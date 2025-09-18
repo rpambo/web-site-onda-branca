@@ -1,0 +1,104 @@
+{{define "subject"}} Confirmação do seu pedido - Onda Branca {{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f3f2f1;
+        margin: 0;
+        padding: 0;
+        color: #323130;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e1dfdd;
+      }
+      .header {
+        background: #0078d4;
+        padding: 20px;
+        text-align: center;
+      }
+      .header img {
+        max-height: 48px;
+      }
+      .content {
+        padding: 30px;
+      }
+      h2 {
+        color: #0078d4;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .details {
+        background: #f8f8f8;
+        border: 1px solid #e1dfdd;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 25px 0;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #0078d4;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #605e5c;
+        background: #f3f2f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header com logo -->
+      <div class="header">
+        <img src="https://example.com/logo.png" alt="Onda Branca Logo" />
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="content">
+        <h2>Olá {{.Name}},</h2>
+        <p>
+          Recebemos o seu pedido de serviço através da <strong>Onda Branca</strong>.  
+          A nossa equipa já está a processar o seu pedido.
+        </p>
+
+        <div class="details">
+          <p><b>Email:</b> {{.Email}}</p>
+          <p><b>Serviço:</b> {{.Servico}}</p>
+        </div>
+
+        <p>
+          Entraremos em contacto em breve para confirmar todos os detalhes.  
+          Se não foi você quem fez este pedido, pode simplesmente ignorar este email.
+        </p>
+
+        <p style="text-align:center; margin: 30px 0;">
+          <a href="https://ondabranca.com" class="button">Visitar Onda Branca</a>
+        </p>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="footer">
+        &copy; {{.Year}} Onda Branca - Todos os direitos reservados.
+      </div>
+    </div>
+  </body>
+</html>
+{{end}}

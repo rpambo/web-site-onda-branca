@@ -1,0 +1,63 @@
+definitions:
+  types.InfoEmpresa:
+    properties:
+      email:
+        type: string
+      mensagem:
+        type: string
+      name:
+        type: string
+      servico:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /enterprises/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados de uma empresa e envia um email de boas-vindas
+      parameters:
+      - description: Enterprise Info
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.InfoEmpresa'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.InfoEmpresa'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Send enterprise email
+      tags:
+      - enterprises
+  /health:
+    get:
+      description: Healthcheck endpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Healthcheck
+      tags:
+      - ops
+swagger: "2.0"
