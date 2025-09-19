@@ -3,9 +3,10 @@ package mailer
 import "embed"
 
 const (
-	FromName            = "OndaBranca"
-	maxRetires          = 3
-	UserWelcomeTemplate = "user_invitation.tmpl"
+	FromName            				= "OndaBranca"
+	maxRetires          				= 3
+	UserWelcomeTemplate 				= "user_invitation.tmpl"
+	SalesTeamNotificationTemplate		= "sales_team_notification.tmpl"
 )
 
 //go:embed "templates"

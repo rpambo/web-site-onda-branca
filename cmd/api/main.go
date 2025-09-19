@@ -8,6 +8,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/rpambo/web-site-onda-branca/internal/env"
 	"github.com/rpambo/web-site-onda-branca/internal/mailer"
+	"github.com/rpambo/web-site-onda-branca/internal/ratelimiter"
 	"go.uber.org/zap"
 )
 
@@ -20,6 +21,11 @@ func main() {
 		apiURL: env.GetString("EXTERNAL_URL", "localhost:8080"),
 		frontendURL: env.GetString("FRONTEND_URL", "localhost:4200"),
 		env: env.GetString("ENV", "developmente"),
+		ratelimiter: ratelimiter.Config{
+			RequestsPerTimeFrame: env.GetInt("RATELIMITER_REQUESTS_COUNT", 20),
+			TimeFrame: time.Second * 5,
+			Enabled: env.GetBoll("RATE_LIMITER_ENABLED", true),
+		},
 		mail: mailConfig{
 			exp: time.Hour * 24 * 3, // 3 dias
 			fromEmail: env.GetString("FROM_EMAIL", ""),
@@ -33,6 +39,9 @@ func main() {
 	logger := zap.Must(zap.NewProduction()).Sugar()
 	defer logger.Sync()
 
+	//ratelimiter
+	ratelimiter := ratelimiter.NewFixedWindowLimiter(cfg.ratelimiter.RequestsPerTimeFrame, cfg.ratelimiter.TimeFrame)
+	
 	//mail
 	//mailtrap
 	mailtrap, err := mailer.NewMailTrapClient(cfg.mail.mailTrap.apikey, cfg.mail.fromEmail)
@@ -44,6 +53,7 @@ func main() {
 		config: cfg,
 		mailer: mailtrap,
 		logger: logger,
+		ratelimiter: ratelimiter,
 	}
 
 	// Metrics collected

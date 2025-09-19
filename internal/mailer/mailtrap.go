@@ -27,36 +27,42 @@ func NewMailTrapClient(apiKey, fromEmail string) (mailtrapClient, error) {
 }
 
 func (m mailtrapClient) Send(templateFile, username, email string, data any, isSandbox bool) (int, error) {
-	// Template parsing and building
-	tmpl, err := template.ParseFS(FS, "templates/"+templateFile)
-	if err != nil {
-		return -1, err
-	}
+    // Template parsing and building
+    tmpl, err := template.ParseFS(FS, "templates/"+templateFile)
+    if err != nil {
+        return -1, err
+    }
 
-	subject := new(bytes.Buffer)
-	err = tmpl.ExecuteTemplate(subject, "subject", data)
-	if err != nil {
-		return -1, err
-	}
+    subject := new(bytes.Buffer)
+    if err := tmpl.ExecuteTemplate(subject, "subject", data); err != nil {
+        return -1, err
+    }
 
-	body := new(bytes.Buffer)
-	err = tmpl.ExecuteTemplate(body, "body", data)
-	if err != nil {
-		return -1, err
-	}
+    body := new(bytes.Buffer)
+    if err := tmpl.ExecuteTemplate(body, "body", data); err != nil {
+        return -1, err
+    }
 
-	message := gomail.NewMessage()
-	message.SetHeader("From", m.fromEmail)
-	message.SetHeader("To", email)
-	message.SetHeader("Subject", subject.String())
+    // Se estiver em sandbox, envia para e-mail de teste
+    if isSandbox {
+        email = "teste@seudominio.com" // <- MailTrap ou outro e-mail de teste
+        subjectStr := "[SANDBOX] " + subject.String()
+        subject.Reset()
+        subject.WriteString(subjectStr)
+    }
 
-	message.AddAlternative("text/html", body.String())
+    message := gomail.NewMessage()
+    message.SetHeader("From", m.fromEmail)
+    message.SetHeader("To", email)
+    message.SetHeader("Subject", subject.String())
+    message.AddAlternative("text/html", body.String())
 
-	dialer := gomail.NewDialer("smtp.gmail.com", 587, m.fromEmail, m.apiKey)
+    // Dialer - Gmail apenas em produção
+    dialer := gomail.NewDialer("smtp.gmail.com", 587, m.fromEmail, m.apiKey)
 
-	if err := dialer.DialAndSend(message); err != nil {
-		return -1, err
-	}
+    if err := dialer.DialAndSend(message); err != nil {
+        return -1, err
+    }
 
-	return 200, nil
+    return 200, nil
 }

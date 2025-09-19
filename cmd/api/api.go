@@ -13,17 +13,19 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
+	_ "github.com/rpambo/web-site-onda-branca/docs"
 	"github.com/rpambo/web-site-onda-branca/internal/env"
 	"github.com/rpambo/web-site-onda-branca/internal/mailer"
+	"github.com/rpambo/web-site-onda-branca/internal/ratelimiter"
 	httpSwagger "github.com/swaggo/http-swagger"
-	_ "github.com/rpambo/web-site-onda-branca/docs"
 	"go.uber.org/zap"
 )
 
 type application struct {
-	config		config
-	logger		*zap.SugaredLogger
-	mailer		mailer.Client			
+	config			config
+	logger			*zap.SugaredLogger
+	mailer			mailer.Client
+	ratelimiter		ratelimiter.Limiter			
 }
 
 type config struct {
@@ -32,6 +34,7 @@ type config struct {
 	frontendURL		string
 	mail 			mailConfig
 	env				string
+	ratelimiter		ratelimiter.Config
 }
 
 type mailConfig struct {
@@ -118,4 +121,4 @@ func (app *application) run(mux http.Handler) error{
 	app.logger.Infow("server has stopped", "addr", app.config.addr, "env", app.config.env)
 
 	return nil
-} 
+}
