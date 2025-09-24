@@ -1,27 +1,21 @@
-.uk-navbar-nav li a {
-  font-size: 18px !important;
-  color: white;
+#offcanvas-nav {
+  display: none;
 }
 
-.uk-navbar-nav > li.uk-active > a {
-  color: #c467bf !important;
-  border-radius: 20px;
+.uk-offcanvas-bar {
+  visibility: hidden;
 }
 
-.uk-navbar-nav li a:hover{
-  color: #c467bf !important;
-}
-.fab:hover{
-  color: #c467bf !important;
+.uk-offcanvas.uk-open .uk-offcanvas-bar {
+  visibility: visible;
 }
 
-button:hover{
-  background-color: #9A74A1 !important;
-  color: #EBE3EC !important;
+.uk-navbar-container{
+  border-bottom: 5px solid transparent; /* precisa ser transparente */
+  border-image: radial-gradient(circle 562px at center, rgba(0, 0, 0, 0.626), #f1f6fb00) 1;
+  border-image-slice: 1;
+  text-align: center;
 }
-
-
-
 
 .custom-navbar {
   position: fixed !important;
@@ -29,7 +23,7 @@ button:hover{
   left: 0 !important;
   right: 0;
   z-index: 3;
-  background-color: rgba(2, 2, 2, 0.096);
+  background-color: rgba(222, 222, 222, 0.043);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -37,50 +31,140 @@ button:hover{
   transition: transform 0.3s ease-in-out;
 }
 
-.hidden-navbar {
-  transform: translateY(-100%) !important;
-  transition: transform 0.3s ease-in-out !important;
+.uk-navbar-nav li a {
+  font-size: 16px !important;
+  color: #969696 !important;
+  text-transform: capitalize !important;
 }
 
-.white-navbar {
-  background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+.custom-navbar {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.white-navbar .uk-navbar-nav li a{
-  color: black;
+.custom-navbar:hover {
+  background-color: #00224bec !important;
 }
 
-.custom-navbar .uk-navbar {
-  display: flex;
-  justify-content: space-between; /* distribui left / center / right */
-  align-items: center;
-  flex-wrap: wrap; /* permite quebrar em 2 linhas no mobile */
-}
-.custom-navbar .uk-navbar-center {
-  flex: 1;
-  text-align: center;
-}
-.custom-navbar .uk-navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* espaçamento para ícones/botões */
+.uk-drop-grid {
+  position: relative; /* precisa para o pseudo-elemento */
 }
 
-.uk-icon-button.icon-branca {
-  background-color: #00a7fb !important;
+.uk-drop-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* meio exato */
+  width: 1px;
+  background: #dcdcdc; /* cor da linha */
+}
+
+.uk-button::first-letter{
+  text-transform: uppercase;
+}
+
+.uk-button {
+  text-transform: lowercase;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: lowercase;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  border: none !important;
+  border-radius: 10px;
+}
+
+/* efeito de espalhar/reagrupar */
+.uk-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #c467bf !important;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* animação quando hover */
+.uk-button:hover {
   color: white !important;
+  border: none !important;
+  animation: spreadRegroup 600ms ease forwards;
 }
 
-@media (max-width: 360px) {
-  .uk-navbar-container{
-    margin-bottom: 20px !important;
-  }
+@keyframes spreadRegroup {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); } /* espalha */
+  100% { transform: scale(1); }   /* volta ao normal */
 }
 
-/* Estilo do dropdown fullscreen */
-.custom-dropdown {
-  top: 100% !important;
-  right: 100% !important;
+.uk-button:hover::after {
+  width: 250%;
+  height: 250%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.uk-nav .uk-parent > a::after {
+  content: "▼"; /* ou "▸" se quiser para o lado */
+  font-size: 0.7em;
+  margin-left: 8px;
+  color: #666;
+}
+
+.uk-nav .uk-parent.uk-open > a::after {
+  content: "▲"; /* muda para cima */
+}
+
+/* Dividers no menu principal */
+#offcanvas-nav .uk-nav > li {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+#offcanvas-nav .uk-nav > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Dividers nos submenus */
+#offcanvas-nav .uk-nav-sub > li {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+#offcanvas-nav .uk-nav-sub > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Dividers na lista de redes sociais */
+#offcanvas-nav .uk-list-divider > li {
+  border-bottom: 1px solid #e5e5e5; /* mesma cor */
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+#offcanvas-nav .uk-list-divider > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+hr{
+  border-bottom: 1px solid #e5e5e5; /* mesma cor */
+  margin-bottom: 0;
+}
+
+
+.uk-navbar-nav > li.uk-active > a {
+  color: #c467bf !important; /* cor para ativo */
+  font-weight: 600;
 }

@@ -1,14 +1,10 @@
-.uk-button:hover{
-    background-color: #c467bf !important;
-    color: white !important;
-    border: 1px solid #c467bf;
+.hr-custom{
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-image: radial-gradient(circle 562px at center, #007dbb, #F1F6FB) 1;
+  border-image-slice: 1;
+  text-align: center;
 }
-
-@keyframes growMobile {
-  from { width: 0; }
-  to { width: 25%; }
-}
-
 
 .titulo-principal {
   font-size: 16px;
@@ -32,7 +28,12 @@
 }
 
 .titulo-metricas{
-  max-width: 550px;
+  max-width: 750px;
+}
+
+@keyframes growMobile {
+  from { width: 0; }
+  to { width: 25%; }
 }
 
 @keyframes grow {
@@ -40,15 +41,11 @@
     to { width: 80%; }
 }
 
-
 @media (max-width:768px) {
-  .uk-section{
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
-  }
-
-  .titulo-metricas {
-    text-align: left;
+  .hr-custom {
+    border-image: radial-gradient(circle 200px at center, #007dbb, #F1F6FB) 1; /* gradiente menor */
+    border-top-width: 1px;
+    border-bottom-width: 1px;
   }
 
   .titulo-principal{

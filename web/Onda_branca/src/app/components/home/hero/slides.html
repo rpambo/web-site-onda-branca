@@ -1,47 +1,43 @@
-<link rel="preload" as="image" href="/imagens/background.webp">
-<link rel="preload" as="image" href="/imagens/background-homem.webp">
-<link rel="preload" as="image" href="/imagens/mobile_1.webp">
-<link rel="preload" as="image" href="/imagens/mobile_2.webp">
+<div class="uk-position-relative uk-visible-toggle uk-light" 
+     uk-slideshow="autoplay: true; animation: fade; pause-on-hover: false; autoplay-interval: 2000; ratio: false">
 
-<div uk-slideshow="autoplay: true; infinite: true;" >
-  <div class="uk-slideshow-items">
+  <!-- Slideshow fullscreen -->
+  <div class="uk-slideshow-items" uk-height-viewport="offset-top: true">
     <div>
-      <div class="back">
-        <div class="slide-content">
-          <div class="uk-section uk-section-large">
-            <div class="uk-container-expand uk-padding-large">
-              <h1 class="uk-heading-medium uk-margin-remove" style="color: white; font-weight: 500; max-width: 750px;">Movimento pela saúde  <span class="uk-text-primary">mental</span>  e <span class="uk-text-primary">produtividade</span> <br> laboral</h1>
-            <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-flex uk-flex-middle  uk-grid uk-margin-medium-top ">
-            <div class="uk-width-expand@l">
-              <p style="color: white; font-weight: 400; font-size: 22px; max-width: 650px;">Oferecemos programas de bem-estar, workshops e consultoria para equipes, transformando saúde mental em resultados reais.</p>
-            </div>
-            <div class="uk-width-auto@l uk-text-right desc" style="position: absolute; right: 100px;">
-              <a [routerLink]="['/sobre']" class="uk-button uk-button-default" style="background-color: white; border-radius: 5px; font-size: 18px; padding: 10px 15px 10px 15px; color: #006699; font-weight: 500;">Explorar programas</a>
-            </div>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <img data-src="imagens/desktop_1.webp" uk-img uk-cover alt="desktop_1">
     </div>
     <div>
-      <div class="back-homem">
-        <div class="slide-content">
-          <div class="uk-section uk-section-large">
-            <div class="uk-container uk-padding-large">
-              <h1 class="uk-heading-medium uk-margin-remove" style="color: white; font-weight: 500; max-width: 850px;"><span class="uk-text-primary">Mentoria</span>, <span class="uk-text-primary">workshops</span> e <span class="uk-text-primary">programas</span> corporativos para equipes.</h1>
-              <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-flex uk-flex-middle  uk-grid uk-margin-medium-top ">
-            <div class="uk-width-expand@l">
-              <p style="color: white; font-weight: 400; font-size: 22px; max-width: 650px;">Da mentoria para gestores à gestão de programas corporativos, oferecemos apoio personalizado para empresas e equipes</p>
-            </div>
-            <div class="uk-width-auto@l uk-text-right desc" style="position: absolute; right: 100px;">
-              <a [routerLink]="['/sobre']" class="uk-button uk-button-default" style="background-color: white; border-radius: 5px; font-size: 18px; padding: 10px 15px 10px 15px; color: #006699; font-weight: 500;">Agendar uma conversa</a>
-            </div>
-          </div>     
-            </div>
-          </div>
-      </div>
+      <img data-src="imagens/desktop_2.webp" uk-img uk-cover alt="desktop_2">
+    </div>
+    <div>
+      <img data-src="imagens/desktop_3.webp" uk-img uk-cover alt="desktop_3">
+    </div>
+    <div>
+      <img data-src="imagens/desktop_4.webp" uk-img uk-cover alt="desktop_4">
+    </div>
+    <div>
+      <img data-src="imagens/desktop_5.webp" uk-img uk-cover alt="desktop_5">
+    </div>
+    <div>
+      <img data-src="imagens/desktop_6.webp" uk-img uk-cover alt="desktop_6">
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="uk-position-cover" style="background: rgba(0, 0, 0, 0.6);"></div>
+
+  <!-- Texto central -->
+  <div class="uk-position-center uk-text-center uk-light text uk-padding-large" style="bottom: 15%;">
+    <h2 class="uk-heading-large" style="text-transform: uppercase; font-weight: 500; margin-bottom: 0;">Onda Branca</h2>
+    <p class="uk-text-lead uk-text-large@m desc" style="color: white; font-weight: 500; font-size: 32px; margin-top: 0;">Movimento pela saúde mental e produtividade laboral</p>
+    <div class="uk-flex conteudo uk-flex-between uk-flex-wrap uk-flex-center@s uk-margin-medium-top">
+      <p class="desc_1" style="color: white; font-size: 18px; text-transform: uppercase; font-weight: 500; max-width: 750px; margin: 0 auto;">
+        Programas de bem-estar, workshops, consultoria e podcast para fortalecer equipes e promover saúde mental
+      </p>
+      <div>
+        <a href="" class="uk-button uk-button-default uk-margin-left" style="background-color: white; color: #0F62A5;">AGENDAR UMA CONVERSA</a>
       </div>
     </div>
   </div>
 </div>
+

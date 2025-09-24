@@ -1,82 +1,104 @@
-.back, .back-homem{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+.uk-button::first-letter{
+    text-transform: uppercase;
 }
 
-.slide-content{
-    display: flex;
-    align-items: flex-end; /* desktop: centralizado */
-    min-height: 100vh;
-}
-
-.back{
-    background-image: url("/imagens/background.webp");
-}
-
-.back-homem{
-    background-image: url("/imagens/background-homem.webp");
-}
-
-h1, h2{
-  font-family: "Archivo" !important;
-}
-
-.uk-slideshow,
-.uk-slideshow-items,
-.uk-slideshow-items > div {
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-@media (max-width: 750px) {    
-    .back{
-        background-image: url("/imagens/mobile_1.webp");
-    }
-    .back-homem{
-        background-image: url("/imagens/mobile_2.webp");
-        
-    }
-    h1{
-        font-size: 35px !important;
-    }
-    p{
-        font-size: 19px !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .back{
-        background-image: url("/imagens/mobile_1.webp");
-    }
-    .back-homem{
-        background-image: url("/imagens/mobile_2.webp");
-        
-    }
-    h1{
-        font-size: 35px !important;
-    }
-    p{
-        font-size: 19px !important;
-    }
-    .desc  {
-    position: static !important;   /* tira o absolute */
-    text-align: left !important;   /* ajusta alinhamento */
-    margin-top: 20px;              /* espaço embaixo do texto */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-
-  .desc a.uk-button {
-    display: inline-block;         /* mantém estilo de botão */
-    width: auto;                   /* largura automática */
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
+
+h2 {
+  animation: scaleUp 0.8s ease-out forwards;
+}
+
 
 .uk-button {
-  text-transform: lowercase;   /* força tudo em minúsculas */
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: lowercase;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  border: none !important;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
 }
 
-.uk-button::first-letter {
-  text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
+/* efeito de espalhar/reagrupar */
+.uk-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #c467bf !important;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* animação quando hover */
+.uk-button:hover {
+  color: white !important;
+  border: none !important;
+  animation: spreadRegroup 600ms ease forwards;
+}
+
+@keyframes spreadRegroup {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); } /* espalha */
+  100% { transform: scale(1); }   /* volta ao normal */
+}
+
+.uk-button:hover::after {
+  width: 250%;
+  height: 250%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+@media (min-width: 344px) and (max-width:740px){
+    h2{
+        font-size: 32px !important;
+    }
+    .desc{
+        font-size: 20px !important;
+    }
+    .text{
+        bottom: 5% !important;
+    }
+    .desc_1{
+        font-size: 15px !important;
+        margin-bottom: 20px !important;
+    }
+    .uk-slideshow-items {
+        min-height: 550px !important;
+    }
+    .conteudo{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width:1024px){
+    .uk-slideshow-items {
+        min-height: 550px !important;
+    }
+    .text{
+        bottom: 5% !important;
+    }
+    .conteudo{
+        display: flex;
+        justify-content: center;
+    }
+    .desc_1{
+        margin-bottom: 20px !important;
+    }
 }

@@ -87,11 +87,8 @@
     font-size: 70px;
   }
   .metric.destaque {
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding-top: 15px;
-    max-width: 150px;
     text-align: left;
+    border-image: radial-gradient(circle 100px at center, #00aaff, #F1F6FB) 1;
   }
 }
 
