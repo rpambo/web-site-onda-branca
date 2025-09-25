@@ -3,17 +3,18 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from '../../components/footer/footer';
 import { Contactos } from "../../components/contacto/contacto-principal/contactos";
-import { Historia } from "../../components/historia/historia";
+import { Historia } from "../../components/sobre-onda-branca/historia/historia";
 import { Missao } from '../../components/sobre-onda-branca/missao/missao';
 import { Vissao } from "../../components/sobre-onda-branca/vissao/vissao";
 import { Values } from "../../components/sobre-onda-branca/values/values";
 import { StaticsSobre } from '../../components/home/statics-sobre/statics-sobre';
-
+import { QuemSomos } from "../../components/sobre-onda-branca/quem-somos/quem-somos";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sobre',
   standalone: true,
-  imports: [Navbar, Footer, Contactos, StaticsSobre, Historia, Missao, Vissao, Values],
+  imports: [Navbar, Footer, Contactos, StaticsSobre, Historia, Missao, Vissao, Values, QuemSomos, RouterLink],
   templateUrl: './sobre.html',
   styleUrls: ['./sobre.css']
 })

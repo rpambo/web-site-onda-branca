@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="hero hero-content" style="overflow: hidden;">
+<div class="hero hero-content" style="overflow: hidden; position: relative; z-index: 2;">
   <div class="uk-section uk-section-large uk-light">
     <div class="uk-container uk-padding-large">
         <div>
@@ -7,14 +7,20 @@
               style="color: white; font-weight: 400; color: #212121;">
             Somos uma iniciativa líder em Angola, dedicada ao bem-estar e à produtividade, comprometida com a inovação, inclusão e impacto social
           </h1>
-          <a href="" class="uk-button uk-button-default uk-margin-medium-top" style="background-color: #036ef2; border-radius: 5px; font-size: 18px; padding: 10px 15px 10px 15px; color: white; font-weight: 500;">Nossos servicos</a>
+          <!-- Botão abre modal -->
+        <a href="#modal-servicos" 
+           uk-toggle 
+           class="uk-button uk-button-default uk-margin-medium-top" 
+           style="background-color: #036ef2; border-radius: 5px; font-size: 18px; padding: 10px 15px; color: white; font-weight: 500;">
+          Nossos serviços
+        </a>
       </div>
     </div>
   </div>
 </div>
+<app-quem-somos></app-quem-somos>
 <app-historia></app-historia>
-<app-contactos></app-contactos>
-<div class="uk-section uk-section-large" style="background-color: #F1F6FB; padding-bottom: 30px;">
+<div class="uk-section uk-section-large" style="background-color: #F1F6FB; padding-bottom: 30px; position: relative; z-index: 2;">
   <div class="uk-container">
       <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo';" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
             <span class="titulo-principal">Missão, Visão e Valores <span class="linha"></span></span>
@@ -28,3 +34,102 @@
 <app-statics-sobre></app-statics-sobre>
 <app-contactos></app-contactos>
 <app-footer></app-footer>
+
+<!-- Modal com Carrossel -->
+<div id="modal-servicos" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-width-1-1 uk-width-2xlarge@m uk-margin-auto-vertical">
+
+    <!-- Botão fechar -->
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+
+    <h2 class="uk-modal-title uk-text-center">Nossos Serviços</h2>
+
+    <!-- Slideshow -->
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" 
+         uk-slideshow="animation: push; ratio: 7:4; autoplay: true">
+         <div class="uk-slideshow-items">
+          <div>
+            <img data-src="/imagens/hero/hero-programa-de-saude-mental-no-trabalho.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Programa de saúde mental no trabalho</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">O Programa de Saúde Mental no Trabalho apoia empresas na criação de ambientes mais equilibrados, oferecendo estratégias de prevenção, apoio psicológico e promoção do bem-estar.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/programa-de-saude-mental-no-trabalho']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero-palestra.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Palestras e workshops</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">Gestão do stress; prevenção e controlo da depressão e da ansiedade; estratégias para a qualidade de vida pessoal e laboral.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/palestra-e-workshop']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero-gestao-de-saude-mental-para-empresa.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Gestão de programa de saúde mental para empresas</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">Planejamento e implementação de programas de bem-estar duradouros, focados na prevenção e acompanhamento da saúde mental corporativa.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/gestao-de-saude-mental-para-empressa']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero-antendimento-empressarial.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Atendimento empresarial</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">Consultoria personalizada para melhorar o clima organizacional e apoiar a saúde mental das equipas.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/antendimento-empressarial']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero_renda_extra.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Programa de Renda Extra</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">Orientação prática para gerar novas fontes de renda alinhando bem-estar e produtividade.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/programa-de-renda-extra']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero-programa-de-ginastica-laboral.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">O programa de ginástica laboral</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">O programa de ginástica laboral promove a saúde física e mental dos colaboradores por meio de exercícios simples e práticos realizados no ambiente de trabalho.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/programa-de-ginastica-laboral']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+          <div>
+            <img data-src="/imagens/hero/hero-mentoria-para-gestores.webp" uk-img class="uk-cover" alt="">
+             <div class="uk-position-cover" style="background: rgba(0,0,0,0.5);"></div>
+             <div class="uk-position-center uk-light uk-width-4-5@s uk-width-4-5 uk-width-3-5@m uk-width-3-5@xm uk-padding">
+              <h3 class="title uk-text-center uk-margin-remove" style="font-size: 32px;">Mentoria de saúde mental para gestores</h3>
+              <p class="uk-text-center descricao uk-text-small@s uk-text-normal@m">Acompanhamento personalizado para desenvolver equilíbrio entre saúde mental e produtividade.</p>
+              <div class="uk-text-center">
+                <a [routerLink]="['/mentoria-de-saude-mental-para-gestores']" class="uk-button uk-button-default uk-modal-close-default" style="background-color: #00479f;">Saiba mais</a>
+              </div>
+             </div>
+          </div>
+         </div>
+      <!-- Controles -->
+      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+  </div>
+</div>

@@ -48,7 +48,7 @@ blockquote{
   to { width: 25%; }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px ) and (max-width: 1024px) {
   .titulo-principal{
     display: block;
   }
@@ -83,7 +83,7 @@ blockquote{
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width:344px) and (max-width: 767px) {
     .hero{
         height: 556px !important;
     }
@@ -104,6 +104,19 @@ blockquote{
     .uk-button{
         margin-top: 10px !important;
     }
+    .titulo-modal-title{
+      font-size: 12px !important;
+    }
+    .uk-modal-title{
+      font-size: 14px !important;
+    }
+    .title{
+      font-size: 18px !important;
+    }
+    .descricao{
+      font-size: 12px !important;
+      margin: 0;
+    }
 }
 
 .uk-button {
@@ -112,4 +125,50 @@ blockquote{
 
 .uk-button::first-letter {
   text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
+}
+
+.uk-button {
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: lowercase;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  border: none !important;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+}
+
+/* efeito de espalhar/reagrupar */
+.uk-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #c467bf !important;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* animação quando hover */
+.uk-button:hover {
+  color: white !important;
+  border: none !important;
+  animation: spreadRegroup 600ms ease forwards;
+}
+
+@keyframes spreadRegroup {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); } /* espalha */
+  100% { transform: scale(1); }   /* volta ao normal */
+}
+
+.uk-button:hover::after {
+  width: 250%;
+  height: 250%;
+  transition: width 0.4s ease, height 0.4s ease;
 }
