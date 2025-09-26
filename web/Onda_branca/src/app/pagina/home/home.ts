@@ -8,12 +8,13 @@ import { CommonModule } from '@angular/common';
 import { Contactos } from "../../components/contacto/contacto-principal/contactos";
 import { StaticsSobre } from "../../components/home/statics-sobre/statics-sobre";
 import { ParceiroCliente } from '../../components/home/parceiro-cliente/parceiro-cliente';
+import { OndaBrancaRadioSolidaria } from '../../components/home/onda-branca-radio-solidaria/onda-branca-radio-solidaria';
 
 declare var UIkit: any; // para usar UIkit direto
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, Slides, Footer, Services, CommonModule, Contactos, StaticsSobre, ParceiroCliente],
+  imports: [Navbar, Slides, Footer, Services, CommonModule, Contactos, StaticsSobre, ParceiroCliente, OndaBrancaRadioSolidaria],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

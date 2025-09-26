@@ -12,10 +12,11 @@ import { PalestraEWorkshop } from './pagina/palestra-e-workshop/palestra-e-works
 import { ProgramaDeSaudeMental } from './pagina/programa-de-saude-mental/programa-de-saude-mental';
 import { PoliticaPrivacidade } from './components/politica-privacidade/politica-privacidade';
 import { TermoDeUso } from './components/termo-de-uso/termo-de-uso';
+import { Podcast } from './pagina/podcast/podcast';
 
 export const routes: Routes = [
   {path:"", component: Home},
-  {path:"sobre", component: Sobre},
+  {path:"sobre-onda-branca", component: Sobre},
   {path:"on-air", component: OnAir},
   {path:"contacto", component: Contacto},
   {path:"mentoria-de-saude-mental-para-gestores", component: Mentoria},
@@ -26,5 +27,6 @@ export const routes: Routes = [
   {path:"palestra-e-workshop", component: PalestraEWorkshop},
   {path:"programa-de-saude-mental-no-trabalho", component: ProgramaDeSaudeMental},
   {path:"politica-de-privacidade", component: PoliticaPrivacidade},
-  {path:"termo-de-uso", component: TermoDeUso}
+  {path:"termo-de-uso", component: TermoDeUso},
+  {path:"podcast-onda-branca", component: Podcast}
 ];
