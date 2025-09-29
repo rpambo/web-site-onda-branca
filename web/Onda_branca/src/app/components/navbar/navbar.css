@@ -90,6 +90,25 @@
   z-index: -1;
 }
 
+/* estado normal */
+.uk-navbar-dropdown .uk-navbar-dropdown-nav li > a.dropdown-link {
+  font-size: 18px;
+  color: #272727 !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+ul li a:hover{
+  color: #c467bf !important;
+}
+
+/* hover */
+.uk-navbar-dropdown .uk-navbar-dropdown-nav li > a.dropdown-link:hover {
+  color: #c467bf !important;
+  text-decoration: underline;
+}
+
+
 /* animação quando hover */
 .uk-button:hover {
   color: white !important;

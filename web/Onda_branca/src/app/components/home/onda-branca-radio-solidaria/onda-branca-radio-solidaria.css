@@ -1,6 +1,14 @@
+.back{
+  background-image: url(/imagens/home/radio.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .titulo-principal {
   font-size: 16px;
-  color: #094268;
+  color: #c467bf;
   font-weight: 300;
   text-transform: uppercase;
   position: relative;

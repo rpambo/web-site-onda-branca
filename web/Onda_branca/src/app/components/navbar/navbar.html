@@ -1,156 +1,164 @@
 <div class="uk-navbar-container custom-navbar" style="z-index: 4;">
   <div class="uk-container">
     <div uk-navbar>
-    <div class="uk-navbar-left">
-      <a [routerLink]="['']" class="uk-logo">
-        <img width="120" data-src="imagens/logo/logo.png" uk-img alt="">
-      </a>
-    </div>
-    <div class="uk-navbar-center uk-visible@s">
-      <ul class="uk-navbar-nav">
-        <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
-          <a href="javascript:void(0)" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Sobre onda branca</a>
-          <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
-                uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x"
-                hidden
-                style="background-color: white;"
-                >
-                <div  class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
-                  <div>
-                    <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">Cuidar da mente é investir na produtividade.</h1>
-                    <p style="color: #00224b; font-size: 18px;">Equilíbrio, Foco e Bem-Estar são os pilares que sustentam nossa visão de produtividade saudável.</p>
-                  </div>
-                  <div>
-                    <div>
-                      <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/sobre-onda-branca']">Sobre a Onda Branca</a></li>
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/sobre-onda-branca']" fragment="missao">Nossa Missão</a></li>
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/sobre-onda-branca']" fragment="valores">Nossa valores</a></li>
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/sobre-onda-branca']" fragment="vissao">Nossos visão</a></li>
-                    </ul>
-                  </div>
-                  </div>
+      <!-- LOGO -->
+      <div class="uk-navbar-left">
+        <a [routerLink]="['']" class="uk-logo">
+          <img width="120" data-src="imagens/logo/logo.png" uk-img alt="">
+        </a>
+      </div>
+
+      <!-- NAVBAR CENTER -->
+      <div class="uk-navbar-center uk-visible@s">
+        <ul class="uk-navbar-nav">
+          
+          <!-- SOBRE ONDA BRANCA -->
+          <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
+            <a href="javascript:void(0)" tabindex="0">Sobre onda branca</a>
+            <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
+                 uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x"
+                 hidden style="background-color: white;">
+              <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
+                <div>
+                  <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
+                    Cuidar da mente é investir na produtividade.
+                  </h1>
+                  <p style="color: #00224b; font-size: 18px;">
+                    Equilíbrio, Foco e Bem-Estar são os pilares que sustentam nossa visão de produtividade saudável.
+                  </p>
                 </div>
-          </div>
-        </li>
-        <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
-          <a href="javascript:void(0)" uk-scroll (click)="setActive('servico')">Serviços</a>
-          <div  class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
-           uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x;"
-           hidden
-           style="background-color: white;"
-          >
-            <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
-              <div>
-                <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
-                  Soluções que transformam bem-estar em resultados.
-                </h1>
-                <p style="color: #00224b; font-size: 18px;">
-                  Do diagnóstico às ações práticas, cuidamos da saúde mental da sua equipa.
-                </p>
-              </div>
-              <div>
-                <div class="uk-grid uk-child-width-1-2@s" uk-grid>
-          
-          <!-- Primeira coluna -->
-          <div>
-            <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/mentoria-de-saude-mental-para-gestores']">Mentoria de saúde mental para gestores</a></li>
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/antendimento-empressarial']">Atendimento empresarial</a></li>
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/gestao-de-saude-mental-para-empressa']">Gestão de programa de saúde mental para empresas</a></li>
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/programa-de-renda-extra']">Programa de Renda Extra</a></li>
-            </ul>
-          </div>
-          
-          <!-- Segunda coluna -->
-          <div>
-            <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/programa-de-ginastica-laboral']">O programa de ginástica laboral</a></li>
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/palestra-e-workshop']">Palestras e workshops</a></li>
-              <li><a style="font-size: 18px; color: #272727 !important;" [routerLink]="['/programa-de-saude-mental-no-trabalho']">Programa de saúde mental no trabalho</a></li>
-            </ul>
-          </div>
-        </div>
+                <div>
+                  <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/sobre-onda-branca']">Sobre a Onda Branca</a></li>
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/sobre-onda-branca']" fragment="missao">Nossa Missão</a></li>
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/sobre-onda-branca']" fragment="valores">Nossos valores</a></li>
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/sobre-onda-branca']" fragment="visao">Nossa visão</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
-          <a href="javascript:void(0)" uk-scroll (click)="setActive('conteudo')">Media</a>
-          <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
-           uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x;"
-           hidden
-           style="background-color: white;">
-          <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
-              <div>
-                <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
-                  Conhecimento para equilibrar mente e resultados
-                </h1>
-                <p style="color: #00224b; font-size: 18px;">
-                  Descubra nosso blog, Podcast e materiais que inspiram equilíbrio, foco e performance sustentável
-                </p>
-              </div>
-              <div class="uk-child-width-1-2@l uk-grid">
+          </li>
+
+          <!-- SERVIÇOS -->
+          <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
+            <a href="javascript:void(0)">Serviços</a>
+            <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
+                 uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x"
+                 hidden style="background-color: white;">
+              <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
                 <div>
+                  <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
+                    Soluções que transformam bem-estar em resultados.
+                  </h1>
+                  <p style="color: #00224b; font-size: 18px;">
+                    Do diagnóstico às ações práticas, cuidamos da saúde mental da sua equipa.
+                  </p>
+                </div>
+                <div class="uk-grid uk-child-width-1-2@s" uk-grid>
+                  <!-- Primeira coluna -->
+                  <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/podcast-onda-branca/']">Podcast</a></li>
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" href="javascript:void(0)">Blog</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/mentoria-de-saude-mental-para-gestores']">Mentoria de saúde mental para gestores</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/antendimento-empressarial']">Atendimento empresarial</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/gestao-de-saude-mental-para-empressa']">Gestão de programa de saúde mental para empresas</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/programa-de-renda-extra']">Programa de Renda Extra</a></li>
                     </ul>
                   </div>
-                  <div >
+                  <!-- Segunda coluna -->
+                  <div>
                     <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-                      <li style="font-size: 18px !important; color: #6c757d !important;">Radio solidaria 90.7 FM</li>
-                      <li style="font-size: 18px !important; color: #272727 !important;">Programa onda branca <br><span style="font-size: 14px !important; color: #272727 !important; font-style: italic;">Todos os sábados das 9h às 10h</span></li>
-                    </ul>   
-                  </div>
-              </div>
-          </div> 
-          </div>  
-        </li>
-        <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
-          <a href="javascript:void(0)" uk-scroll (click)="setActive('conteudo')">Conexão</a>
-          <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
-           uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x;"
-           hidden
-           style="background-color: white;">
-          <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
-              <div>
-                <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
-                  Construa conexões, participe e viva experiências coletivas
-                </h1>
-                <p style="color: #00224b; font-size: 18px;">
-                  Nossa comunidade é um espaço para trocar ideias, aprender e crescer junto.
-Acompanhe a agenda de eventos, workshops e encontros que aproximam pessoas e fortalecem a cultura de bem-estar e produtividade.
-                </p>
-              </div>
-              <div class="dropdown-col-right">
-                    <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/podcast']">Comunidade</a></li>
-                      <li><a style="font-size: 18px !important; color: #272727 !important;" [routerLink]="['/blog']">Agenda</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/programa-de-ginastica-laboral']">O programa de ginástica laboral</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/palestra-e-workshop']">Palestras e workshops</a></li>
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/programa-de-saude-mental-no-trabalho']">Programa de saúde mental no trabalho</a></li>
                     </ul>
+                  </div>
+                </div>
               </div>
-          </div> 
-          </div>  
-        </li>
-      </ul>
-    </div>
-    <div class="uk-navbar-right uk-visible@s">
-      <div class="uk-flex uk-flex-middle">
+            </div>
+          </li>
+
+          <!-- MEDIA -->
+          <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
+            <a href="javascript:void(0)">Media</a>
+            <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
+                 uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x"
+                 hidden style="background-color: white;">
+              <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
+                <div>
+                  <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
+                    Conhecimento para equilibrar mente e resultados
+                  </h1>
+                  <p style="color: #00224b; font-size: 18px;">
+                    Descubra nosso blog, Podcast e materiais que inspiram equilíbrio, foco e performance sustentável
+                  </p>
+                </div>
+                <div class="uk-child-width-1-2@l uk-grid">
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
+                      <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/podcast-onda-branca/']">Podcast</a></li>
+                      <li><a class="dropdown-link" href="javascript:void(0)">Blog</a></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
+                      <li style="font-size: 18px; color: #6c757d;">Radio solidaria 90.7 FM</li>
+                      <li style="font-size: 18px; color: #272727;">
+                        Programa onda branca <br>
+                        <span style="font-size: 14px; color: #272727; font-style: italic;">Todos os sábados das 9h às 10h</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- CONEXÃO -->
+          <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
+            <a href="javascript:void(0)">Conexão</a>
+            <div class="uk-navbar-dropdown uk-padding-large custom-dropdown uk-navbar-dropdown-width-1-1"
+                 uk-dropdown="mode: click, hover; delay-show: 200; delay-hide: 200; stretch: x"
+                 hidden style="background-color: white;">
+              <div class="uk-drop-grid uk-child-width-1-2 uk-grid uk-drop-grid-divider uk-padding-medium uk-text-left">
+                <div>
+                  <h1 style="color: #00224b; font-size: 32px; font-weight: 500;">
+                    Construa conexões, participe e viva experiências coletivas
+                  </h1>
+                  <p style="color: #00224b; font-size: 18px;">
+                    Nossa comunidade é um espaço para trocar ideias, aprender e crescer junto.  
+                    Acompanhe a agenda de eventos, workshops e encontros que aproximam pessoas e fortalecem a cultura de bem-estar e produtividade.
+                  </p>
+                </div>
+                <div class="dropdown-col-right">
+                  <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/podcast']">Comunidade</a></li>
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/blog']">Agenda</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NAVBAR RIGHT -->
+      <div class="uk-navbar-right uk-visible@s">
+        <div class="uk-flex uk-flex-middle">
           <a href="" class="uk-button uk-button-default" style="background-color: #00479f; color: white; border: none; border-radius: 5px;">Contato</a>
         </div>
-    </div>
+      </div>
 
-    <!-- Botão Hambúrguer (mobile only) -->
-    <div class="uk-navbar-right uk-hidden@s">
+      <!-- BOTÃO MOBILE -->
+      <div class="uk-navbar-right uk-hidden@s">
         <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
           <span style="color: white; font-weight: bold;" class="uk-icon" uk-icon="icon: more-vertical"></span> 
           <span style="color: white; font-weight: bold;" class="uk-margin-small-right">Menu</span>
         </a>
+      </div>
     </div>
   </div>
-  </div>
-  
 </div>
+
 
 
 <!-- Offcanvas para mobile -->
