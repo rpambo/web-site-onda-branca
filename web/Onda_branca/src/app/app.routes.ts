@@ -13,6 +13,7 @@ import { ProgramaDeSaudeMental } from './pagina/programa-de-saude-mental/program
 import { PoliticaPrivacidade } from './components/politica-privacidade/politica-privacidade';
 import { TermoDeUso } from './components/termo-de-uso/termo-de-uso';
 import { Podcast } from './pagina/podcast/podcast';
+import { Comunidade } from './pagina/comunidade/comunidade';
 
 export const routes: Routes = [
   {path:"", component: Home},
@@ -28,5 +29,6 @@ export const routes: Routes = [
   {path:"programa-de-saude-mental-no-trabalho", component: ProgramaDeSaudeMental},
   {path:"politica-de-privacidade", component: PoliticaPrivacidade},
   {path:"termo-de-uso", component: TermoDeUso},
-  {path:"podcast-onda-branca", component: Podcast}
+  {path:"podcast-onda-branca", component: Podcast},
+  {path:"comunidade-onda-branca", component: Comunidade}
 ];
