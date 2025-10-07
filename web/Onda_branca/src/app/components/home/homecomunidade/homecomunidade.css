@@ -1,0 +1,129 @@
+.missao-section {
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: url("/imagens/comunidade (4).png") no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* ajuda no mobile */
+}
+
+/* Título vertical no desktop */
+.missao-title {
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+/* Texto alinhado à direita no desktop */
+.missao-text {
+  position: relative;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: 100px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* -------- RESPONSIVO -------- */
+@media (max-width: 768px) {
+  .missao-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .missao-title {
+    position: static;
+    writing-mode: horizontal-tb; /* título horizontal */
+    text-orientation: initial;
+    font-size: 36px;
+    margin-bottom: 20px;
+    transform: none;
+  }
+
+  .missao-text {
+    margin: 0;
+    max-width: 100%;
+    font-size: 16px;
+  }
+}
+
+
+.uk-button {
+  text-transform: lowercase;   /* força tudo em minúsculas */
+}
+
+.uk-button::first-letter {
+  text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
+}
+
+
+.uk-button {
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: lowercase;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  border-radius: 10px;
+}
+
+.uk-button-saiba{
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: lowercase;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  border-radius: 10px;
+}
+
+
+/* efeito de espalhar/reagrupar */
+.uk-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #c467bf !important;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* animação quando hover */
+.uk-button:hover {
+  color: white !important;
+  border: none !important;
+  animation: spreadRegroup 600ms ease forwards;
+}
+
+@keyframes spreadRegroup {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.08); } /* espalha */
+  100% { transform: scale(1); }   /* volta ao normal */
+}
+
+.uk-button:hover::after {
+  width: 250%;
+  height: 250%;
+  transition: width 0.4s ease, height 0.4s ease;
+}

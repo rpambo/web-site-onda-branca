@@ -9,12 +9,13 @@ import { Contactos } from "../../components/contacto/contacto-principal/contacto
 import { StaticsSobre } from "../../components/home/statics-sobre/statics-sobre";
 import { ParceiroCliente } from '../../components/home/parceiro-cliente/parceiro-cliente';
 import { OndaBrancaRadioSolidaria } from '../../components/home/onda-branca-radio-solidaria/onda-branca-radio-solidaria';
+import { Homecomunidade } from "../../components/home/homecomunidade/homecomunidade";
 
 declare var UIkit: any; // para usar UIkit direto
 
 @Component({
   selector: 'app-home',
-  imports: [Navbar, Slides, Footer, Services, CommonModule, Contactos, StaticsSobre, ParceiroCliente, OndaBrancaRadioSolidaria],
+  imports: [Navbar, Slides, Footer, Services, CommonModule, Contactos, StaticsSobre, ParceiroCliente, OndaBrancaRadioSolidaria, Homecomunidade],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
