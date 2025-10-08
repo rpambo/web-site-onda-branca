@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './pagina/home/home';
 import { Sobre } from './pagina/sobre/sobre';
-import { OnAir } from './pagina/on-air/on-air';
 import { Contacto } from './pagina/contacto/contacto';
 import { Mentoria } from './pagina/mentoria/mentoria';
 import { AntendimentoEmpressarial } from './pagina/antendimento-empressarial/antendimento-empressarial';
@@ -18,7 +17,6 @@ import { Comunidade } from './pagina/comunidade/comunidade';
 export const routes: Routes = [
   {path:"", component: Home},
   {path:"sobre-onda-branca", component: Sobre},
-  {path:"on-air", component: OnAir},
   {path:"contacto", component: Contacto},
   {path:"mentoria-de-saude-mental-para-gestores", component: Mentoria},
   {path:"antendimento-empressarial", component: AntendimentoEmpressarial},
