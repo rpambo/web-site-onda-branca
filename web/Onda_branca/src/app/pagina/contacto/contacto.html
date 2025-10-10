@@ -1,58 +1,64 @@
 <app-navbar></app-navbar>
 <div class="uk-section uk-section-large uk-padding-remove" style="margin-top: 73px;">
-        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-grid">
+        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-grid" uk-grid uk-height-match="target: > div > div">
             <div class="uk-inline">
-                <img src="imagens/contactos/contacto.webp" alt="">
-                <div class="uk-overlay uk-overlay-default uk-position-bottom uk-margin-left">
+                <div class="uk-background-cover uk-border-rounded uk-height-1-1" 
+                    data-src="imagens/contactos/contacto.webp" 
+                    uk-img
+                    style="position: relative; overflow: hidden;"
+                    >
+                    <div class="uk-overlay uk-overlay-default uk-position-bottom ">
                     <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo';" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
                         <span class="titulo-principal">Contacto <span class="linha"></span></span>
                         <span class="uk-text-light"> <span class="destaque" style="font-weight: bold;"> Estamos prontos  <span class="uk-text-primary">para ouvir</span> e transformar desafios em equilíbrio, performance e renda</span></span>
                     </h2>
-                    <div class="uk-flex uk-flex-middle uk-flex-around uk-margin-top">
+                    <div class="uk-flex uk-flex-middle uk-flex-wrap uk-flex-around uk-margin-top">
                         <div>
                             <a style="color: #272727; font-size: 14px;" href="tel:+24499999999">Av. Comandante Gika, Luanda, Angola</a>
                         </div>
-                        <div>
+                        <div class="uk-margin-small-left">
                             <a style="color: #272727; font-size: 14px;" href="tel:+24499999999">+244 999 999 999</a>
                         </div>
-                        <div>
+                        <div class="uk-margin-small-left">
                             <a style="color: #272727; font-size: 14px;" href="mail:comercial@ondabranca.ao">comercial&#64;ondabranca.ao</a>
                         </div>
                     </div>
                 </div>
+                </div>
+                
             </div>
            
             <div style="background: linear-gradient(to right, #00479f, #04165D);">
                 <div class="uk-card uk-card-body">
-                    <form action="">
+                    <form  [formGroup]="applyForm" (ngSubmit)="submiteForm()">
                         <div class="uk-margin">
-                            <input class="uk-input uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;" type="text" placeholder="Qual o seu nome?" aria-label="Large">
+                            <input  [ngStyle]="{'border': applyForm.get('fullName')?.invalid && (applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched || isSumbit) ? '2px solid #f0506e' : '1px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="fullName" style="background-color: transparent; border-radius: 5px; color: white;" type="text" placeholder="Qual o seu nome?" aria-label="Large">
+                            <div [class.erroMensage]="applyForm.get('fullName')?.invalid && applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched"></div>
                         </div>
                         <div class="uk-margin">
-                            <input class="uk-input uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
+                            <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '1px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: white;" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
                         </div>
                         <div class="uk-margin">
-                            <input class="uk-input uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;" type="tel" placeholder="Seu telefone com WhatsApp" aria-label="Large">
+                            <input [ngStyle]="{'border': applyForm.get('contact')?.invalid && (applyForm.get('contact')?.dirty || applyForm.get('contact')?.touched || isSumbit ) ? '2px solid #f0506e' : '1px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="contact" style="background-color: transparent; border-radius: 5px; color: white;" type="tel" placeholder="Seu telefone com WhatsApp" aria-label="Large">
                         </div>
                         <div class="uk-margin">
-                            <select class="uk-select uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;" aria-label="Large">
-                                <option>Qual serviço interessa?</option>
-                                <option value="">Mentoria de saúde mental para gestores</option>
-                                <option value="">Atendimento a empresa</option>
-                                <option value="">Gestão de programa de saúde mental para empresas</option>
-                                <option value="">Renda extra</option>
-                                <option value="">O programa de ginástica laboral</option>
-                                <option value="">Palestras e workshops</option>
-                                <option value="">Programa de saúde mental do trabalho</option>
+                            <select [ngStyle]="{'border': applyForm.get('service')?.invalid && (applyForm.get('service')?.dirty || applyForm.get('service')?.touched || isSumbit) ? '2px solid #f0506e' : '1px solid #d1d1d1'}" formControlName="service" class="uk-select  uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;" aria-label="Large">
+                                <option value="" selected disabled hidden>Qual serviço interessa?</option>
+                                <option value="mentoria-de-saude-mental-para-gestores">Mentoria de saúde mental para gestores</option>
+                                <option value="antendiemento-a-empresa">Atendimento a empresa</option>
+                                <option value="gestao-de-programa-de-saude-mental-para-empresa">Gestão de programa de saúde mental para empresas</option>
+                                <option value="renda-extra">Renda extra</option>
+                                <option value="o-programa-de-ginastica-laboral">O programa de ginástica laboral</option>
+                                <option value="palestra-e-workshops">Palestras e workshops</option>
+                                <option value="programa-de-saude-mental-do-trabalho">Programa de saúde mental do trabalho</option>
                             </select>
                         </div>
                         <div class="uk-margin">
-                            <textarea name="" id="" placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;">
-
-                            </textarea>
+                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '1px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: white;"></textarea>
                         </div>
+
                         <div class="uk-margin">
-                            <input type="submit" value="Solicitar contacto" style="background-color: white; border-radius: 5px;" class="uk-button uk-button-default">
+                            <button type="submit" class="uk-button uk-button-default" style="background-color: white; color: #272727;">Solicitar contacto</button>
                             <p style="color: white; font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
                         </div>
                     </form>
