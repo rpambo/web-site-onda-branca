@@ -14,7 +14,9 @@
 }
 
 .back{
-    background-color: #F1F6FB;
+    background-image: url(/imagens/asset.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .uk-card-default{
@@ -64,6 +66,9 @@ a[uk-slider-item].uk-invisible {
 }
 
 @media (max-width:768px) {
+  .uk-slider-container{
+    padding-right: 0 !important;
+  }
   .back{
     padding-top: 50px !important;
   }

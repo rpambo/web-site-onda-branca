@@ -1,3 +1,9 @@
+.back{
+  background-image: url(/imagens/RCS2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* Degradê nos números */
 .gradient-number {
     font-size: 60px;
@@ -16,7 +22,7 @@
 
 .metric.destaque {
   border-top: 1px solid transparent; /* precisa ser transparente */
-  border-image: radial-gradient(circle 160px at center, #00aaff, #F1F6FB) 1;
+  border-image: radial-gradient(circle 120px at center, #cbe7fa, #00385b) 1;
   border-image-slice: 1;
   margin-bottom: 60px;
   padding-top: 20px;
@@ -32,7 +38,7 @@
 
 .titulo-principal {
   font-size: 16px;
-  color: #094268;
+  color: white !important;
   font-weight: 300;
   text-transform: uppercase;
   position: relative;
@@ -88,7 +94,7 @@
   }
   .metric.destaque {
     text-align: left;
-    border-image: radial-gradient(circle 100px at center, #00aaff, #F1F6FB) 1;
+    border-image: radial-gradient(circle 100px at center, #cbe7fa, #00385b) 1;
   }
 }
 

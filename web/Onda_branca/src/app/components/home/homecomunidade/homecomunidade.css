@@ -1,3 +1,9 @@
+.back{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .missao-section {
   position: relative;
   margin-bottom: 10px;

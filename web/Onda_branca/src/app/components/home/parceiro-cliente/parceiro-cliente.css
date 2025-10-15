@@ -59,4 +59,7 @@
     width: 25%;
     animation: growMobile 2s infinite alternate;
   }
+  .titulo-metricas{
+    max-width: 100%;
+  }
 }

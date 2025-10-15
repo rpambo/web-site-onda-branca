@@ -1,3 +1,18 @@
+.back{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.back-canva{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+}
+
+
 #offcanvas-nav {
   display: none;
 }
@@ -128,12 +143,20 @@ ul li a:hover{
   transition: width 0.4s ease, height 0.4s ease;
 }
 
-.uk-nav .uk-parent > a::after {
-  content: "▼"; /* ou "▸" se quiser para o lado */
-  font-size: 0.7em;
-  margin-left: 8px;
-  color: #666;
+.uk-nav .uk-parent > a {
+  position: relative; /* importante para posicionar o ::after */
 }
+
+.uk-nav .uk-parent > a::after {
+  content: "▼"; /* ou ▸ */
+  font-size: 0.7em;
+  color: #666;
+  position: absolute;
+  right: 10px; /* encosta à direita do <a> */
+  top: 50%;
+  transform: translateY(-50%); /* centraliza verticalmente */
+}
+
 
 .uk-nav .uk-parent.uk-open > a::after {
   content: "▲"; /* muda para cima */
