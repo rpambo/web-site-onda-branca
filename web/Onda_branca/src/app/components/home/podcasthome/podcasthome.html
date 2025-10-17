@@ -1,8 +1,42 @@
 <div class="uk-section uk-section-large back">
     <div class="uk-container">
-        <div class="uk-child-width-1-2@l uk-grid">
+        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-grid">
             <div>
-
+                <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo';" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+                    <span class="titulo-principal">Podcast Onda Branca <span class="linha"></span></span>
+                    <span class="uk-text-light"> <span style="color: white;"> Conversas inspiradoras sobre <span class="uk-text-primary" style="font-size: 35px; font-weight: bold;">saúde mental, bem-estar e produtividade</span></span></span>
+                </h2>
+                <p style="color: white; font-size: 16px;" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">Descobre novas perspetivas e histórias reais que te ajudam a viver com mais equilíbrio.</p>
+                <div uk-accordion uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+                    <li>
+                        <a class="uk-accordion-title" style="color: white; font-family: 'Archivo'; font-weight: bold; border-bottom: 1px solid #21212167;"  href="">Ouvir direitamente no nosso site</a>
+                        <div class="uk-accordion-content" style="background-color: rgba(248, 248, 248, 0.32); padding: 20px; margin-top: 0; border-radius: 10px;">
+                            <p style="color: white;">Ouve os episódios completos aqui mesmo no site da Onda Branca — simples, gratuito e sem precisar sair da página.</p>
+                            <a [routerLink]="['/podcast-onda-branca']" style="background-color: white; color: #00479f;" class="uk-button uk-margin-small-top">Ouvir agora</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-accordion-title" style="color: white; font-family: 'Archivo'; font-weight: bold; border-bottom: 1px solid #21212167;"  href="">Ouvir no Spotify</a>
+                        <div class="uk-accordion-content" style="background-color: rgba(248, 248, 248, 0.32); padding: 20px; margin-top: 0; border-radius: 10px;">
+                            <p style="color: white;">O Podcast Onda Branca já está disponível no Spotify. Segue-nos para não perder nenhum episódio novo.</p>
+                            <a href="#" onclick="return false;" target="_blank" style="background-color: white; color: #00479f;" class="uk-button uk-margin-small-top">Abrir no Spotify</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-accordion-title" style="color: white; font-family: 'Archivo'; font-weight: bold; border-bottom: 1px solid #21212167;"  href="">Ouvir no Apple Podcast</a>
+                        <div class="uk-accordion-content" style="background-color: rgba(248, 248, 248, 0.32); padding: 20px; margin-top: 0; border-radius: 10px;">
+                            <p style="color: white">Também disponível no Apple Podcasts — acompanha as nossas conversas no teu dispositivo iOS preferido.</p>
+                            <a href="#" onclick="return false;" target="_blank" style="background-color: white; color: #00479f;" class="uk-button uk-margin-small-top">Abrir no Apple Podcasts</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-accordion-title" style="color: white; font-family: 'Archivo'; font-weight: bold; border-bottom: 1px solid #21212167;"  href="">Ver no Youtube</a>
+                        <div class="uk-accordion-content" style="background-color: rgba(248, 248, 248, 0.32); padding: 20px; margin-top: 0; border-radius: 10px;">
+                            <p style="color: white;">Vê as nossas conversas em vídeo no canal oficial da Onda Branca no YouTube.</p>
+                            <a href="#" onclick="return false;" target="_blank" style="background-color: white; color: #00479f;" class="uk-button uk-margin-small-top">Ver no YouTube</a>
+                        </div>
+                    </li>
+                </div>
             </div>
             <div>
                 <img data-src="/imagens/home/podcast-onda-branca.webp" uk-img alt="">
