@@ -1,3 +1,10 @@
+.back{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .hero{
     background-image: url("/imagens/hero/hero-podcast.webp");
     background-size: cover;
@@ -5,6 +12,42 @@
     background-repeat: no-repeat;
     height: 75vh;
 }
+
+.social-icon {
+    font-size: 64px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.15) translateY(-2px);
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  }
+  
+  .spotify-icon {
+    color: #1DB954;
+  }
+  
+  .spotify-icon:hover {
+    color: #1ed760;
+  }
+  
+  .youtube-icon {
+    color: #FF0000;
+  }
+  
+  .youtube-icon:hover {
+    color: #ff3333;
+  }
+  
+  .podcast-icon {
+    color: #8A2BE2;
+  }
+  
+  .podcast-icon:hover {
+    color: #9d45ff;
+  }
 
 .uk-button {
   text-transform: lowercase;   /* força tudo em minúsculas */

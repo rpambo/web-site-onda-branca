@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../../components/navbar/navbar';
 import { Meta, Title } from '@angular/platform-browser';
+import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: 'app-podcast',
-  imports: [Navbar],
+  imports: [Navbar, Footer],
   templateUrl: './podcast.html',
   styleUrl: './podcast.css'
 })

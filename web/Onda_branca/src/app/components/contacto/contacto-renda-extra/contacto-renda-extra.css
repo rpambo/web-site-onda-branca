@@ -3,7 +3,7 @@
 }
 
 .zoom-container:hover .zoom-hover {
-  transform: scale(1.2); /* aumenta a imagem ao passar o mouse */
+  transform: scale(1.1); /* aumenta a imagem ao passar o mouse */
 }
 
 .efeito-cantos {

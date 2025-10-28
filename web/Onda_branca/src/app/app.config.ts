@@ -28,11 +28,11 @@ const cookieConfig: NgcCookieConsentConfig = {
   },
   type: 'opt-in',
   content: {
-    message: 'Usamos cookies para melhorar sua experiência e analisar o tráfego.',
+    message: 'Usamos cookies para melhorar sua experiência, analisar tráfego e exibir anúncios. Você pode alterar suas preferências a qualquer momento.',
     dismiss: 'Aceitar',
     deny: 'Recusar',
     link: 'Saiba mais',
-    href: '/politica-de-cookies',
+    href: '/politica-de-privacidade',
     policy: 'Política de Cookies'
   },
   compliance: {
