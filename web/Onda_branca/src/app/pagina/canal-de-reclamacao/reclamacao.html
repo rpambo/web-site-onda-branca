@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="uk-section uk-section-large uk-margin-large-top back">
+    <div class="uk-container">
+        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-child-width-1-2@xm uk-grid">
+            <div>
+                <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo'; font-size: 42px; max-width: 530px;" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+                    <span class="titulo-principal">Canal de reclamação <span class="linha"></span></span>
+                    <span class="uk-text-light"> <span class="destaque" style="font-weight: bold;"> <span class="uk-text-primary"> A sua opinião</span> é fundamental para a melhoria dos nossos serviços</span></span>
+                </h2>
+                <p  style="font-size: 16px; color: #272727; max-width: 440px;" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">Estamos sempre disponíveis para ouvir você. Se tiver dúvidas, sugestões ou quiser saber mais sobre as nossas soluções voltadas para saúde mental e produtividade, entre em contacto conosco.</p>
+                <div>
+                    <a style="color: #272727; font-size: 20px;" href="mail:comercial@ondabranca.ao">reclamacao&#64;ondabranca.ao</a>
+                </div>
+            </div>
+            <div>
+                <div uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+                    <form  [formGroup]="applyForm" (ngSubmit)="submiteForm()">
+                        <div class="uk-margin">
+                            <input  [ngStyle]="{'border': applyForm.get('fullName')?.invalid && (applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="fullName" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="text" placeholder="Qual o seu nome?" aria-label="Large">
+                            <div [class.erroMensage]="applyForm.get('fullName')?.invalid && applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched"></div>
+                        </div>
+                        <div class="uk-margin">
+                            <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
+                        </div>
+                        <div class="uk-margin">
+                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" rows="5"></textarea>
+                        </div>
+                        <div class="uk-margin">
+                            <button type="submit" class="uk-button uk-button-default" style="background-color: #00479f; color: #ffffff;">Enviar reclamação</button>
+                            <p style="color: rgb(0, 0, 0); font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -8,6 +8,15 @@ body {
   height: 12px;
 }
 
+/* Faz o texto ficar acima e os botões abaixo */
+.cc-window {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+
 /* Fundo da “track” (por onde o thumb desliza) */
 ::-webkit-scrollbar-track {
   background: #f0f0f0;

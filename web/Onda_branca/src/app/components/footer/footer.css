@@ -1,12 +1,6 @@
-.uk-icon-button.icon-branca:hover {
-    background-color: #9A74A1 !important;
+a:hover{
+  color: #9A74A1 !important;
 }
-
-.uk-icon-button.icon-branca {
-  background-color: #094268 !important;
-  color: white !important;
-}
-
 .slogan{
   text-transform: lowercase;
 }

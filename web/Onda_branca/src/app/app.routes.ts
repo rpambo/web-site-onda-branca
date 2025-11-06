@@ -13,11 +13,13 @@ import { PoliticaPrivacidade } from './components/politica-privacidade/politica-
 import { TermoDeUso } from './components/termo-de-uso/termo-de-uso';
 import { Podcast } from './pagina/podcast/podcast';
 import { Comunidade } from './pagina/comunidade/comunidade';
+import { Reclamacao } from './pagina/canal-de-reclamacao/reclamacao';
 
 export const routes: Routes = [
   {path:"", component: Home},
   {path:"sobre-onda-branca", component: Sobre},
   {path:"contacto", component: Contacto},
+  {path:"canal-de-reclamacao", component: Reclamacao},
   {path:"mentoria-de-saude-mental-para-gestores", component: Mentoria},
   {path:"antendimento-empressarial", component: AntendimentoEmpressarial},
   {path:"gestao-de-saude-mental-para-empressa", component: GestaoDeSaudeMentalParaEmpresa},

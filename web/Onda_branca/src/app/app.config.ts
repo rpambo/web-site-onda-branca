@@ -12,7 +12,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     secure: true
   },
   
-  position: 'top',
+  position: 'bottom-left',
   theme: 'classic',
   palette: {
     popup: {
@@ -33,7 +33,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     deny: 'Recusar',
     link: 'Saiba mais',
     href: '/politica-de-privacidade',
-    policy: 'Política de Cookies'
+    policy:  '<i class="fa fa-cookie"></i>',    
   },
   compliance: {
     optin: 'button button-primary',
