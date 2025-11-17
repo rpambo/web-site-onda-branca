@@ -29,9 +29,23 @@ export class App implements OnInit, OnDestroy {
   private el = inject(ElementRef);
   private platformId = inject(PLATFORM_ID);
 
-  // Substitui pelo teu ID real do Google Analytics
+  // ID do Google Analytics
   private readonly GA_MEASUREMENT_ID = 'G-ZKBGZCSKLN';
 
+  /* ======================================================
+     REMOVER COMPLETAMENTE O COOKIE BANNER DO DOM
+  ====================================================== */
+  private removeCookieBanner() {
+    const banner = document.querySelector('.cc-window');
+    if (banner) {
+      banner.remove();
+      console.log('Banner de cookies removido do DOM!');
+    }
+  }
+
+  /* ======================================================
+     ANIMAÇÃO DOS CÍRCULOS DO CURSOR
+  ====================================================== */
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) return;
 
@@ -73,35 +87,44 @@ export class App implements OnInit, OnDestroy {
     animateCircles();
   }
 
+  /* ======================================================
+     EVENTOS DO COOKIE CONSENT
+  ====================================================== */
   ngOnInit(): void {
-    // Eventos do cookie consent
-    if (this.ccService) {
-      this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
-        console.log('Popup de cookies aberto!');
-      });
+    // Evento quando popup abre
+    this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
+      console.log('Popup de cookies aberto!');
+    });
 
-      this.popupCloseSubscription = this.ccService.popupClose$.subscribe(() => {
-        console.log('Popup de cookies fechado!');
-      });
-    }
+    // Evento quando popup fecha
+    this.popupCloseSubscription = this.ccService.popupClose$.subscribe(() => {
+      console.log('Popup de cookies fechado!');
+      this.removeCookieBanner(); // remove mesmo se estiver invisível
+    });
 
-    // Verifica se já há consentimento
+    // Se já estiver permitido antes
     const consent = this.cookieService.get('cookie_consent');
     if (consent === 'allow') {
       this.gaService.loadScript(this.GA_MEASUREMENT_ID);
+      this.removeCookieBanner();
     }
 
-    // Ouve alterações do consentimento
-    this.statusChangeSubscription = this.ccService.statusChange$.subscribe((event: NgcStatusChangeEvent) => {
-      if (event.status === 'allow') {
-        this.cookieService.set('cookie_consent', 'allow', { expires: 365 });
-        this.gaService.loadScript(this.GA_MEASUREMENT_ID);
-      }
+    // Evento de alteração de consentimento
+    this.statusChangeSubscription = this.ccService.statusChange$
+      .subscribe((event: NgcStatusChangeEvent) => {
 
-      if (event.status === 'deny') {
-        this.cookieService.set('cookie_consent', 'deny', { expires: 365 });
-      }
-    });
+        if (event.status === 'allow') {
+          this.cookieService.set('cookie_consent', 'allow', { expires: 365 });
+          this.gaService.loadScript(this.GA_MEASUREMENT_ID);
+          this.removeCookieBanner(); // REMOVE COMPLETAMENTE
+        }
+
+        if (event.status === 'deny') {
+          this.cookieService.set('cookie_consent', 'deny', { expires: 365 });
+          this.removeCookieBanner(); // REMOVE COMPLETAMENTE
+        }
+
+      });
   }
 
   ngOnDestroy(): void {

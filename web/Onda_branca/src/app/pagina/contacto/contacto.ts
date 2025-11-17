@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { ContactService } from '../../services/contact-service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
@@ -32,7 +34,8 @@ export class Contacto implements OnInit {
   constructor(
     private fb: FormBuilder,
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private serviceContact : ContactService
   ) {
     this.applyForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
@@ -177,14 +180,30 @@ export class Contacto implements OnInit {
   }
 
   private sendToBackend(data: any) {
-    console.log('🛡️ ENVIANDO para backend - dados verificados e seguros:', data);
-
-    // Aqui você implementa o HttpClient real
-    // this.http.post('/api/contact', data).subscribe(...)
-
-    this.applyForm.reset();
-    this.isSumbit = false;
-    alert('✅ Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    this.serviceContact.sendContactForm(data).subscribe({
+      next: (response) => {
+        console.log('✅ Formulário enviado com sucesso:', response);
+        this.applyForm.reset();
+        this.isSumbit = false;
+        Swal.fire({
+          title: 'Mensagem enviada!',
+          text: 'Entraremos em contato em breve.',
+          icon: 'success',
+          confirmButtonColor: '#006699',
+          confirmButtonText: 'OK'
+        });
+      },   
+      error: (error) => {
+        console.error('❌ Ocorreu um erro ao enviar o formulário:', error);
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Ocorreu um erro. Tente novamente mais tarde.',
+          icon: 'error',
+          confirmButtonColor: '#cc0000',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
   }
 
   get f() {

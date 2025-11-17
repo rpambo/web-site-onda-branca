@@ -7,24 +7,28 @@
 
     <!-- Formulário -->
     <div>
-      <form action="" class="uk-form-stacked">
+      <form [formGroup]="form" (submit)="submitForm()" class="uk-form-stacked">
         <div class="uk-flex uk-flex-middle uk-flex-wrap uk-child-width-1-1@s uk-child-width-auto@m">
           <div class="uk-width-expand">
             <input class="uk-input" 
-            style="flex: 1; background-color: transparent; border: 1px solid #717378; font-weight: 500; font-size: 18px; height: auto; padding: 12px; color: white;" 
-            placeholder="Seu melhor e-mail..." 
-            type="email" 
-            required
-          >
+              style="flex: 1; background-color: transparent; border: 1px solid #717378; font-weight: 500; font-size: 18px; height: auto; padding: 12px; color: white;" 
+              placeholder="Seu melhor e-mail..." 
+              type="email" 
+              required
+             formControlName="email"
+             [ngStyle]="{'border': form.get('email')?.invalid && (form.get('email')?.dirty || form.get('emial')?.touched || isSubmit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}"
+            >
           </div>
           <div>
             <button 
             type="submit" 
             class="uk-button uk-button-default" 
-            style="background-color: white; border-radius: 5px; font-size: 18px; padding: 8px 15px 8px 15px; color: #006699; font-weight: 500;"
+            style="background-color: white; border-bottom-right-radius: 5px; border-top-right-radius: 5px; font-size: 18px; padding: 8px 15px 8px 15px; color: #006699; font-weight: 500;"
           >
             Solicitar
           </button>
+          <!-- Loading spinner -->
+          <span *ngIf="isLoading" class="uk-icon-spinner uk-icon-spin" style="color: white; font-size: 24px;"></span>
           </div>
         </div>
       </form>

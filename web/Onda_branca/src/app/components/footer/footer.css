@@ -7,3 +7,8 @@ a:hover{
 .slogan::first-letter{
   text-transform: uppercase;
 }
+
+.uk-grid-divider::before,
+.uk-grid-divider::after {
+  pointer-events: none !important;
+}

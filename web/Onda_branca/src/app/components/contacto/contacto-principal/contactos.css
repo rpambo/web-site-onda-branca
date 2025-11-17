@@ -92,6 +92,24 @@
   to { width: 25%; }
 }
 
+/* Mostrar em mobile e tablet (até 1198px) */
+.btn-tablet-mobile {
+  display: block;
+  width: 240px !important;
+}
+
+/* Esconder no desktop grande (≥1200px) */
+@media (min-width: 1200px) {
+  .btn-tablet-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1198px) {
+  .titulo-metricas{
+    margin-top: 30px !important;
+  }
+}
 
 @media (max-width:768px) {
   .uk-container{
@@ -116,4 +134,12 @@
     width: 25%;
     animation: growMobile 2s infinite alternate;
   }
+}
+
+.uk-button {
+  text-transform: lowercase !important;   /* força tudo em minúsculas */
+}
+
+.uk-button::first-letter {
+  text-transform: uppercase !important;   /* só a primeira letra da frase em maiúscula */
 }

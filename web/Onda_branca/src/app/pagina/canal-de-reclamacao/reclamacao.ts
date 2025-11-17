@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanalDeReclamacao } from '../../services/canal-de-reclamacao';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reclamacao',
@@ -21,12 +23,12 @@ export class Reclamacao implements OnInit {
   constructor(
     private fb: FormBuilder,
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private service : CanalDeReclamacao
   ) {
     this.applyForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
       email: ['', [Validators.required, Validators.email]],
-      contact: ['', [Validators.required, Validators.pattern('^[0-9+\\-\\s()]+$')]],
       message: ['', [Validators.required, Validators.maxLength(1000)]]
     });
   }
@@ -128,7 +130,6 @@ export class Reclamacao implements OnInit {
         const sanitizedData = {
           fullName: this.sanitizeForDisplay(rawData.fullName),
           email: rawData.email,
-          contact: rawData.contact,
           message: this.sanitizeForDisplay(rawData.message)
         };
         console.log('🔍 Dados sanitizados (visualização):', sanitizedData);
@@ -139,7 +140,6 @@ export class Reclamacao implements OnInit {
       const cleanData = {
         fullName: rawData.fullName.trim(),
         email: rawData.email.trim(),
-        contact: rawData.contact.replace(/[^\d+\-\s()]/g, ''),
         message: rawData.message.trim()
       };
 
@@ -156,9 +156,28 @@ export class Reclamacao implements OnInit {
     // Aqui será adicionado o HttpClient real futuramente
     // this.http.post('/api/reclamacao', data).subscribe(...)
 
-    this.applyForm.reset();
-    this.isSumbit = false;
-    alert('✅ Reclamação enviada com sucesso! A Onda Branca entrará em contacto em breve.');
+    this.service.sendReclamationForm(data).subscribe({
+      next: () => {
+        Swal.fire({
+          title: 'Reclamação enviada!',
+          text: 'Agradecemos o seu feedback. Vamos analisar a situação.',
+          icon: 'success',
+          confirmButtonColor: '#006699',
+          confirmButtonText: 'OK'
+        });
+        this.applyForm.reset();
+        this.isSumbit = false;
+    },
+    error: () => {
+      Swal.fire({
+      title: 'Erro ao enviar',
+      text: 'Ocorreu um erro. Tente novamente mais tarde.',
+      icon: 'error',
+      confirmButtonColor: '#cc0000',
+      confirmButtonText: 'OK'
+    });
+  }
+  });
   }
 
   get f() {
