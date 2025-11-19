@@ -6,10 +6,11 @@ import { RendaExtraBeneficios } from '../../components/programa-de-renda-extra/r
 import { RendaExtraMetodologia } from '../../components/programa-de-renda-extra/renda-extra-metodologia/renda-extra-metodologia';
 import { ContactoRendaExtra } from '../../components/contacto/contacto-renda-extra/contacto-renda-extra';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-renda-extra',
-  imports: [Navbar, Footer, RendaExtraIntro, RendaExtraBeneficios, RendaExtraMetodologia, ContactoRendaExtra],
+  imports: [Navbar, Footer, RendaExtraIntro, RendaExtraBeneficios, RendaExtraMetodologia, ContactoRendaExtra, RouterLink],
   templateUrl: './renda-extra.html',
   styleUrl: './renda-extra.css'
 })

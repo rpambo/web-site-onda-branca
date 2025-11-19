@@ -76,6 +76,12 @@ func (app *application) mount() http.Handler{
 		r.Route("/enterprises", func(r chi.Router) {
 			r.Post("/email", app.SendEmailEnterprises)
 		})
+		r.Route("/complaints", func(r chi.Router) {
+			r.Post("/email", app.SendComplaint)
+		})
+		r.Route("/brochura", func(r chi.Router) {
+			r.Post("/email", app.SubmitEmailHandler)
+		})
 	})
 	return r
 }

@@ -1,4 +1,4 @@
-{{define "subject"}} Novo pedido de serviço recebido - Onda Branca {{end}}
+{{define "subject"}} Novo pedido de brochura recebido - Onda Branca {{end}}
 
 {{define "body"}}
 <!DOCTYPE html>
@@ -24,23 +24,26 @@
         border: 1px solid #e1dfdd;
       }
       .header {
-        background: #d83b01;
+        background: #00479f;
         padding: 20px;
         text-align: center;
         color: #ffffff;
-        font-size: 18px;
+      }
+      .header img {
+        width: 80px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 20px;
         font-weight: bold;
       }
       .content {
         padding: 30px;
       }
-      h2 {
-        color: #d83b01;
-        margin-bottom: 20px;
-        font-weight: 600;
-      }
       .details {
-        background: #f8f8f8;
+        background: #f0f8ff;
         border: 1px solid #e1dfdd;
         border-radius: 6px;
         padding: 15px;
@@ -59,30 +62,31 @@
     <div class="container">
       <!-- Cabeçalho -->
       <div class="header">
-        Novo Pedido de Cliente
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Logotipo Onda Branca">
+        <h1>Novo pedido de brochura recebido!</h1>
       </div>
 
       <!-- Conteúdo -->
       <div class="content">
-        <h2>Detalhes do Cliente</h2>
+        <p>Olá equipa,</p>
+        <p>
+          Recebemos um novo pedido de brochura sobre <b>Ginástica Laboral</b>.  
+          Seguem os detalhes do solicitante:
+        </p>
+
         <div class="details">
-          <p><b>Nome:</b> {{.Cliente}}</p>
-          <p><b>Email:</b> {{.Email}}</p>
-          <p><b>Serviço de Interesse:</b> {{.Service}}</p>
-          <p><b>Contacto:</b> {{.Contact}}</p>
-          <p><b>Mensagem:</b> {{.Message}}</p>
-          <p><b>Data/Hora:</b> {{.Data}}</p>
+          <p><b>Email do cliente:</b> {{.Email}}</p>
+          <p><b>Data/Hora do pedido:</b> {{.Data}}</p>
         </div>
 
         <p>
-          Este cliente mostrou interesse em um dos nossos serviços.  
-          Por favor, entre em contacto o mais rápido possível.
+          Por favor, providenciem o envio da brochura para o cliente o quanto antes.
         </p>
       </div>
 
       <!-- Rodapé -->
       <div class="footer">
-        &copy; {{.Data}} Onda Branca - Notificação Interna
+        &copy; {{.Data}} Onda Branca - Equipa de Suporte Interno
       </div>
     </div>
   </body>

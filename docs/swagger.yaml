@@ -1,4 +1,18 @@
 definitions:
+  types.Bruchura:
+    properties:
+      email:
+        type: string
+    type: object
+  types.ComplaintPayload:
+    properties:
+      email:
+        type: string
+      mensagem:
+        type: string
+      name:
+        type: string
+    type: object
   types.InfoEmpresa:
     properties:
       email:
@@ -13,11 +27,103 @@ definitions:
 info:
   contact: {}
 paths:
-  /enterprises/email:
+  /health:
+    get:
+      description: Healthcheck endpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Healthcheck
+      tags:
+      - ops
+  /v1/brochura/email:
     post:
       consumes:
       - application/json
-      description: Recebe dados de uma empresa e envia um email de boas-vindas
+      description: Recebe apenas o email do cliente, envia um email de confirmação
+        para ele e uma notificação para a equipa da Onda Branca
+      parameters:
+      - description: Email do cliente
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.Bruchura'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Mensagem de sucesso
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Erro de requisição inválida
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "429":
+          description: Muitas requisições
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Erro interno do servidor
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Envia confirmação de pedido de brochura
+      tags:
+      - brochures
+  /v1/complaints/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe uma reclamação e envia email de confirmação para o cliente
+        e notificação para a equipa de suporte
+      parameters:
+      - description: Complaint Info
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.ComplaintPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ComplaintPayload'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Envia reclamação do cliente
+      tags:
+      - complaints
+  /v1/enterprises/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados de uma empresa, envia um email de boas-vindas ao cliente
+        e uma notificação para a equipa de vendas
       parameters:
       - description: Enterprise Info
         in: body
@@ -44,20 +150,7 @@ paths:
             additionalProperties:
               type: string
             type: object
-      summary: Send enterprise email
+      summary: Envia email de confirmação e notificação
       tags:
       - enterprises
-  /health:
-    get:
-      description: Healthcheck endpoint
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: ok
-          schema:
-            type: string
-      summary: Healthcheck
-      tags:
-      - ops
 swagger: "2.0"

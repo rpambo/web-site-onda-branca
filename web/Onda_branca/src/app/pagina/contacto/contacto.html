@@ -23,8 +23,8 @@
                 <div uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
                     <form  [formGroup]="applyForm" (ngSubmit)="submiteForm()">
                         <div class="uk-margin">
-                            <input  [ngStyle]="{'border': applyForm.get('fullName')?.invalid && (applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="fullName" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="text" placeholder="Qual o seu nome?" aria-label="Large">
-                            <div [class.erroMensage]="applyForm.get('fullName')?.invalid && applyForm.get('fullName')?.dirty || applyForm.get('fullName')?.touched"></div>
+                            <input  [ngStyle]="{'border': applyForm.get('name')?.invalid && (applyForm.get('name')?.dirty || applyForm.get('name')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="name" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="text" placeholder="Qual o seu nome?" aria-label="Large">
+                            <div [class.erroMensage]="applyForm.get('name')?.invalid && applyForm.get('name')?.dirty || applyForm.get('name')?.touched"></div>
                         </div>
                         <div class="uk-margin">
                             <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
@@ -35,21 +35,22 @@
                         <div class="uk-margin">
                             <select [ngStyle]="{'border': applyForm.get('service')?.invalid && (applyForm.get('service')?.dirty || applyForm.get('service')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="service" class="uk-select  uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" aria-label="Large">
                                 <option value="" selected disabled hidden>Qual serviço interessa?</option>
-                                <option value="mentoria-de-saude-mental-para-gestores">Mentoria de saúde mental para gestores</option>
-                                <option value="antendiemento-a-empresa">Atendimento a empresa</option>
-                                <option value="gestao-de-programa-de-saude-mental-para-empresa">Gestão de programa de saúde mental para empresas</option>
-                                <option value="renda-extra">Renda extra</option>
-                                <option value="o-programa-de-ginastica-laboral">O programa de ginástica laboral</option>
-                                <option value="palestra-e-workshops">Palestras e workshops</option>
-                                <option value="programa-de-saude-mental-do-trabalho">Programa de saúde mental do trabalho</option>
+                                <option value="Mentoria de saúde mental para gestores">Mentoria de saúde mental para gestores</option>
+                                <option value="Antendiemento a empresa">Atendimento a empresa</option>
+                                <option value="Gestão de programa de saúde mental para empresas">Gestão de programa de saúde mental para empresas</option>
+                                <option value="Renda extra">Renda extra</option>
+                                <option value="O programa de ginástica laboral">O programa de ginástica laboral</option>
+                                <option value="Palestra e workshops">Palestras e workshops</option>
+                                <option value="Programa de saúde mental do trabalho">Programa de saúde mental do trabalho</option>
                             </select>
                         </div>
                         <div class="uk-margin">
-                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);"></textarea>
+                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" rows="5"></textarea>
                         </div>
 
                         <div class="uk-margin">
                             <button type="submit" class="uk-button uk-button-default" style="background-color: #00479f; color: #ffffff;">Solicitar contacto</button>
+                            <div *ngIf="isLoading" class="spinner"></div>
                             <p style="color: rgb(0, 0, 0); font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
                         </div>
                     </form>

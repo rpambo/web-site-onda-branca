@@ -19,7 +19,7 @@ import (
 // @Success     200 {object} types.InfoEmpresa
 // @Failure     400 {object} map[string]string
 // @Failure     500 {object} map[string]string
-// @Router      v1/enterprises/email [post]
+// @Router      /v1/enterprises/email [post]
 func (app *application) SendEmailEnterprises(w http.ResponseWriter, r *http.Request) {
     ip := r.RemoteAddr
 
@@ -38,16 +38,19 @@ func (app *application) SendEmailEnterprises(w http.ResponseWriter, r *http.Requ
     }
 
     isProdEnv := app.config.env == "production"
+
     vars := struct {
         Name  string
         Email string
-		Servico	string
-		Year	int
+        Contact string
+		Service	string
+		Year	string
     }{
         Name:  payload.Name,
         Email: payload.Email,
-		Servico: payload.Servico,
-		Year: time.Now().Year(),
+        Contact: payload.Contact,
+		Service: payload.Service,
+		Year: time.Now().Format("02/01/2006 15:04"),
     }
 
     if err := Validate.Struct(payload); err != nil {
@@ -69,18 +72,20 @@ func (app *application) SendEmailEnterprises(w http.ResponseWriter, r *http.Requ
     salesVars := struct {
         Cliente string
         Email   string
-        Servico string
-        Mensagem string
+        Contact string
+        Service string
+        Message string
         Data    string
     }{
         Cliente: payload.Name,
         Email:   payload.Email,
-        Servico: payload.Servico,
-        Mensagem: payload.Mensagem,
+        Contact: payload.Contact,
+        Service: payload.Service,
+        Message: payload.Message,
         Data:    time.Now().Format("02/01/2006 15:04"),
     }
 
-    salesEmail := "sales@seudominio.com" // <- trocar pelo email da equipa
+    salesEmail := "rkitoco@gmail.com" // <- trocar pelo email da equipa
     status, err = app.mailer.Send(
         mailer.SalesTeamNotificationTemplate,
         "Equipa de Vendas",

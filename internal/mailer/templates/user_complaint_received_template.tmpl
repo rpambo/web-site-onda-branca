@@ -1,4 +1,4 @@
-{{define "subject"}} Novo pedido de serviço recebido - Onda Branca {{end}}
+{{define "subject"}} Confirmação de Reclamação Recebida – Onda Branca {{end}}
 
 {{define "body"}}
 <!DOCTYPE html>
@@ -24,23 +24,28 @@
         border: 1px solid #e1dfdd;
       }
       .header {
-        background: #d83b01;
+        background: #41a3f5;
         padding: 20px;
         text-align: center;
         color: #ffffff;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
+      }
+      .header img {
+        width: 80px;
+        height: auto;
+        margin-bottom: 10px;
       }
       .content {
         padding: 30px;
       }
       h2 {
-        color: #d83b01;
+        color: #41a3f5;
         margin-bottom: 20px;
         font-weight: 600;
       }
       .details {
-        background: #f8f8f8;
+        background: #f0f8ff;
         border: 1px solid #e1dfdd;
         border-radius: 6px;
         padding: 15px;
@@ -53,36 +58,53 @@
         color: #605e5c;
         background: #f3f2f1;
       }
+      a.button {
+        display: inline-block;
+        background-color: #41a3f5;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-top: 15px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
+
       <!-- Cabeçalho -->
       <div class="header">
-        Novo Pedido de Cliente
+        <img src="https://example.com/logo-onda-branca.png" alt="Logotipo Onda Branca">
+        Reclamação Recebida
       </div>
 
       <!-- Conteúdo -->
       <div class="content">
-        <h2>Detalhes do Cliente</h2>
+        <h2>Olá, {{.Name}} 👋</h2>
+
+        <p>
+          Recebemos a sua reclamação através do nosso canal de suporte e iremos analisá-la com atenção.  
+          A nossa equipa entrará em contacto consigo o mais breve possível para resolver a situação.
+        </p>
+
         <div class="details">
-          <p><b>Nome:</b> {{.Cliente}}</p>
+          <p><b>Nome:</b> {{.Name}}</p>
           <p><b>Email:</b> {{.Email}}</p>
-          <p><b>Serviço de Interesse:</b> {{.Service}}</p>
-          <p><b>Contacto:</b> {{.Contact}}</p>
-          <p><b>Mensagem:</b> {{.Message}}</p>
-          <p><b>Data/Hora:</b> {{.Data}}</p>
+          <p><b>Data/Hora:</b> {{.Year}}</p>
+          <p><b>Mensagem enviada:</b></p>
+          <p>{{.Message}}</p>
         </div>
 
         <p>
-          Este cliente mostrou interesse em um dos nossos serviços.  
-          Por favor, entre em contacto o mais rápido possível.
+          Obrigado por nos contactar. Na Onda Branca, o seu bem-estar é a nossa prioridade.
         </p>
+
+        <a href="mailto:suporte@ondabranca.com" class="button">Contactar Suporte</a>
       </div>
 
       <!-- Rodapé -->
       <div class="footer">
-        &copy; {{.Data}} Onda Branca - Notificação Interna
+        &copy; {{.Year}} Onda Branca — Cuidando da sua saúde mental e produtividade no trabalho.
       </div>
     </div>
   </body>

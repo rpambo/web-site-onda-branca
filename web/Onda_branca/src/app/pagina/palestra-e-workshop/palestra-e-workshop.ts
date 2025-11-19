@@ -7,6 +7,7 @@ import { PalestraEWorkshopQualidade } from '../../components/palestra-e-workshop
 import { PalestraEWorkshopBeneficio } from '../../components/palestra-e-workshop/palestra-e-workshop-beneficio/palestra-e-workshop-beneficio';
 import { ContactoPalestra } from '../../components/contacto/contacto-palestra/contacto-palestra';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-palestra-e-workshop',
@@ -17,8 +18,9 @@ import { Meta, Title } from '@angular/platform-browser';
     PalestraEWorkshopAnsiedade,
     PalestraEWorkshopQualidade,
     PalestraEWorkshopBeneficio,
-    ContactoPalestra
-  ],
+    ContactoPalestra,
+    RouterLink
+],
   templateUrl: './palestra-e-workshop.html',
   styleUrls: ['./palestra-e-workshop.css']
 })

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailMarketing {
-  apiUrl = ''
+  private apiUrl = 'http://localhost:8080/v1/brochura/email'
 
   constructor(private http: HttpClient){}
   

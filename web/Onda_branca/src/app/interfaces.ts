@@ -6,7 +6,7 @@ export interface contactService {
 }
 
 export interface reclamacao {
-  fullName: string;
+  name: string;
   email: string;
   message: string;
 }

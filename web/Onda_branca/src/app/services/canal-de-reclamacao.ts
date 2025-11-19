@@ -9,7 +9,7 @@ import { reclamacao } from '../interfaces';
 
 export class CanalDeReclamacao {
   
-  private apiUrl = 'https://seu-backend.com/api/contact';
+  private apiUrl = 'http://localhost:8080/v1/complaints/email'
 
   constructor(private http: HttpClient){}
 

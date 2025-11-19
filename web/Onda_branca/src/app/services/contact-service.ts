@@ -7,7 +7,7 @@ import { contactService } from '../interfaces';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'https://seu-backend.com/api/contact';
+  private apiUrl = 'http://localhost:8080/v1/enterprises/email'
 
   constructor(private http: HttpClient) {}
 

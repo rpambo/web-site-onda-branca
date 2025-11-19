@@ -20,15 +20,16 @@ export class Contacto implements OnInit {
   isSumbit = false;
   hasMaliciousContent = false;
   securityMessage = '';
+  isLoading = false;
 
   private allowedServices = [
-    'mentoria-de-saude-mental-para-gestores', 
-    'antendiemento-a-empresa', 
-    'gestao-de-programa-de-saude-mental-para-empresa', 
-    'renda-extra', 
-    'o-programa-de-ginastica-laboral', 
-    'palestra-e-workshops', 
-    'programa-de-saude-mental-do-trabalho'
+    'Mentoria de saúde mental para gestores', 
+    'Antendiemento a empresa', 
+    'Gestão de programa de saúde mental para empresas', 
+    'Renda extra', 
+    'O programa de ginástica laboral', 
+    'Palestra e workshops', 
+    'Programa de saúde mental do trabalho'
   ];
 
   constructor(
@@ -38,7 +39,7 @@ export class Contacto implements OnInit {
     private serviceContact : ContactService
   ) {
     this.applyForm = this.fb.group({
-      fullName: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
       email: ['', [Validators.required, Validators.email]],
       contact: ['', [Validators.required, Validators.pattern('^[0-9+\\-\\s()]+$')]],
       service: ['', [Validators.required, this.serviceValidator.bind(this)]],
@@ -138,7 +139,7 @@ export class Contacto implements OnInit {
     if (this.applyForm.valid) {
       const rawData = this.applyForm.value;
 
-      const nameCheck = this.detectMaliciousContent(rawData.fullName);
+      const nameCheck = this.detectMaliciousContent(rawData.name);
       const messageCheck = this.detectMaliciousContent(rawData.message);
 
       if (nameCheck.isMalicious || messageCheck.isMalicious) {
@@ -148,12 +149,12 @@ export class Contacto implements OnInit {
         this.securityMessage = `Conteúdo de segurança detectado: ${allPatterns.join(', ')}. Por favor, remova este conteúdo e tente novamente.`;
 
         console.log('🚨 ENVIO BLOQUEADO - Conteúdo malicioso detectado:', {
-          fullName: { malicious: nameCheck.isMalicious, patterns: nameCheck.patterns },
+          name: { malicious: nameCheck.isMalicious, patterns: nameCheck.patterns },
           message: { malicious: messageCheck.isMalicious, patterns: messageCheck.patterns }
         });
 
         const sanitizedData = {
-          fullName: this.sanitizeForDisplay(rawData.fullName),
+          name: this.sanitizeForDisplay(rawData.fullName),
           email: rawData.email,
           contact: rawData.contact,
           service: rawData.service,
@@ -165,7 +166,7 @@ export class Contacto implements OnInit {
       }
 
       const cleanData = {
-        fullName: rawData.fullName.trim(),
+        name: rawData.name.trim(),
         email: rawData.email.trim(),
         contact: rawData.contact.replace(/[^\d+\-\s()]/g, ''),
         service: rawData.service,
@@ -180,11 +181,10 @@ export class Contacto implements OnInit {
   }
 
   private sendToBackend(data: any) {
+    this.isLoading = true
     this.serviceContact.sendContactForm(data).subscribe({
       next: (response) => {
         console.log('✅ Formulário enviado com sucesso:', response);
-        this.applyForm.reset();
-        this.isSumbit = false;
         Swal.fire({
           title: 'Mensagem enviada!',
           text: 'Entraremos em contato em breve.',
@@ -192,6 +192,10 @@ export class Contacto implements OnInit {
           confirmButtonColor: '#006699',
           confirmButtonText: 'OK'
         });
+        this.applyForm.reset();
+        this.applyForm.get('service')?.setValue('');
+        this.isSumbit = false;
+        this.isLoading = false;
       },   
       error: (error) => {
         console.error('❌ Ocorreu um erro ao enviar o formulário:', error);
@@ -202,6 +206,10 @@ export class Contacto implements OnInit {
           confirmButtonColor: '#cc0000',
           confirmButtonText: 'OK'
         });
+        this.applyForm.reset();
+        this.applyForm.get('service')?.setValue('');
+        this.isSumbit = false;
+        this.isLoading = false;
       }
     });
   }

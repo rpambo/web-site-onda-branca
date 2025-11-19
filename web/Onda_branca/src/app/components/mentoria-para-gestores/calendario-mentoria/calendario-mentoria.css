@@ -1,3 +1,10 @@
+.back{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 blockquote{
     font-size: 13px !important;
     border-left: 4px solid #00aaff;

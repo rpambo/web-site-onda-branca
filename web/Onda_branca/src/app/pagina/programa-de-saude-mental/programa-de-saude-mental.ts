@@ -8,6 +8,7 @@ import { ProgramaDeSaudeMentalSolucoesParaEmpresa } from '../../components/progr
 import { ProgramaDeSaudeMentalInvestir } from '../../components/programa-de-saude-mental/programa-de-saude-mental-investir/programa-de-saude-mental-investir';
 import { ContactoProgramaDeSaudeMental } from "../../components/contacto/contacto-programa-de-saude-mental/contacto-programa-de-saude-mental";
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-programa-de-saude-mental',
@@ -19,7 +20,8 @@ import { Meta, Title } from '@angular/platform-browser';
     ProgramaDeSaudeMentalPilares,
     ProgramaDeSaudeMentalSolucoesParaEmpresa,
     ProgramaDeSaudeMentalInvestir,
-    ContactoProgramaDeSaudeMental
+    ContactoProgramaDeSaudeMental,
+    RouterLink
   ],
   templateUrl: './programa-de-saude-mental.html',
   styleUrls: ['./programa-de-saude-mental.css']

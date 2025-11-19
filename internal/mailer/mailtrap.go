@@ -43,14 +43,6 @@ func (m mailtrapClient) Send(templateFile, username, email string, data any, isS
         return -1, err
     }
 
-    // Se estiver em sandbox, envia para e-mail de teste
-    if isSandbox {
-        email = "teste@seudominio.com" // <- MailTrap ou outro e-mail de teste
-        subjectStr := "[SANDBOX] " + subject.String()
-        subject.Reset()
-        subject.WriteString(subjectStr)
-    }
-
     message := gomail.NewMessage()
     message.SetHeader("From", m.fromEmail)
     message.SetHeader("To", email)

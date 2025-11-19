@@ -7,10 +7,11 @@ import { AtendimentoEmpresarialBeneficio } from '../../components/antendimento-a
 import { Abordagem } from "../../components/antendimento-a-empresa/abordagem/abordagem";
 import { Contactos } from "../../components/contacto/contacto-principal/contactos";
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-antendimento-empressarial',
-  imports: [Navbar, Footer, DesafiosEmpresas, AtendimentoEmpresarialSolution, AtendimentoEmpresarialBeneficio, Abordagem, Contactos],
+  imports: [Navbar, Footer, DesafiosEmpresas, AtendimentoEmpresarialSolution, AtendimentoEmpresarialBeneficio, Abordagem, Contactos, RouterLink],
   templateUrl: './antendimento-empressarial.html',
   styleUrl: './antendimento-empressarial.css'
 })

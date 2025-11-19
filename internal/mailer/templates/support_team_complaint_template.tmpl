@@ -1,4 +1,4 @@
-{{define "subject"}} Novo pedido de serviço recebido - Onda Branca {{end}}
+{{define "subject"}} Nova Reclamação Recebida - Onda Branca {{end}}
 
 {{define "body"}}
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
         border: 1px solid #e1dfdd;
       }
       .header {
-        background: #d83b01;
+        background: #c1121f;
         padding: 20px;
         text-align: center;
         color: #ffffff;
@@ -35,7 +35,7 @@
         padding: 30px;
       }
       h2 {
-        color: #d83b01;
+        color: #c1121f;
         margin-bottom: 20px;
         font-weight: 600;
       }
@@ -53,37 +53,47 @@
         color: #605e5c;
         background: #f3f2f1;
       }
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <!-- Cabeçalho -->
+
+      <!-- Header -->
       <div class="header">
-        Novo Pedido de Cliente
+        Nova Reclamação Recebida
       </div>
 
       <!-- Conteúdo -->
       <div class="content">
-        <h2>Detalhes do Cliente</h2>
+        <h2>Detalhes da Reclamação</h2>
+
         <div class="details">
-          <p><b>Nome:</b> {{.Cliente}}</p>
+          <p><b>Cliente:</b> {{.Cliente}}</p>
           <p><b>Email:</b> {{.Email}}</p>
-          <p><b>Serviço de Interesse:</b> {{.Service}}</p>
-          <p><b>Contacto:</b> {{.Contact}}</p>
-          <p><b>Mensagem:</b> {{.Message}}</p>
           <p><b>Data/Hora:</b> {{.Data}}</p>
         </div>
 
+        <h2>Mensagem do Cliente</h2>
+        <div class="details">
+          <pre>{{.Message}}</pre>
+        </div>
+
         <p>
-          Este cliente mostrou interesse em um dos nossos serviços.  
-          Por favor, entre em contacto o mais rápido possível.
+          Por favor, entre em contacto com o cliente o mais breve possível.  
+          Esta é uma notificação interna automática.
         </p>
       </div>
 
       <!-- Rodapé -->
       <div class="footer">
-        &copy; {{.Data}} Onda Branca - Notificação Interna
+        &copy; {{.Data}} Onda Branca — Notificação Interna de Reclamação
       </div>
+
     </div>
   </body>
 </html>

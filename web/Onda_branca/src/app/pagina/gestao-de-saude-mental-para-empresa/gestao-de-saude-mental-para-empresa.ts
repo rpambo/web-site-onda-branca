@@ -7,10 +7,11 @@ import { ResultadosCorporativos } from '../../components/gestao-de-saude-mental-
 import { ParceiraEstrategicaComponent } from "../../components/gestao-de-saude-mental-para-empresa/parceira-estrategica-component/parceira-estrategica-component";
 import { ContactoGestaoDeSaudeMentalParaEmpresa } from "../../components/contacto/contacto-gestao-de-saude-mental-para-empresa/contacto-gestao-de-saude-mental-para-empresa";
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-gestao-de-saude-mental-para-empresa',
-  imports: [Navbar, Footer, GestaoSaudeMental, AtuacaoGestaoDeSaudeMentalParaEmpresa, ResultadosCorporativos, ParceiraEstrategicaComponent, ContactoGestaoDeSaudeMentalParaEmpresa],
+  imports: [Navbar, Footer, GestaoSaudeMental, AtuacaoGestaoDeSaudeMentalParaEmpresa, ResultadosCorporativos, ParceiraEstrategicaComponent, ContactoGestaoDeSaudeMentalParaEmpresa, RouterLink],
   templateUrl: './gestao-de-saude-mental-para-empresa.html',
   styleUrl: './gestao-de-saude-mental-para-empresa.css'
 })

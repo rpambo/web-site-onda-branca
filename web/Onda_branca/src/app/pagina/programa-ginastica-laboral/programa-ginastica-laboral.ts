@@ -7,10 +7,11 @@ import { ProgramaGinasticaLaboralPacotes } from '../../components/programa-de-gi
 import { Bruchura } from '../../components/programa-de-ginastica-laboral/bruchura/bruchura';
 import { ContactoGinastica } from '../../components/contacto/contacto-ginastica/contacto-ginastica';
 import { Meta, Title } from '@angular/platform-browser';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-programa-ginastica-laboral',
-  imports: [Navbar, ProgramaGinasticaLaboralImplementar, Footer, ProgramaGinasticaLaboralPrograma, ProgramaGinasticaLaboralPacotes, Bruchura, ContactoGinastica],
+  imports: [Navbar, ProgramaGinasticaLaboralImplementar, Footer, ProgramaGinasticaLaboralPrograma, ProgramaGinasticaLaboralPacotes, Bruchura, ContactoGinastica, RouterLink],
   templateUrl: './programa-ginastica-laboral.html',
   styleUrl: './programa-ginastica-laboral.css'
 })

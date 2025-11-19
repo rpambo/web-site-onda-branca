@@ -19,6 +19,7 @@ export class Reclamacao implements OnInit {
   isSumbit = false;
   hasMaliciousContent = false;
   securityMessage = '';
+  isLoading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -27,7 +28,7 @@ export class Reclamacao implements OnInit {
     private service : CanalDeReclamacao
   ) {
     this.applyForm = this.fb.group({
-      fullName: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$')]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.maxLength(1000)]]
     });
@@ -114,7 +115,7 @@ export class Reclamacao implements OnInit {
     if (this.applyForm.valid) {
       const rawData = this.applyForm.value;
 
-      const nameCheck = this.detectMaliciousContent(rawData.fullName);
+      const nameCheck = this.detectMaliciousContent(rawData.name);
       const messageCheck = this.detectMaliciousContent(rawData.message);
 
       if (nameCheck.isMalicious || messageCheck.isMalicious) {
@@ -123,12 +124,12 @@ export class Reclamacao implements OnInit {
         this.securityMessage = `Conteúdo de segurança detectado: ${allPatterns.join(', ')}. Por favor, remova este conteúdo e tente novamente.`;
 
         console.log('🚨 ENVIO BLOQUEADO - Conteúdo malicioso detectado:', {
-          fullName: { malicious: nameCheck.isMalicious, patterns: nameCheck.patterns },
+          name: { malicious: nameCheck.isMalicious, patterns: nameCheck.patterns },
           message: { malicious: messageCheck.isMalicious, patterns: messageCheck.patterns }
         });
 
         const sanitizedData = {
-          fullName: this.sanitizeForDisplay(rawData.fullName),
+          name: this.sanitizeForDisplay(rawData.name),
           email: rawData.email,
           message: this.sanitizeForDisplay(rawData.message)
         };
@@ -138,7 +139,7 @@ export class Reclamacao implements OnInit {
       }
 
       const cleanData = {
-        fullName: rawData.fullName.trim(),
+        name: rawData.name.trim(),
         email: rawData.email.trim(),
         message: rawData.message.trim()
       };
@@ -155,7 +156,7 @@ export class Reclamacao implements OnInit {
 
     // Aqui será adicionado o HttpClient real futuramente
     // this.http.post('/api/reclamacao', data).subscribe(...)
-
+    this.isLoading = true;
     this.service.sendReclamationForm(data).subscribe({
       next: () => {
         Swal.fire({
@@ -167,6 +168,7 @@ export class Reclamacao implements OnInit {
         });
         this.applyForm.reset();
         this.isSumbit = false;
+        this.isLoading = false;
     },
     error: () => {
       Swal.fire({
@@ -176,6 +178,9 @@ export class Reclamacao implements OnInit {
       confirmButtonColor: '#cc0000',
       confirmButtonText: 'OK'
     });
+    this.applyForm.reset();
+    this.isSumbit = false;
+    this.isLoading = false;
   }
   });
   }

@@ -1,3 +1,10 @@
+.back{
+  background-image: url(/imagens/asset1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .titulo-principal {
   font-size: 16px;
   color: #094268;
