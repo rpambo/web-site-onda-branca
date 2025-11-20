@@ -1,6 +1,6 @@
 .titulo-principal {
   font-size: 16px;
-  color: #094268;
+  color: white;
   font-weight: 300;
   text-transform: uppercase;
   position: relative;
@@ -56,4 +56,7 @@
     width: 25%;
     animation: growMobile 2s infinite alternate;
   }
+}
+.uk-accordion-title::before {
+    filter: brightness(0) invert(1); /* transforma cinza em branco */
 }
