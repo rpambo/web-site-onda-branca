@@ -1,6 +1,6 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, OnInit, OnDestroy, Renderer2, inject, PLATFORM_ID } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterOutlet } from '@angular/router';
 import { NgcCookieConsentService, NgcStatusChangeEvent } from 'ngx-cookieconsent';
 import { CookieService } from 'ngx-cookie-service';
 import { Subscription } from 'rxjs';
@@ -17,6 +17,10 @@ export class App implements OnInit, OnDestroy {
   protected title = 'Onda_branca';
   circles = Array(20);
 
+  // LOADING ENTRE PÁGINAS
+  isRouting = false;
+  private routerSub!: Subscription;
+
   private popupOpenSubscription!: Subscription;
   private popupCloseSubscription!: Subscription;
   private statusChangeSubscription!: Subscription;
@@ -29,8 +33,9 @@ export class App implements OnInit, OnDestroy {
   private el = inject(ElementRef);
   private platformId = inject(PLATFORM_ID);
 
-  // ID do Google Analytics
   private readonly GA_MEASUREMENT_ID = 'G-ZKBGZCSKLN';
+
+  constructor(private router: Router) {}
 
   /* ======================================================
      REMOVER COMPLETAMENTE O COOKIE BANNER DO DOM
@@ -41,6 +46,57 @@ export class App implements OnInit, OnDestroy {
       banner.remove();
       console.log('Banner de cookies removido do DOM!');
     }
+  }
+
+  /* ======================================================
+     EVENTOS DO COOKIE CONSENT
+  ====================================================== */
+  ngOnInit(): void {
+    // LOADING ENTRE PÁGINAS
+    this.routerSub = this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.isRouting = true;
+      }
+      if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        setTimeout(() => this.isRouting = false, 1000); // delay evita flicker
+      }
+    });
+
+    // Evento quando popup abre
+    this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
+      console.log('Popup de cookies aberto!');
+    });
+
+    // Evento quando popup fecha
+    this.popupCloseSubscription = this.ccService.popupClose$.subscribe(() => {
+      console.log('Popup de cookies fechado!');
+      this.removeCookieBanner();
+    });
+
+    // Se já estiver permitido antes
+    const consent = this.cookieService.get('cookie_consent');
+    if (consent === 'allow') {
+      this.gaService.loadScript(this.GA_MEASUREMENT_ID);
+      this.removeCookieBanner();
+    }
+
+    // Evento de alteração de consentimento
+    this.statusChangeSubscription = this.ccService.statusChange$
+      .subscribe((event: NgcStatusChangeEvent) => {
+        if (event.status === 'allow') {
+          this.cookieService.set('cookie_consent', 'allow', { expires: 365 });
+          this.gaService.loadScript(this.GA_MEASUREMENT_ID);
+          this.removeCookieBanner();
+        }
+        if (event.status === 'deny') {
+          this.cookieService.set('cookie_consent', 'deny', { expires: 365 });
+          this.removeCookieBanner();
+        }
+      });
   }
 
   /* ======================================================
@@ -87,47 +143,8 @@ export class App implements OnInit, OnDestroy {
     animateCircles();
   }
 
-  /* ======================================================
-     EVENTOS DO COOKIE CONSENT
-  ====================================================== */
-  ngOnInit(): void {
-    // Evento quando popup abre
-    this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
-      console.log('Popup de cookies aberto!');
-    });
-
-    // Evento quando popup fecha
-    this.popupCloseSubscription = this.ccService.popupClose$.subscribe(() => {
-      console.log('Popup de cookies fechado!');
-      this.removeCookieBanner(); // remove mesmo se estiver invisível
-    });
-
-    // Se já estiver permitido antes
-    const consent = this.cookieService.get('cookie_consent');
-    if (consent === 'allow') {
-      this.gaService.loadScript(this.GA_MEASUREMENT_ID);
-      this.removeCookieBanner();
-    }
-
-    // Evento de alteração de consentimento
-    this.statusChangeSubscription = this.ccService.statusChange$
-      .subscribe((event: NgcStatusChangeEvent) => {
-
-        if (event.status === 'allow') {
-          this.cookieService.set('cookie_consent', 'allow', { expires: 365 });
-          this.gaService.loadScript(this.GA_MEASUREMENT_ID);
-          this.removeCookieBanner(); // REMOVE COMPLETAMENTE
-        }
-
-        if (event.status === 'deny') {
-          this.cookieService.set('cookie_consent', 'deny', { expires: 365 });
-          this.removeCookieBanner(); // REMOVE COMPLETAMENTE
-        }
-
-      });
-  }
-
   ngOnDestroy(): void {
+    if (this.routerSub) this.routerSub.unsubscribe();
     if (this.popupOpenSubscription) this.popupOpenSubscription.unsubscribe();
     if (this.popupCloseSubscription) this.popupCloseSubscription.unsubscribe();
     if (this.statusChangeSubscription) this.statusChangeSubscription.unsubscribe();

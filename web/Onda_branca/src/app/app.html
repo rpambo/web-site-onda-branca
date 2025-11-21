@@ -1,3 +1,18 @@
+<!-- Loader -->
+<div *ngIf="isRouting" class="global-loader">
+  <div class="loader-content">
+    <div class="circle-rotate">
+      <img src="imagens/laco.png" alt="Laço Onda Branca" class="loader-image" />
+      <div class="spinner-circle"></div>
+    </div>
+    <div class="loader-text">Onda Branca</div>
+  </div>
+</div>
+
 <!-- Cursor Effect -->
-<div *ngFor="let circle of circles" class="circle"></div>
-<router-outlet />
+<div #cursorContainer>
+  <div *ngFor="let circle of circles" class="circle"></div>
+</div>
+
+<router-outlet></router-outlet>
+
