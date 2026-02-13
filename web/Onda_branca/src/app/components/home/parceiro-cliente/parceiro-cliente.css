@@ -1,13 +1,3 @@
-.hr-custom{
-  border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
-  border-image: radial-gradient(circle 562px at center, #007dbb, #F1F6FB) 1;
-  border-image-slice: 1;
-  text-align: center;
-}
-
-
-
 .titulo-principal {
   font-size: 16px;
   color: #094268;
@@ -43,11 +33,65 @@
     to { width: 80%; }
 }
 
-@media (max-width:768px) {
-  .hr-custom {
-    border-image: radial-gradient(circle 200px at center, #007dbb, #F1F6FB) 1; /* gradiente menor */
-    border-top-width: 1px;
-    border-bottom-width: 1px;
+.uk-grid > div{
+    margin-top: 20px;
+}
+.title{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.2rem;
+    color: #272727;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.text-servico.reveal-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.reveal-active.text-servico {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-servico{
+    font-size: 2rem;
+    font-family: "Urbanist";
+    color: #1253C6;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 550px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.card.reveal-fade{
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.reveal-active.card{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 344px) and (max-width: 767px){
+  h2, .destaque{
+    font-size: 1.6rem !important;
+  }
+  img{
+    width: 55%;
+    margin: auto;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .text-servico{
+    font-size: 2rem !important;
   }
 
   .titulo-principal{

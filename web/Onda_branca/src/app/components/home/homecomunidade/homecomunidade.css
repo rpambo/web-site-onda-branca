@@ -1,163 +1,345 @@
 .back{
-  background-image: url(/imagens/asset1.webp);
+  background-image: url(/imagens/home/back-ground.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.missao-section {
-  position: relative;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: url("/imagens/comunidade.png") no-repeat center center;
-  background-size: cover;
-  padding: 100px 20px;
-  color: white;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap; /* ajuda no mobile */
+
+@font-face {
+  font-family: 'Joyride';
+  src: url('/Joyride-Font/JoyrideSTD.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Título vertical no desktop */
-.missao-title {
+@font-face {
+  font-family: 'joryde';
+  src: url('/Joyride-Font/JoyrideALT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.titulo-principal {
+  font-size: 1rem;
+  color: #094268;
+  font-weight: 300;
   text-transform: uppercase;
-  text-orientation: upright;
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-  margin-left: 100px;
-}
-
-/* Texto alinhado à direita no desktop */
-.missao-text {
   position: relative;
-  max-width: 450px;
-  margin-left: 100px;
-  margin-right: auto;
-  font-weight: 500;
-  font-size: 18px;
+  display: inline-block;
 }
 
-/* -------- RESPONSIVO -------- */
-@media (min-width: 340px) and (max-width: 767px) {
-  .missao-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 20px;
-    background-position: right;
-  }
-
-  .button-desc{
-    margin-left: auto !important;
-  }
-  .missao-title {
-    margin-left: auto !important;
-    position: static;
-    writing-mode: horizontal-tb; /* título horizontal */
-    text-orientation: initial;
-    font-size: 36px;
-    margin-bottom: 20px;
-    transform: none;
-  }
-
-  .missao-text {
-    margin: 0;
-    max-width: 100%;
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px){
-  .missao-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 20px;
-    background-position: right;
-  }
-
-  .button-desc{
-    margin-left: auto !important;
-  }
-  .missao-title {
-    margin-left: auto !important;
-    position: static;
-    writing-mode: horizontal-tb; /* título horizontal */
-    text-orientation: initial;
-    font-size: 36px;
-    margin-bottom: 20px;
-    transform: none;
-  }
-
-  .missao-text {
-    margin: 0;
-    max-width: 350px;
-    font-size: 16px;
-  }
-}
-
-
-.uk-button {
-  text-transform: lowercase;   /* força tudo em minúsculas */
-}
-
-.uk-button::first-letter {
-  text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
-}
-
-
-.uk-button {
-  position: relative;
-  overflow: hidden;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-transform: lowercase;
-  font-size: 18px !important;
-  font-weight: 400 !important;
-  border-radius: 10px;
-}
-
-.uk-button-saiba{
-  position: relative;
-  overflow: hidden;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-transform: lowercase;
-  font-size: 18px !important;
-  font-weight: 400 !important;
-  border-radius: 10px;
-}
-
-
-/* efeito de espalhar/reagrupar */
-.uk-button::after {
-  content: "";
+.titulo-principal .linha {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: white !important;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  bottom: -3px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #00aaff, #0d5a90);
+  display: block;
+  animation: grow 2s infinite alternate;
 }
 
-/* animação quando hover */
-.uk-button:hover {
-  color: #00479f !important;
-  border: none !important;
-  animation: spreadRegroup 600ms ease forwards;
+.onda-branca-animada {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0;
 }
 
-@keyframes spreadRegroup {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.08); } /* espalha */
-  100% { transform: scale(1); }   /* volta ao normal */
+.onda-loop {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.uk-button:hover::after {
-  width: 250%;
-  height: 250%;
-  transition: width 0.4s ease, height 0.4s ease;
+.onda-loop .faixa {
+  display: inline-flex;
+  animation: deslize 12s linear infinite;
+}
+
+.frase {
+  font-family: 'Joyride';
+  font-size: 6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #c4c4c4a1;
+  display: inline-block;
+}
+
+/* este cara substitui o padding */
+.espaco {
+  display: inline-block;
+  width: 3rem; /* mesmo valor que usavas no padding */
+}
+
+/* estica-letras */
+.x {
+  font-family: 'joryde';
+}
+
+
+@keyframes deslize {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+.titulo-metricas{
+  max-width: 750px;
+}
+
+@keyframes growMobile {
+  from { width: 0; }
+  to { width: 25%; }
+}
+
+@keyframes grow {
+    from { width: 20%; }
+    to { width: 80%; }
+}
+
+
+
+.uk-button{
+  text-transform: lowercase;
+}
+
+.uk-button::first-letter{
+  text-transform: uppercase;
+}
+
+
+/* =====================================
+   BOTÃO AZUL – MOVIMENTO E INCLINAÇÃO
+   ===================================== */
+
+.btn-blue-alive {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+
+  /* Gradiente horizontal */
+  background: radial-gradient(at top center, #4759FF 13%, #040E6A 80%);
+  background-size: 300% 100%;
+
+  /* Animação que move apenas o gradiente */
+  animation: gradientMove 5s ease-in-out infinite;
+
+  transition: box-shadow 0.3s ease;
+  will-change: background-position;
+}
+
+/* =====================================
+   ANIMAÇÃO DO GRADIENTE
+   ===================================== */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  25% {
+    background-position: 50% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  75% {
+    background-position: 50% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =====================================
+   INCLINAÇÃO EM RESPOSTA AO GRADIENTE
+   ===================================== */
+
+.btn-blue-alive:hover {
+  animation: 
+    gradientMove 7s ease-in-out infinite,
+    tiltEffect 0.5s ease-in-out;
+}
+
+@keyframes tiltEffect {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  
+  25% {
+    transform: rotate(3deg) translateX(3px);
+  }
+  
+  50% {
+    transform: rotate(-2deg) translateX(-2px);
+  }
+  
+  75% {
+    transform: rotate(1deg) translateX(1px);
+  }
+  
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+/* =====================================
+   HOVER COM BRILHO E SOMBRA
+   ===================================== */
+
+.btn-blue-alive:hover {
+  box-shadow:
+    0 0 15px rgba(0, 180, 216, 0.6),
+    0 0 30px rgba(0, 119, 182, 0.3);
+  
+  /* Efeito de brilho interno que segue o gradiente */
+  background: linear-gradient(
+    90deg,
+    #004a9e,
+    #0060c0,
+    #0088e0,
+    #00c8ff,
+    #004a9e
+  );
+  background-size: 300% 100%;
+}
+
+/* =====================================
+   ESTADO ATIVO/CLICADO
+   ===================================== */
+
+.btn-blue-alive:active {
+  transform: scale(0.98) rotate(-1deg);
+  transition: transform 0.1s ease;
+}
+
+/* =====================================
+   EFEITO DE PULSO AO PASSAR O MOUSE
+   ===================================== */
+
+.btn-blue-alive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.btn-blue-alive:hover::before {
+  left: 100%;
+}
+
+/* =====================================
+   FOCO PARA ACESSIBILIDADE
+   ===================================== */
+
+.btn-blue-alive:focus {
+  outline: none;
+  animation-play-state: paused;
+  box-shadow:
+    0 0 0 3px rgba(0, 119, 182, 0.5),
+    0 0 20px rgba(0, 180, 216, 0.8);
+}
+
+/* =====================================
+   ACESSIBILIDADE
+   ===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-blue-alive {
+    animation: none;
+  }
+  
+  .btn-blue-alive:hover {
+    animation: none;
+  }
+  
+  .btn-blue-alive:active {
+    transform: scale(0.98);
+  }
+}
+
+/* =====================================
+   VARIANTE COM MAIS INCLINAÇÃO
+   ===================================== */
+
+.btn-blue-alive.tilt-more:hover {
+  animation: 
+    gradientMove 5s ease-in-out infinite,
+    tiltMore 0.8s ease-in-out infinite;
+}
+
+@keyframes tiltMore {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  
+  25% {
+    transform: rotate(5deg) translateX(5px);
+  }
+  
+  50% {
+    transform: rotate(-4deg) translateX(-4px);
+  }
+  
+  75% {
+    transform: rotate(3deg) translateX(3px);
+  }
+  
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+/* =====================================
+   VARIANTE COM INCLINAÇÃO CONTÍNUA
+   ===================================== */
+
+.btn-blue-alive.tilt-wave {
+  animation: 
+    gradientMove 7s ease-in-out infinite,
+    waveTilt 3s ease-in-out infinite;
+}
+
+@keyframes waveTilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(2deg);
+  }
+  
+  50% {
+    transform: rotate(0deg);
+  }
+  
+  75% {
+    transform: rotate(-2deg);
+  }
 }

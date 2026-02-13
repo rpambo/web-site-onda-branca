@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../../components/navbar/navbar';
 import { Footer } from "../../components/footer/footer";
-import { RendaExtraIntro } from "../../components/programa-de-renda-extra/renda-extra-intro/renda-extra-intro";
-import { RendaExtraBeneficios } from '../../components/programa-de-renda-extra/renda-extra-beneficios/renda-extra-beneficios';
-import { RendaExtraMetodologia } from '../../components/programa-de-renda-extra/renda-extra-metodologia/renda-extra-metodologia';
-import { ContactoRendaExtra } from '../../components/contacto/contacto-renda-extra/contacto-renda-extra';
 import { Meta, Title } from '@angular/platform-browser';
-import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-renda-extra',
-  imports: [Navbar, Footer, RendaExtraIntro, RendaExtraBeneficios, RendaExtraMetodologia, ContactoRendaExtra, RouterLink],
+  imports: [Navbar, Footer],
   templateUrl: './renda-extra.html',
   styleUrl: './renda-extra.css'
 })

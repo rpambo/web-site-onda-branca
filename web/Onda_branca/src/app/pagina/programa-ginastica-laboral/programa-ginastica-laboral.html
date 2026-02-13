@@ -1,44 +1,83 @@
 <app-navbar></app-navbar>
-<div class="hero-content" style="overflow: hidden; position: relative; height: 100vh;">
-
-  <!-- Vídeo de fundo -->
-  <video autoplay muted loop playsinline 
-         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
-    <source src="/video/hero/hero-programa-de-ginastica-laboral.mp4" type="video/mp4">
-    O seu navegador não suporta vídeo.
-  </video>
-
-  <!-- 🔲 Overlay para escurecer o vídeo -->
-  <div class="uk-position-cover" style="background: rgba(0, 0, 0, 0.4);"></div>
-
-  <!-- 📌 Conteúdo -->
-  <div class="uk-section uk-section-large uk-position-relative" style="z-index: 1;">
-    <div class="uk-container uk-padding-large">
-      <div>
-        <h1 class="uk-heading-medium uk-margin-remove" 
-            style="color: white; font-weight: 500; max-width: 850px;">
-          Mais <span class="uk-text-primary">saúde para a equipa</span>, mais <span class="uk-text-primary">produtividade para a organização</span>
+<!-- Hero -->
+<div class="back">
+    <div class="uk-position-center-left uk-position-relative conteudo" style="left: 7%; bottom: 1%;">
+        <h1  class="titulo" style="color: #8f51c9; font-family: 'sora'; max-width: 500px; font-size: 3.3rem; font-weight: 200;">
+            <strong>Programa de Ginástica Laboral</strong>
         </h1>
-        
-        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-flex uk-flex-middle uk-grid uk-margin-medium-top desc" uk-grid>
-          <div class="uk-width-expand@l">
-            <p style="color: white; font-weight: 400; font-size: 22px; max-width: 650px;">
-              O Programa de Ginástica Laboral Empresarial oferece sessões breves no trabalho para reduzir dores, aliviar o estresse e melhorar a disposição da equipa.
-            </p>
-          </div>
-          <div class="uk-width-auto@l uk-text-right@l">
-            <a [routerLink]="['/contacto']" class="uk-button uk-button-default" style="background-color: white; border-radius: 5px; font-size: 18px; padding: 10px 15px; color: #006699; font-weight: 500;">
-              Solicitar sessão demonstrativa
-            </a>
-          </div>
+
+        <p style="color: #272727; font-family: 'sora'; max-width: 450px;">
+            O programa de Ginástica Laboral promove alongamentos, movimentos leves e práticas de relaxamento que reduzem dores, evitam lesões e aumentam a energia durante o trabalho.
+        </p>
+
+        <a href="" class="uk-button animated-btn uk-button-default"
+            style="
+                   color: white;
+                   border: none;
+                   border-radius: 6px;
+                   font-weight: 600;">
+            Contratar agora
+        </a>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="uk-section" >
+  <div class="uk-container">
+    <div class="uk-child-width-1-4@l uk-child-width-1-2@s uk-child-width-1-2@m uk-grid-match uk-grid-large" uk-grid>
+
+      <div>
+        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
+          <h4 style="color: #8F51C9;">Atendimento de Qualidade</h4>
+          <p>Instrutores qualificados, suporte contínuo e acompanhamento adaptado às necessidades da empresa.</p>
         </div>
       </div>
+
+      <div>
+        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
+          <h4 style="color: #8F51C9;">Atividades para Qualquer Espaço</h4>
+          <p>Sessões rápidas e eficazes que podem ser feitas em qualquer ambiente, sem necessidade de equipamentos.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
+          <h4 style="color: #8F51C9;">Programas Personalizados</h4>
+          <p>Exercícios ajustados ao tipo de trabalho, prevenindo dores musculares e melhorando o bem-estar.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
+          <h4 style="color: #8F51C9;">Sessões em Grupo</h4>
+          <p>Atividades que estimulam integração, descontração e fortalecem o clima organizacional.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-<app-programa-ginastica-laboral-implementar></app-programa-ginastica-laboral-implementar>
-<app-programa-ginastica-laboral-programa></app-programa-ginastica-laboral-programa>
-<app-programa-ginastica-laboral-pacotes></app-programa-ginastica-laboral-pacotes>
+
+<!-- Para Quem É -->
+<div class="uk-section" style="background-color: #F4F7F8;">
+  <div class="uk-container uk-text-center">
+    <h3 style="font-size: 2rem; color: #8f51c9;">
+      <strong>Para quem é o programa de <br> Ginástica Laboral</strong>
+    </h3>
+
+    <p style="font-size: 1.3rem; max-width: 650px; margin: auto; color: #272727;">
+      É ideal para empresas, equipas e profissionais que passam longos períodos sentados, lidam com esforço repetitivo ou querem melhorar energia e bem-estar no trabalho.
+    </p>
+
+    <a href="" class="uk-button uk-button-default animated-btn uk-margin-top"
+       style="color: white;
+              border-radius: 6px;
+              padding: 12px 28px;
+              font-weight: 600;">
+      Solicitar proposta
+    </a>
+  </div>
+</div>
+
 <app-bruchura></app-bruchura>
-<app-contacto-ginastica></app-contacto-ginastica>
 <app-footer></app-footer>

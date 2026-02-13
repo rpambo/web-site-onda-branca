@@ -1,5 +1,57 @@
+@font-face {
+  font-family: 'Joyride';
+  src: url('/Joyride-Font/JoyrideSTD.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'joryde';
+  src: url('/Joyride-Font/JoyrideALT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.efeito-cantos {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos suaves */
+.circulo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 720px;
+  z-index: 1;
+  height: 150px;
+  background: linear-gradient(to right,#3463ffc4, #3463ff53);
+
+  filter: blur(100px);   /* deixa suave */
+  
+  pointer-events: none; /* não bloqueia clique no conteúdo */
+}
+
+
+.uk-dotnav > li > a {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #1100ff;
+  border-radius: 20px;
+  background: transparent;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.uk-dotnav > .uk-active > a {
+  background: #1100ff;
+  border: none;
+}
+
+
 .uk-button::first-letter{
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 @keyframes scaleUp {
@@ -17,92 +69,268 @@ h2 {
   animation: scaleUp 0.8s ease-out forwards;
 }
 
+.btn-gradient-animated {
+  margin-top: 25px;
+  color: #fff;
+  background: linear-gradient(
+    120deg,
+    #6A00F4,
+    #9D4EDD,
+    #B5179E,
+    #6A00F4
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
 
-.uk-button {
+
+
+/* animação */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* hover brilhante */
+.btn-gradient-animated:hover {
+  animation-duration: 3s;
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 8px rgba(157, 78, 221, 0.6),
+    0 0 20px rgba(181, 23, 158, 0.5),
+    0 0 40px rgba(106, 0, 244, 0.4);
+}
+
+/* opcional: foco acessível */
+.btn-gradient-animated:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.25),
+    0 0 25px rgba(157, 78, 221, 0.6);
+}
+
+.text-gradient-animate {
+  font-size: 1.3rem;
+  font-family: 'sora';
+  max-width: 350px;
+  padding: 10px;
+  margin: 0;
+  font-weight: 600;
+
+  /* Faz o gradiente aparecer no texto */
+  background: linear-gradient(90deg, #c467bf, #e287ff, #f0a8ff, #c467bf);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* animação do gradiente */
+  animation: gradientText 4s ease infinite;
+}
+
+/* =====================================
+   ANIMAÇÃO DE GRADIENTE
+   ===================================== */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .uk-slidershow, .uk-slideshow-items {
+    height: auto !important;
+  }
+
+}
+
+
+/* =====================================
+   BOTÃO SPOTIFY – MOVIMENTO E BRILHO
+   ===================================== */
+
+.btn-spotify {
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
 
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-transform: lowercase;
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  border: none !important;
-  padding: 10px 15px 10px 15px;
-  border-radius: 10px;
+  background: radial-gradient(at top center, #1ed760 15%, #158a40 80%);
+  background-size: 300% 100%;
+  animation: spotiMove 5s ease-in-out infinite;
+
+  transition: box-shadow 0.3s ease;
+  will-change: background-position;
 }
 
-/* efeito de espalhar/reagrupar */
-.uk-button::after {
-  content: "";
+/* Movimento do gradiente */
+@keyframes spotiMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Inclinação leve */
+.btn-spotify:hover {
+  animation:
+    spotiMove 7s ease-in-out infinite,
+    spotiTilt 0.5s ease-in-out;
+}
+
+@keyframes spotiTilt {
+  0% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(2deg) translateX(3px); }
+  50% { transform: rotate(-1deg) translateX(-2px); }
+  75% { transform: rotate(1deg) translateX(1px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+/* Sombra estilo Spotify */
+.btn-spotify:hover {
+  box-shadow:
+    0 0 12px rgba(30, 215, 96, 0.7),
+    0 0 28px rgba(30, 215, 96, 0.3);
+
+  background: linear-gradient(
+    90deg,
+    #158a40,
+    #1ed760,
+    #24e66f,
+    #1ed760,
+    #158a40
+  );
+  background-size: 300% 100%;
+}
+
+/* Efeito shine */
+.btn-spotify::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: #c467bf !important;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transition: left 0.7s ease;
 }
 
-/* animação quando hover */
-.uk-button:hover {
-  color: white !important;
-  border: none !important;
-  animation: spreadRegroup 600ms ease forwards;
+.btn-spotify:hover::before {
+  left: 100%;
 }
 
-@keyframes spreadRegroup {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.08); } /* espalha */
-  100% { transform: scale(1); }   /* volta ao normal */
+/* Ativo / click */
+.btn-spotify:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
 }
 
-.uk-button:hover::after {
-  width: 250%;
-  height: 250%;
-  transition: width 0.4s ease, height 0.4s ease;
+/* Acessibilidade */
+.btn-spotify:focus {
+  outline: none;
+  animation-play-state: paused;
+  box-shadow:
+    0 0 0 3px rgba(30, 215, 96, 0.6),
+    0 0 18px rgba(30, 215, 96, 0.8);
 }
-@media (min-width: 344px) and (max-width:740px){
-    h2{
-        font-size: 32px !important;
-    }
-    .desc{
-        font-size: 20px !important;
-    }
-    .text{
-        bottom: 5% !important;
-    }
-    .desc_1{
-        font-size: 15px !important;
-        margin-bottom: 20px !important;
-        text-transform: lowercase !important;
-    }
-    .desc_1::first-letter{
-      text-transform: uppercase !important;
-    }
-    .uk-slideshow-items {
-        min-height: 550px !important;
-    }
-    .conteudo{
-        display: flex;
-        justify-content: center;
-    }
+
+/* Para quem não curte animação */
+@media (prefers-reduced-motion: reduce) {
+  .btn-spotify,
+  .btn-spotify:hover {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* MOBILE: 344px até 767px */
+@media (min-width: 344px) and (max-width: 767px) {
+
+  .uk-slideshow-items {
+    min-height: 650px !important;
+  }
+
+  .conteudo {
+    left: 0 !important;
+    right: 0 !important;
+    transform: none;
+    text-align: center !important;
+  }
+
+  /* Texto fluido e responsivo em QUALQUER tamanho de mobile */
+  .desc_1,
+  .desc,
+  .text-gradient-animate {
+    max-width: 100% !important;
+    font-size: clamp(1rem, 100vw, 1.3rem) !important;
+  }
+
+  /* Título fluido sem estourar no mobile */
+  .title {
+    font-size: clamp(1.4rem, 100vw, 2rem) !important;
+    max-width: 250px !important;
+    margin: auto !important;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .uk-slideshow-items{
+    min-height: 450px !important;
+  }
+  .text-gradient-animate, .desc, .desc_1{
+    max-width: 200px !important;
+    font-size: 1.2rem !important;
+  }
+  .text-gradient-animate{
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .title{
+    max-width: 150px !important;
+    font-size: 1.5rem !important;
+  }
 }
 
 
-@media (min-width: 768px) and (max-width:1024px){
-    .uk-slideshow-items {
-        min-height: 550px !important;
-    }
-    .text{
-        bottom: 5% !important;
-    }
-    .conteudo{
-        display: flex;
-        justify-content: center;
-    }
-    .desc_1{
-        margin-bottom: 20px !important;
-    }
+/* Tablet grande (iPad, iPad Air, iPad Pro retrato) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .uk-slideshow-items{
+    min-height: 550px !important;
+  }
+  .text-gradient-animate, .desc, .desc_1{
+    max-width: 300px !important;
+    font-size: 1.8rem !important;
+  }
+  .text-gradient-animate{
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .title{
+    max-width: 300px !important;
+    font-size: 2rem !important;
+  }
 }

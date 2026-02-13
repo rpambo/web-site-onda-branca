@@ -1,7 +1,22 @@
 .back{
-  background-image: url(/imagens/contactos/background.png);
-
+  background-image: url(/imagens/contacto-topo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
 }
+
+.uk-card-default{
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+a[uk-slider-item].uk-invisible {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 .titulo-principal {
   font-size: 16px;
   color: #094268;
@@ -9,16 +24,6 @@
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-}
-
-.input-error {
-  border: 2px solid #f0506e !important;
-  background-color: rgba(240, 80, 110, 0.1) !important;
-}
-
-@keyframes grow {
-    from { width: 20%; }
-    to { width: 80%; }
 }
 
 .titulo-principal .linha {
@@ -34,7 +39,7 @@
 }
 
 .titulo-metricas{
-  max-width: 550px;
+  max-width: 750px;
 }
 
 @keyframes growMobile {
@@ -42,16 +47,17 @@
   to { width: 25%; }
 }
 
-textarea::placeholder, input::placeholder {
-    color: rgb(0, 0, 0) !important; /* branco com transparência */
+@keyframes grow {
+    from { width: 20%; }
+    to { width: 80%; }
 }
 
-@media (max-width: 768px) {
-  .uk-background-cover {
-    height: 500px; /* ajusta conforme o design */
-    background-position: center;
-    border-radius: 10px;
-    margin-bottom: 0;
+@media (max-width:768px) {
+  .uk-slider-container{
+    padding-right: 0 !important;
+  }
+  .back{
+    padding-top: 50px !important;
   }
 
   .titulo-principal{
@@ -65,76 +71,4 @@ textarea::placeholder, input::placeholder {
     width: 25%;
     animation: growMobile 2s infinite alternate;
   }
-}
-
-.uk-button {
-  text-transform: lowercase;   /* força tudo em minúsculas */
-}
-
-.uk-button::first-letter {
-  text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
-}
-
-
-.uk-button {
-  position: relative;
-  overflow: hidden;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-transform: lowercase;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  border: none !important;
-  border-radius: 5px;
-}
-
-/* efeito de espalhar/reagrupar */
-.uk-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background-color: #c467bf !important;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-/* animação quando hover */
-.uk-button:hover {
-  color: white !important;
-  border: none !important;
-  background-color: #c467bf !important;
-  animation: spreadRegroup 600ms ease forwards;
-}
-
-@keyframes spreadRegroup {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.08); } /* espalha */
-  100% { transform: scale(1); }   /* volta ao normal */
-}
-
-.uk-button:hover::after {
-  width: 250%;
-  height: 250%;
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.spinner {
-  border: 4px solid rgba(255,255,255,0.3);
-  border-top: 4px solid #094268;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  animation: spin 1s linear infinite;
-  display: inline-block;
-  margin-left: 8px; /* distância do botão */
-  vertical-align: middle;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }

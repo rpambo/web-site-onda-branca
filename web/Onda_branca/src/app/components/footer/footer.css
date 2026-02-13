@@ -1,14 +1,48 @@
-a:hover{
-  color: #9A74A1 !important;
-}
-.slogan{
-  text-transform: lowercase;
-}
-.slogan::first-letter{
-  text-transform: uppercase;
+ul li a, a, p{
+  font-size: .8rem;
+  color: #b7b7b7;
 }
 
-.uk-grid-divider::before,
-.uk-grid-divider::after {
-  pointer-events: none !important;
+a{
+  text-decoration: none;
+}
+
+ul li a:hover, a:hover{
+  color: white;
+}
+
+ul li{
+  margin: 0;
+}
+h3{
+  font-size: 1rem;
+  color: white;
+}
+
+.efeito-cantos {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos suaves */
+.circulo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 720px;
+  height: 200px;
+  background: linear-gradient(to right,#b17dffc4, #35215370);
+  filter: blur(100px);   /* deixa suave */
+  
+  pointer-events: none; /* não bloqueia clique no conteúdo */
+}
+
+@media (min-width: 344px) and (max-width: 767px) {
+  .uk-section {
+    text-align: center !important;
+  }
+  .icon{
+    display: flex;
+    justify-content: center;
+  }
 }

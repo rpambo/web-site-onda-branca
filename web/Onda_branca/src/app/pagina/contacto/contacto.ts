@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
-  imports: [Navbar, Footer, RouterLink, CommonModule, ReactiveFormsModule],
+  imports: [Navbar, Footer, CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.css']
 })
@@ -129,89 +129,6 @@ export class Contacto implements OnInit {
       .replace(/javascript:/gi, '')
       .replace(/vbscript:/gi, '')
       .trim();
-  }
-
-  submiteForm() {
-    this.isSumbit = true;
-    this.hasMaliciousContent = false;
-    this.securityMessage = '';
-
-    if (this.applyForm.valid) {
-      const rawData = this.applyForm.value;
-
-      const nameCheck = this.detectMaliciousContent(rawData.name);
-      const messageCheck = this.detectMaliciousContent(rawData.message);
-
-      if (nameCheck.isMalicious || messageCheck.isMalicious) {
-        this.hasMaliciousContent = true;
-
-        const allPatterns = [...nameCheck.patterns, ...messageCheck.patterns];
-        this.securityMessage = `Conteúdo de segurança detectado: ${allPatterns.join(', ')}. Por favor, remova este conteúdo e tente novamente.`;
-
-        console.log('🚨 ENVIO BLOQUEADO - Conteúdo malicioso detectado:', {
-          name: { malicious: nameCheck.isMalicious, patterns: nameCheck.patterns },
-          message: { malicious: messageCheck.isMalicious, patterns: messageCheck.patterns }
-        });
-
-        const sanitizedData = {
-          name: this.sanitizeForDisplay(rawData.fullName),
-          email: rawData.email,
-          contact: rawData.contact,
-          service: rawData.service,
-          message: this.sanitizeForDisplay(rawData.message)
-        };
-        console.log('🔍 Dados sanitizados (apenas visualização):', sanitizedData);
-
-        return; // BLOQUEIA ENVIO
-      }
-
-      const cleanData = {
-        name: rawData.name.trim(),
-        email: rawData.email.trim(),
-        contact: rawData.contact.replace(/[^\d+\-\s()]/g, ''),
-        service: rawData.service,
-        message: rawData.message.trim()
-      };
-
-      console.log('✅ Dados SEGUROS para envio:', cleanData);
-      this.sendToBackend(cleanData);
-    } else {
-      console.log('❌ Formulário inválido - Erros de validação');
-    }
-  }
-
-  private sendToBackend(data: any) {
-    this.isLoading = true
-    this.serviceContact.sendContactForm(data).subscribe({
-      next: (response) => {
-        console.log('✅ Formulário enviado com sucesso:', response);
-        Swal.fire({
-          title: 'Mensagem enviada!',
-          text: 'Entraremos em contato em breve.',
-          icon: 'success',
-          confirmButtonColor: '#006699',
-          confirmButtonText: 'OK'
-        });
-        this.applyForm.reset();
-        this.applyForm.get('service')?.setValue('');
-        this.isSumbit = false;
-        this.isLoading = false;
-      },   
-      error: (error) => {
-        console.error('❌ Ocorreu um erro ao enviar o formulário:', error);
-        Swal.fire({
-          title: 'Erro!',
-          text: 'Ocorreu um erro. Tente novamente mais tarde.',
-          icon: 'error',
-          confirmButtonColor: '#cc0000',
-          confirmButtonText: 'OK'
-        });
-        this.applyForm.reset();
-        this.applyForm.get('service')?.setValue('');
-        this.isSumbit = false;
-        this.isLoading = false;
-      }
-    });
   }
 
   get f() {

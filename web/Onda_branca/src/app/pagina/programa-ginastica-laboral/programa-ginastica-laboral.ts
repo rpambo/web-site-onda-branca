@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
-import { ProgramaGinasticaLaboralImplementar } from "../../components/programa-de-ginastica-laboral/programa-ginastica-laboral-implementar/programa-ginastica-laboral-implementar";
 import { Footer } from '../../components/footer/footer';
-import { ProgramaGinasticaLaboralPrograma } from '../../components/programa-de-ginastica-laboral/programa-ginastica-laboral-programa/programa-ginastica-laboral-programa';
-import { ProgramaGinasticaLaboralPacotes } from '../../components/programa-de-ginastica-laboral/programa-ginastica-laboral-pacotes/programa-ginastica-laboral-pacotes';
 import { Bruchura } from '../../components/programa-de-ginastica-laboral/bruchura/bruchura';
-import { ContactoGinastica } from '../../components/contacto/contacto-ginastica/contacto-ginastica';
 import { Meta, Title } from '@angular/platform-browser';
-import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-programa-ginastica-laboral',
-  imports: [Navbar, ProgramaGinasticaLaboralImplementar, Footer, ProgramaGinasticaLaboralPrograma, ProgramaGinasticaLaboralPacotes, Bruchura, ContactoGinastica, RouterLink],
+  imports: [Navbar, Footer, Bruchura],
   templateUrl: './programa-ginastica-laboral.html',
   styleUrl: './programa-ginastica-laboral.css'
 })

@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../../components/navbar/navbar';
-import { MentoriaSection } from "../../components/mentoria-para-gestores/mentoria-section/mentoria-section";
+
 import { Footer } from "../../components/footer/footer";
-import { MentoriaDestaques } from '../../components/mentoria-para-gestores/mentoria-destaques/mentoria-destaques';
-import { CalendarioMentoria } from '../../components/mentoria-para-gestores/calendario-mentoria/calendario-mentoria';
-import { ContactoGestores } from "../../components/contacto/contacto-gestores/contacto-gestores";
+
 import { Meta, Title } from '@angular/platform-browser';
-import { RouterLink } from "@angular/router";
+
 
 @Component({
   selector: 'app-mentoria',
-  imports: [Navbar, MentoriaSection, Footer, MentoriaDestaques, CalendarioMentoria, ContactoGestores, RouterLink],
+  imports: [Navbar, Footer],
   templateUrl: './mentoria.html',
   styleUrl: './mentoria.css'
 })

@@ -1,30 +1,63 @@
 <app-navbar></app-navbar>
-<div class="hero hero-content" style="overflow: hidden; position: relative;">
-    <!-- Overlay -->
-  <div class="uk-position-cover" style="background: rgba(0, 0, 0, 0.3); z-index: 0;"></div>
-  <div class="uk-section uk-section-large" style="position: relative; z-index: 1;">
-    <div class="uk-container uk-padding-large">
-        <div>
-          <h1 class="uk-heading-medium uk-margin-remove" 
-              style="color: white; font-weight: 500; max-width: 850px;">
-              Ambientes equilibrados, <span class="uk-text-primary">equipas mais produtivas</span> 
-          </h1>
-          <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-grid uk-margin-medium-top desc">
-            <div class="uk-width-expand@l">
-              <p style="color: white; font-weight: 400; font-size: 22px; max-width: 650px;">O Programa de Saúde Mental no Trabalho apoia empresas na criação de ambientes saudáveis e sustentáveis, oferecendo estratégias de prevenção, apoio psicológico e promoção do bem-estar.</p>
-            </div>
-            <div class="uk-width-auto@l uk-text-right@l">
-              <a [routerLink]="['/contacto']" class="uk-button uk-button-default" style="background-color: white; border-radius: 5px; font-size: 18px; padding: 10px 15px 10px 15px; color: #006699; font-weight: 500;">Entre em contacto</a>
-            </div>
-          </div>
-      </div>
+<div class="back">
+    <div class="uk-position-center uk-position-relative conteudo" style="left: 70%; bottom: 1%;">
+        <h1 class="titulo" style="color: white; font-family: 'sora'; max-width: 500px; font-size: 3.3rem; font-weight: 200;">Programa de <strong>saúde  emocional</strong> do trabalhador</h1>
+        <p style="color: white; font-family: 'sora'; max-width: 450px;">O programa atua na prevenção do stress, na melhoria das relações profissionais e no fortalecimento do bem-estar diário dos colaboradores, começando com ações simples e práticas adaptadas à realidade de cada equipa.</p>
+        <a href="" class="uk-button uk-button-default animated-btn " style="font-size: 1.3rem; font-family: 'sora'; color: white; border-radius: 5px; padding: 10px;">Solicitar Proposta</a>
+    </div>
+</div>
+
+<div class="uk-section" >
+  <div class="uk-container">
+    <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-child-width-1-2@m uk-grid">
+    <div>
+      <h3 style="font-size: 2rem; " class="titulo-p7" ><strong>P7 — Programa de Saúde  Mental do Trabalhador</strong></h3>
+      <p>O P7 é uma iniciativa desenvolvida para promover bem-estar psicológico, equilíbrio emocional e melhores condições de produtividade no ambiente de trabalho.</p>
+      <p>Com uma abordagem integrada, o programa apoia trabalhadores e equipas na prevenção do stress, redução do esgotamento e desenvolvimento de hábitos saudáveis que fortalecem desempenho e qualidade de vida.</p>
+      <a href="" class="uk-button bnt uk-button-default animated-btn " style="font-size: 1.3rem; font-family: 'sora'; color: white; border-radius: 5px; padding: 10px;">Solicitar Proposta</a>
+    </div>
+    <div>
+      <img style="border-radius: 10px;"  src="imagens/2026-p7/p7-apresentatio.jpg" alt="">
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Seção 1 -->
+<div class="uk-section" style="background-color: #01061F;">
+  <div class="uk-container uk-padding uk-text-center">
+    <h3 style="font-size: 2rem; color: white;"><strong>Para quem e o programa p7</strong></h3>
+    <p class="desc" style="font-size: 1.5rem; max-width: 650px;margin: auto; color: white;">
+      Empresas, gestores de recursos humanos e colaboradores de qualquer área que queiram construir ambientes de trabalho mais saudáveis e equilibrados.
+    </p>
+  </div>
+</div>
+
+<div class="uk-container">
+  <!-- Card flutuante -->
+<div class="uk-card uk-card-body uk-card-default" 
+     style="border-radius: 10px; margin: -50px auto 50px auto; 
+            z-index: 10; position: relative; padding: 5px;
+            background: linear-gradient(90deg, #01061F, #7CCFF7);">
+
+  <div style="background: white; padding: 20px; border-radius: 5px;">
+    <p class="desc-p7" style="font-size: 1.5rem; color: #272727; font-weight: bold;">
+      Quem participa do P7 não busca apenas melhorar o ambiente de trabalho 
+      <span style="color: #7CCFF7;">busca construir equipes mais equilibradas e saudáveis</span>
+    </p>
+  </div>
+
+</div>
+</div>
+
+
+<!-- Seção 2 -->
+<div class="uk-section uk-section-large sectio-baixo" style="background-color: #eae8e0; margin-top: -145px; padding-bottom: 30px;">
+  <div class="uk-container">
+    <div class="uk-text-center">
+      <a href="" class="uk-button btn-2 uk-button-default animated-btn " style="font-size: 1.3rem; font-family: 'sora'; color: white; padding: 10px; border-radius: 5px;">Solicitar Proposta</a>
     </div>
   </div>
 </div>
-<app-programa-de-saude-mental-desafio></app-programa-de-saude-mental-desafio>
-<app-programa-de-saude-mental-solucao></app-programa-de-saude-mental-solucao>
-<app-programa-de-saude-mental-pilares></app-programa-de-saude-mental-pilares>
-<app-programa-de-saude-mental-solucoes-para-empresa></app-programa-de-saude-mental-solucoes-para-empresa>
-<app-programa-de-saude-mental-investir></app-programa-de-saude-mental-investir>
-<app-contacto-programa-de-saude-mental></app-contacto-programa-de-saude-mental>
+
 <app-footer></app-footer>

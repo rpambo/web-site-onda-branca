@@ -8,9 +8,14 @@
   /* Adicione estas propriedades */
   word-break: break-word; /* Quebra palavras longas */
   max-width: 100%; /* Garante que respeite o container pai */
-  line-height: 1.2; /* Ajuste o espaçamento entre linhas */
   font-size: 16px;
-  font-weight: 600;
+}
+
+a{
+  text-decoration: none !important;
+}
+a:hover{
+  text-decoration: underline !important;
 }
 
 .back{

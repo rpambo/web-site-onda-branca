@@ -1,28 +1,89 @@
 <div class="uk-position-relative uk-visible-toggle uk-light" 
-     uk-slideshow="autoplay: true; animation: fade; pause-on-hover: false; autoplay-interval: 2000; ratio: false">
+     uk-slideshow="autoplay: true; animation: slide; pause-on-hover: false; ratio: false">
 
-  <!-- Slideshow fullscreen -->
-  <div class="uk-slideshow-items" uk-height-viewport="offset-top: true">
-    <div>
-      <img data-src="imagens/hero.webp" uk-img uk-cover alt="desktop_1">
-    </div>
-  </div>
+  <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true">
 
-  <!-- Overlay -->
-  <div class="uk-position-cover" style="background: rgba(0, 0, 0, 0.6);"></div>
-
-  <!-- Texto central -->
-  <div class="uk-position-center uk-text-center uk-light text uk-padding-large" style="bottom: 15%;">
-    <h2 class="uk-heading-large" style="text-transform: uppercase; font-weight: 500; margin-bottom: 0;">Onda Branca</h2>
-    <p class="uk-text-lead uk-text-large@m desc" style="color: white; font-weight: 500; font-size: 32px; margin-top: 0;">Movimento pela saúde mental e produtividade laboral</p>
-    <div class="uk-flex conteudo uk-flex-between uk-flex-wrap uk-flex-center@s uk-margin-medium-top">
-      <p class="desc_1" style="color: white; font-size: 18px; text-transform: uppercase; font-weight: 500; max-width: 750px; margin: 0 auto;">
-        Programas de bem-estar, workshops, consultoria e podcast para fortalecer equipes e promover saúde mental
-      </p>
-      <div>
-        <a [routerLink]="['/contacto']" class="uk-button uk-button-default uk-margin-left" style="background-color: white; color: #0F62A5;">AGENDAR UMA CONVERSA</a>
+    <!-- SLIDE 1 -->
+    <li>
+      <div class="uk-position-relative uk-height-1-1">
+        <img src="imagens/hero.png" alt="" class="uk-visible@s" uk-cover>
+        <img src="imagens/mobile-top-1.png" class="uk-hidden@s" style="object-position: center top;" uk-cover alt="">
       </div>
-    </div>
-  </div>
-</div>
 
+      <div class="uk-container">
+        <div class="uk-position-center-left uk-text-left text uk-padding-large conteudo">
+          <p class="desc_1" style="color: #272727; font-size: 1.6rem; font-weight: 200; max-width: 400px; margin: 0; font-family: 'sora';">
+            Programas de bem-estar, palestras, workshop e treinamentos para 
+            <span style="font-weight: 500;">fortalecer equipes, individuos e promover saúde mental</span>
+          </p>
+
+          <a [routerLink]="['']" 
+             class="uk-button uk-button-default btn-gradient-animated" 
+             style="color: #fff; margin-top: 25px;">
+            Comece aqui <span uk-icon="icon: arrow-right"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- SLIDE 2 -->
+    <li>
+      <div class="uk-position-relative uk-height-1-1">
+        <img src="imagens/slide-podcast.png" class="uk-visible@s" alt="" uk-cover>
+        <img src="imagens/mobile-top-2.png" class="uk-hidden@s" style="object-position: center top;" uk-cover alt="">
+      </div>
+
+      <div class="uk-container">
+        <div class="uk-position-center-left uk-text-left uk-light text conteudo uk-padding-large">
+          <img src="imagens/logo/aovivo.png" width="120" alt="">
+          <h2 class="title" 
+              style="font-weight: 200; margin-bottom: 0; font-size: 2.3rem; max-width: 500px; font-family: 'Joyride'; color: #272727; margin-top: 0;">
+            Programa onda branca
+          </h2>
+
+          <p class="desc" style="color: #272727; font-weight: 400; font-size: 1.5rem; margin: 0; font-family: 'sora';">
+            Na rádio solidaria | 90.7FM
+          </p>
+
+          <p class="text-gradient-animate">Todos sábados 9h - 10h</p>
+        </div>
+      </div>
+    </li>
+
+    <!-- SLIDE 3 -->
+    <li>
+      <div class="uk-position-relative uk-height-1-1">
+        <img src="imagens/hero-podcast.png" class="uk-visible@s" alt="" uk-cover>
+        <img src="imagens/mobile-top-3.png" class="uk-hidden@s" style="object-position: center top;" uk-cover alt="">
+      </div>
+
+      <div class="uk-container">
+        <div class="uk-position-center-left uk-text-left uk-light text uk-padding-large conteudo">
+          <h2 class="title" 
+              style="font-weight: 200; margin-bottom: 0; font-size: 1.8rem; max-width: 550px; text-transform: uppercase; font-family: 'Joyride'; color: #272727;">
+            <span style="font-family: 'joryde';">o</span>n<span style="font-family: 'joryde';">d</span>a <span style="font-family: 'joryde';">b</span>ran<span style="font-family: 'joryde';">c</span>a p<span style="font-family: 'joryde';">o</span>dca<span style="font-family: 'joryde';">s</span>t
+          </h2>
+
+          <p class="desc" 
+             style="color: #8f51c9; font-weight: 400; font-size: 1.5rem; margin: 0; font-family: 'sora';">
+            Podcast de saúde mental
+          </p>
+
+          <a href="" class="uk-button uk-button-default btn-spotify" 
+             style="background-color: #1DB954; color: white; border-radius: 5px; margin-top: 20px;">
+            Ouvir agora <span class="fab fa-spotify" style="font-size: 1rem;"></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- DOTNAV CORRETO -->
+  <ul class="uk-dotnav uk-slideshow-nav uk-position-center-right uk-position-medium uk-flex uk-flex-column">
+    <li uk-slideshow-item="0"><a href="#"></a></li>
+    <li uk-slideshow-item="1"><a href="#"></a></li>
+    <li uk-slideshow-item="2"><a href="#"></a></li>
+  </ul>
+
+</div>

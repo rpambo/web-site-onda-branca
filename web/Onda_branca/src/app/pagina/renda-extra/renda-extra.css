@@ -1,108 +1,107 @@
-.hero{
-    background-image: url("/imagens/hero/hero_renda_extra.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
+.back{
+  background-image: url(/imagens/pmv/hero-projecto-de-melhoria-de-vida.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
 }
 
-.uk-button {
-  position: relative;
-  overflow: hidden;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-transform: lowercase;
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  border: none !important;
-  padding: 10px 15px 10px 15px;
-  border-radius: 10px;
+p, h4{
+  font-family: 'sora';
 }
 
-/* efeito de espalhar/reagrupar */
-.uk-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: #c467bf !important;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+.animated-btn {
+    background: linear-gradient(90deg, #02576C, #7CCFF7);
+    background-size: 200%;
+    animation: moveGradient 3s ease infinite;
+    border: none;
+    padding: 5px !important;
+    font-size: 1rem !important;
+  }
+
+  @keyframes moveGradient {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
 }
 
-/* animação quando hover */
-.uk-button:hover {
-  color: white !important;
-  border: none !important;
-  animation: spreadRegroup 600ms ease forwards;
+.animated-btn:hover {
+    box-shadow:
+    0 0 15px rgba(0, 180, 216, 0.6),
+    0 0 30px rgba(0, 119, 182, 0.3);
+  
+  /* Efeito de brilho interno que segue o gradiente */
+  background: linear-gradient(
+    90deg,
+    #004a9e,
+    #0060c0,
+    #0088e0,
+    #00c8ff,
+    #004a9e
+  );
+  background-size: 300% 100%;
 }
 
-@keyframes spreadRegroup {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.08); } /* espalha */
-  100% { transform: scale(1); }   /* volta ao normal */
+
+
+
+
+@media (min-width:344px) and (max-width: 767px) {
+  .conteudo {
+    position: static !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    transform: none;
+    text-align: center;
+    padding: 20px;
+  }
+  .back {
+    height: 65vh !important;
+    background-image: url(/imagens/mentoria-p7/hero-p7-mentoria-mobile.png) !important;
+    background-position: center top;
+  }   
+
+  .titulo{
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
+  }
+  .titulo-p7{
+    font-size: 2rem !important;
+  }
+  .uk-section{
+    text-align: center;
+  }
+  .bnt{
+    margin-bottom: 10px !important;
+  }
+  .btn-1{
+    margin-top: 35px !important;
+  }
 }
 
-.uk-button:hover::after {
-  width: 250%;
-  height: 250%;
-  transition: width 0.4s ease, height 0.4s ease;
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .back {
+    height: 50vh !important;
+  }
+  
+  .conteudo{
+    margin-bottom: 20px !important;
+  }
+
+  .sectio-baixo{
+    margin-top: -90px !important;
+  }
 }
 
-@media (max-width: 1024px) {
-    .hero-content{
-        display: flex;
-        align-items: flex-end;
-    }
-    
-    .hero{
-        height: 656px !important;
-    }
-    .hero-content{
-        display: flex;
-        align-items: flex-end;
-    }
-    p{
-        font-size: 18px !important;
-    }
-    .desc{
-        margin-top: 30px !important;
-    }
-    .uk-button{
-        margin-top: 30px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero{
-        height: 556px !important;
-    }
-    .hero-content{
-        display: flex;
-        align-items: flex-end;
-    }
-    h1{
-        font-size: 1.6rem !important;
-        max-width: 100% !important;
-    }
-    p{
-        font-size: 16px !important;
-    }
-    .desc{
-        margin-top: 10px !important;
-    }
-    .uk-button{
-        margin-top: 10px !important;
-    }
-}
-
-.uk-button {
-  text-transform: lowercase;   /* força tudo em minúsculas */
-}
-
-.uk-button::first-letter {
-  text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
+@media (max-height: 700px) {
+  .titulo{
+    font-size: 2rem !important;
+    max-width: 450px !important;
+  }
 }

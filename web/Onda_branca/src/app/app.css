@@ -2,7 +2,7 @@
 .global-loader {
   position: fixed;
   inset: 0;
-  background: #c467bf; /* fundo neutro para saúde mental */
+  background: #8f51c9; /* fundo neutro para saúde mental */
   display: flex;
   justify-content: center;
   align-items: center;

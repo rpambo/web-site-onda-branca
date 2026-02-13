@@ -1,62 +1,107 @@
 <app-navbar></app-navbar>
-<div class="uk-section uk-section-large uk-margin-large-top back">
-    <div class="uk-container">
-        <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-child-width-1-2@xm uk-grid">
-            <div>
-                <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo'; font-size: 42px; max-width: 530px;" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
-                    <span class="titulo-principal">Contacto <span class="linha"></span></span>
-                    <span class="uk-text-light"> <span class="destaque" style="font-weight: bold;"> Estamos prontos  <span class="uk-text-primary">para ouvir</span> e transformar desafios em equilíbrio, performance e renda</span></span>
-                </h2>
-                <p  style="font-size: 16px; color: #272727; max-width: 440px;" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">Estamos sempre disponíveis para ouvir você. Se tiver dúvidas, sugestões ou quiser saber mais sobre as nossas soluções voltadas para saúde mental e produtividade, entre em contacto conosco.</p>
-                <h3 style="margin-bottom: 5px !important; font-weight: bold;">Contacto</h3>
-                <div>
-                    <a style="color: #272727; font-size: 20px;" href="tel:+24499999999">Av. Comandante Gika, Luanda, Angola</a>
-                </div>
-                <div>
-                    <a style="color: #272727; font-size: 20px;" href="tel:+24499999999">+244 999 999 999</a>
-                </div>
-                <div>
-                    <a style="color: #272727; font-size: 20px;" href="mail:comercial@ondabranca.ao">comercial&#64;ondabranca.ao</a>
-                </div>
-            </div>
-            <div>
-                <div uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
-                    <form  [formGroup]="applyForm" (ngSubmit)="submiteForm()">
-                        <div class="uk-margin">
-                            <input  [ngStyle]="{'border': applyForm.get('name')?.invalid && (applyForm.get('name')?.dirty || applyForm.get('name')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="name" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="text" placeholder="Qual o seu nome?" aria-label="Large">
-                            <div [class.erroMensage]="applyForm.get('name')?.invalid && applyForm.get('name')?.dirty || applyForm.get('name')?.touched"></div>
-                        </div>
-                        <div class="uk-margin">
-                            <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
-                        </div>
-                        <div class="uk-margin">
-                            <input [ngStyle]="{'border': applyForm.get('contact')?.invalid && (applyForm.get('contact')?.dirty || applyForm.get('contact')?.touched || isSumbit ) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="contact" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="tel" placeholder="Seu telefone com WhatsApp" aria-label="Large">
-                        </div>
-                        <div class="uk-margin">
-                            <select [ngStyle]="{'border': applyForm.get('service')?.invalid && (applyForm.get('service')?.dirty || applyForm.get('service')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="service" class="uk-select  uk-form-width-1-1 uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" aria-label="Large">
-                                <option value="" selected disabled hidden>Qual serviço interessa?</option>
-                                <option value="Mentoria de saúde mental para gestores">Mentoria de saúde mental para gestores</option>
-                                <option value="Antendiemento a empresa">Atendimento a empresa</option>
-                                <option value="Gestão de programa de saúde mental para empresas">Gestão de programa de saúde mental para empresas</option>
-                                <option value="Renda extra">Renda extra</option>
-                                <option value="O programa de ginástica laboral">O programa de ginástica laboral</option>
-                                <option value="Palestra e workshops">Palestras e workshops</option>
-                                <option value="Programa de saúde mental do trabalho">Programa de saúde mental do trabalho</option>
-                            </select>
-                        </div>
-                        <div class="uk-margin">
-                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" rows="5"></textarea>
-                        </div>
+<div class="back">
+    <div class="uk-position-center" style="left: 70%; bottom: 1%;">
+        <h1 style="color: white; font-family: 'sora'; max-width: 500px; font-size: 3.3rem; font-weight: 200;">Entre em <strong>contato</strong> com equipe onda branca.</h1>
+        <p style="color: white; font-family: 'sora'; max-width: 450px;">Seja para palestras, programas ou publicidade, a equipe está pronta para te ajudar no que precisar.</p>
+    </div>
+</div>
 
-                        <div class="uk-margin">
-                            <button type="submit" class="uk-button uk-button-default" style="background-color: #00479f; color: #ffffff;">Solicitar contacto</button>
-                            <div *ngIf="isLoading" class="spinner"></div>
-                            <p style="color: rgb(0, 0, 0); font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
+
+<div class="uk-section" style="z-index: 2; position: relative;">
+    <div >
+        <div class="uk-container">
+            <h2 class="uk-margin-remove titulo-metricas" style="font-family: 'Archivo';" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
+                <span class="titulo-principal">Serviços <span class="linha"></span></span>
+                <span class="uk-text-light"> Oferecemos<span class="destaque uk-text-primary" style="font-size: 35px; font-weight: bold;"> soluções para promover saúde mental e produtividade</span> em organizações</span>
+            </h2>
+        </div>
+                
+        <div uk-slider="finite: true;" >
+        <div class="uk-margin-small-bottom uk-margin-medium-top uk-width-auto uk-margin-medium-left">
+            <div uk-scrollspy="cls: uk-animation-slide-left; delay:900">
+                <a href uk-slider-item="previous"  style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f4fbff00; border: 1px solid #767676">
+                <span uk-icon="icon: chevron-left; ratio: 1.8" style="color: #767676;"></span>
+                </a>
+                <a href uk-slider-item="next"  style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f4fbff00; border: 1px solid #767676;">
+                <span uk-icon="icon: chevron-right; ratio: 1.8" style="color: #767676"></span>
+                </a>
+            </div>
+        </div>
+        <div  class="uk-slider-container uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-right" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 400">
+            <div class="uk-slider-items uk-child-width-1-3@l uk-grid-match uk-child-width-1-2@s uk-child-width-1-1 uk-child-width-1-1@s uk-grid uk-grid-collapse custom-slider">
+                <div class="uk-card uk-card-default first-slide">
+                    <div class="uk-card-body" style="background-color: #2d5286;">
+                        <div class="uk-card-media-bottom">
+                        <img data-src="imagens/banner-p7.png" uk-img style="width:100%;" alt="Programa de saúde mental no trabalho para prevenção, apoio psicológico e promoção do bem-estar nas empresas">
+                    </div>
+                        <h3 style="font-size: 22px; color: #E6EEF6; text-transform: capitalize; font-weight: 500;">P7</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">O Programa de Saúde Emocional no Trabalho ajuda empresas a criar ambientes equilibrados, com foco em prevenção e bem-estar.</p>
+                        <a [routerLink]="['/programa-de-saude-mental-no-trabalho']" style="color: #6FAF98; font-size: 16px;">Contratar <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
+                </div>
+
+                <div class="uk-card uk-card-default first-slide">
+                    <div class="uk-card-body" style="background: linear-gradient(to right,#fb9bf3,#2d5286)">
+                        <div class="uk-card-media-bottom">
+                        <img data-src="imagens/banner-p7-mentoria.png" uk-img style="width:100%;" alt="Programa de saúde mental no trabalho para prevenção, apoio psicológico e promoção do bem-estar nas empresas">
+                    </div>
+                        <h3 style="font-size: 22px; color: #E6EEF6; text-transform: capitalize; font-weight: 500;">P7 - mentoria</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">Mentoria estratégica para promover saúde emocional e desempenho sustentável no ambiente de trabalho.</p>
+                        <a [routerLink]="['/programa-de-saude-mental-no-trabalho']" style="color: #fff; font-size: 16px;">Contratar <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
+                </div>
+                <div class="uk-card uk-card-default " >
+                    <div class="uk-card-body" style="background-color: #0D1B2A;">
+                        <div class="uk-card-media-top">
+                            <img  uk-img data-src="imagens/banner-projecto-de-qualidade-de-vida.png" style="width:100%;" alt="Programa de renda extra com foco em bem-estar e produtividade">
                         </div>
-                    </form>
+                        <h3 style="font-size: 22px; color: #E6EEF6; font-weight: 500;">Projecto de Qualidade de Vida</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">Programas e iniciativas que promovem bem-estar, equilíbrio emocional, produtividade saudável e desenvolvimento pessoal.</p>
+                        <a [routerLink]="['/programa-de-renda-extra']" style="color: #C9A227; font-size: 16px;">Se inscrever <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
+                </div>
+                <div class="uk-card uk-card-default" >
+                    <div class="uk-card-body" style="background-color: #1F3A5F;">
+                        <div class="uk-card-media-bottom"> 
+                        <img uk-img data-src="imagens/banner-ginastica-laboral.png" style="width:100%;" alt="Programa de ginástica laboral com exercícios para saúde física e mental no trabalho">
+                    </div>
+                        <h3 style="font-size: 22px; color: #E6EEF6; font-weight: 500;">O programa de ginástica laboral</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">O programa de ginástica laboral promove a saúde física e mental dos colaboradores por meio de exercícios simples e práticos realizados no ambiente de trabalho.</p>
+                        <a [routerLink]="['/programa-de-ginastica-laboral']" style="color: #48bd4e; font-size: 16px;">Saiba mais <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
+                </div>
+                <div class="uk-card uk-card-default" >
+                    <div class="uk-card-body" style="background: linear-gradient(to left, #1f3a5f, #4a1e1b)">
+                        <div class="uk-card-media-bottom">
+                        <img data-src="imagens/banner-palestra-e-workshops.png" uk-img style="width:100%;" alt="Palestras e workshops sobre saúde mental, gestão do stress e qualidade de vida no trabalho">
+                    </div>
+                        <h3 style="font-size: 22px; color: #E6EEF6; font-weight: 500;">Palestras e workshops</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">Gestão do stress; prevenção e controlo da depressão e da ansiedade; estratégias para a qualidade de vida pessoal e laboral.</p>
+                        <a [routerLink]="['/palestra-e-workshop']" style="color: #6FAF98; font-size: 16px;">Contratar <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
+                </div>
+                
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-body" style="background-color: #170725;">
+                        <div class="uk-card-media-bottom">
+                        <img data-src="imagens/banner-espaco-de-eventos.png" uk-img style="width:100%;" alt="Programa de saúde mental no trabalho para prevenção, apoio psicológico e promoção do bem-estar nas empresas">
+                    </div>
+                        <h3 style="font-size: 22px; color: #E6EEF6; text-transform: capitalize; font-weight: 500;">Espaço de Eventos</h3>
+                        <p style="color: #E6EEF6; font-size: 16px;">Divulgue a sua marca ou contrate o espaço para palestras, encontros, workshops e eventos corporativos.</p>
+                        <a [routerLink]="['/programa-de-saude-mental-no-trabalho']" style="color: #EACB6B; font-size: 16px; ">Saibas mais <span uk-icon="icon: arrow-right"></span></a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </div>
+
+
 <app-footer></app-footer>

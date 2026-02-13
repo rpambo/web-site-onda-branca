@@ -19,7 +19,7 @@
   left: 0;
   width: 50%;
   height: 3px;
-  background: linear-gradient(90deg, #00aaff, #0d5a90);
+  background: linear-gradient(90deg, #bd76ff, #7945a9);
   display: block;
   animation: grow 2s infinite alternate;
 }
@@ -107,7 +107,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: #c467bf !important;
+  background: #00d02a !important;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;

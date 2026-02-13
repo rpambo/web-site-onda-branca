@@ -28,10 +28,14 @@
             "styles": [
               "src/styles.css",
               "node_modules/flatpickr/dist/flatpickr.min.css",
-              "node_modules/cookieconsent/build/cookieconsent.min.css"
+              "node_modules/cookieconsent/build/cookieconsent.min.css",
+              "public/css/uikit.min.css",
+              "public/css/uikit.css"
             ],
             "scripts": [
-              "node_modules/cookieconsent/build/cookieconsent.min.js"
+              "node_modules/cookieconsent/build/cookieconsent.min.js",
+              "public/js/uikit.min.js",
+              "public/js/uikit.js"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",

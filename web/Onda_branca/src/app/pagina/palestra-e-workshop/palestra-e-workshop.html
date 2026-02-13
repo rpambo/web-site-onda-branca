@@ -1,29 +1,42 @@
 <app-navbar></app-navbar>
-<div class="hero hero-content" style="overflow: hidden; position: relative;">
-    <!-- Overlay -->
-  <div class="uk-position-cover" style="background: rgba(0, 0, 0, 0.3); z-index: 0;"></div>
-  <div class="uk-section uk-section-large" style="position: relative; z-index: 1;">
-    <div class="uk-container uk-padding-large">
-        <div>
-          <h1 class="uk-heading-medium uk-margin-remove" 
-              style="color: white; font-weight: 500; max-width: 850px;">
-              <span class="uk-text-primary">Equilíbrio emocional e produtividade</span> para pessoas e equipas
-          </h1>
-          <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-grid uk-margin-medium-top desc">
-            <div class="uk-width-expand@l">
-              <p style="color: white; font-weight: 400; font-size: 22px; max-width: 650px;">Oferecemos palestras e workshops práticos que ajudam a gerir o stress, prevenir e controlar a depressão e a ansiedade, e a promover uma melhor qualidade de vida pessoal e laboral.</p>
-            </div>
-            <div class="uk-width-auto@l uk-text-right@l">
-              <a [routerLink]="['/contacto']" class="uk-button uk-button-default" style="background-color: white; border-radius: 5px; font-size: 18px; padding: 10px 15px 10px 15px; color: #006699; font-weight: 500;">Próxima palestra</a>
+<div class="uk-section">
+  <div class="uk-container">
+    <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-child-width-1-2@m uk-grid uk-flex-center " uk-grid>
+
+      <div class="card-programa">
+        <div class="uk-card">
+          <img src="imagens/palestra-1.png" alt="Palestras">
+
+          <div class="uk-overlay uk-overlay-primary uk-position-cover overlay-custom">
+            <div class="uk-position-bottom uk-text-center uk-padding" style="bottom: 18%">
+              <h1>Palestras</h1>
+              <p>Aplique para contratar palestras</p>
+              <a routerLink="palestras" class="uk-button btn-gold">
+                Saiba mais <span uk-icon="icon: arrow-right"></span>
+              </a>
             </div>
           </div>
+        </div>
       </div>
+      <div class="card-programa">
+        <div class="uk-card ">
+          <img src="imagens/palestra-2.png" alt="Palestras">
+
+          <div class="uk-overlay uk-overlay-primary uk-position-cover overlay-custom">
+            <div class="uk-position-bottom uk-text-center uk-padding" style="bottom: 18%">
+              <h1>Workshops</h1>
+              <p>Aplique para contratar workshops</p>
+              <a routerLink="workshops" class="uk-button btn-gold2">
+                Saiba mais <span uk-icon="icon: arrow-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
     </div>
   </div>
 </div>
-<app-palestra-e-workshop-intro></app-palestra-e-workshop-intro>
-<app-palestra-e-workshop-ansiedade></app-palestra-e-workshop-ansiedade>
-<app-palestra-e-workshop-qualidade></app-palestra-e-workshop-qualidade>
-<app-palestra-e-workshop-beneficio></app-palestra-e-workshop-beneficio>
-<app-contacto-palestra></app-contacto-palestra>
+
 <app-footer></app-footer>

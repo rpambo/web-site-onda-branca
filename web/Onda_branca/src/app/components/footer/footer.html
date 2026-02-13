@@ -3,106 +3,97 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 />
 
-<div class="uk-section uk-section-medium" style="background-color: #04165D; position: relative; z-index: 1; padding-bottom: 20px;">
+<div class="uk-section efeito-cantos uk-section-medium" style="background-color: #000; position: relative; z-index: 1; padding-bottom: 20px;">
+  <div class="circulo"></div>
+
   <div class="uk-container">
-    <footer>
-      <div class="uk-grid uk-child-width-1-5@l uk-grid">
-        
-        <!-- Coluna 1 - Logo + Sobre -->
-        <div>
-          <img uk-img width="120" data-src="imagens/logo_footer.webp" alt="Logo Onda Branca">
+    <div class="uk-child-width-1-5@l uk-child-width-1-4@s uk-child-width-1-4@m uk-grid">
 
-          <p class="slogan" style="color: white; font-size: 13px; opacity: 0.6; margin-top: 12px;">
-            A Onda Branca é uma empresa angolana dedicada à saúde mental, produtividade e inovação social,
-            oferecendo soluções digitais e programas de apoio que promovem o bem-estar e o desenvolvimento
-            humano em Angola e na África lusófona.
-          </p>
-
-          <h2 style="font-size: 12px; color: white; opacity: 0.7; font-weight: bold; margin-top: 15px;">Quem Somos</h2>
-          <ul class="uk-nav uk-nav-default">
-            <li><a [routerLink]="['/sobre-onda-branca']" style="color: white; font-size: 13px;">Sobre a Onda Branca</a></li>
-            <li><a [routerLink]="['/sobre-onda-branca']" fragment="missao-visao-valores" style="color: white; font-size: 13px;">Missão, Visão e Valores</a></li>
-          </ul>
-
-          <!-- Contactos -->
-          <ul class="uk-list">
-            <li style="color: white; font-size: 13px; margin: 5px 0;">
-              <a [routerLink]="['/contacto']" style="color: white; text-decoration: none;">Contacto</a>
-            </li>
-            <li style="color: white; font-size: 13px; margin: 5px 0;">
-              Av. Comandante Gika, Luanda – Angola
-            </li>
-            <li style="color: white; font-size: 13px; margin: 5px 0;">
-              +244 922 222 222
-            </li>
-            <li style="color: white; font-size: 13px; margin: 5px 0 0;">
-              contacto&#64;ondabranca.ao
-            </li>
-            <li style="color: white; font-size: 13px; margin: 5px 0;">
-              <a [routerLink]="['/canal-de-reclamacao']" style="color: white; text-decoration: none;">Canal de reclamação</a>
-            </li>
-          </ul>
-
-          <!-- Redes Sociais -->
-          <div class="uk-flex uk-flex-middle uk-flex-around">
-            <a href="https://facebook.com" style="color: white; font-size: 20px !important;" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: white; font-size: 20px !important;" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: white; font-size: 20px !important;" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; font-size: 20px !important;" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: white; font-size: 20px !important;" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="#" style="color: white; font-size: 20px !important;" target="_blank"><i class="fa-solid fa-podcast"></i></a>
-          </div>
-        </div>
-
-        <!-- Coluna 2 - Serviços -->
-        <div>
-          <h2 style="font-size: 12px; color: white; opacity: 0.7; font-weight: bold;">Serviços</h2>
-          <ul class="uk-nav uk-nav-default">
-            <li><a [routerLink]="['/mentoria-de-saude-mental-para-gestores']" style="color: white; font-size: 13px;">Mentoria para gestores</a></li>
-            <li><a [routerLink]="['/antendimento-empressarial']" style="color: white; font-size: 13px;">Atendimento empresarial</a></li>
-            <li><a [routerLink]="['/gestao-de-saude-mental-para-empressa']" style="color: white; font-size: 13px;">Gestão de saúde mental</a></li>
-            <li><a [routerLink]="['/programa-de-renda-extra']" style="color: white; font-size: 13px;">Programa de Renda Extra</a></li>
-            <li><a [routerLink]="['/programa-de-ginastica-laboral']" style="color: white; font-size: 13px;">Ginástica laboral</a></li>
-            <li><a [routerLink]="['/palestra-e-workshop']" style="color: white; font-size: 13px;">Palestras e workshops</a></li>
-            <li><a [routerLink]="['/programa-de-saude-mental-no-trabalho']" style="color: white; font-size: 13px;">Saúde mental no trabalho</a></li>
-          </ul>
-        </div>
-
-        <!-- Coluna 3 - Media -->
-        <div>
-          <h2 style="font-size: 12px; color: white; opacity: 0.7; font-weight: bold;">Media</h2>
-          <ul class="uk-nav uk-nav-default">
-            <li><a [routerLink]="'/podcast-onda-branca'" style="color: white; font-size: 13px;">Podcast</a></li>
-            <li><a href="javascript:void(0)" style="color: white; font-size: 13px;">Blog</a></li>
-          </ul>
-
-          <h2 style="font-size: 12px; color: white; opacity: 0.7; font-weight: bold; margin-top: 15px;">Rádio Solidária 90.7 FM</h2>
-          <p style="color: white; font-size: 13px; margin-top: 5px;">
-            Programa Onda Branca – Sábados, das 9h às 10h
-          </p>
-        </div>
-
-        <!-- Coluna 4 - Conexão -->
-        <div>
-          <h2 style="font-size: 12px; color: white; opacity: 0.7; font-weight: bold;">Conexão</h2>
-          <ul class="uk-nav uk-nav-default">
-            <li><a style="color: white; font-size: 13px;" [routerLink]="['/comunidade-onda-branca']">Comunidade</a></li>
-            <li><a style="color: white; font-size: 13px;" href="javascript:void(0)">Agenda</a></li>
-          </ul>
-        </div>
-
+      <!-- Logo + lema -->
+      <div>
+        <img src="imagens/logo/logo-onda-branca.svg" width="120" alt="Onda Branca">
+        <p style="font-size: 0.85rem; color: #ccc; margin-top: 10px; line-height: 1.4;">
+          Saúde mental, produtividade<br>e comunidade.
+        </p>
       </div>
-    </footer>
 
-    <hr style="border-color: rgba(255,255,255,0.3);">
+      <div>
+        <h3>Serviços</h3>
+        <ul class="uk-list">
+          <li><a [routerLink]="['/programa-de-saude-emocional-do-trabalhador']">Programa de saúde mental no trabalho</a></li>
+          <li><a [routerLink]="['/programa-de-saude-emocional-do-trabalhador-mentoria']">Programa de saúde mental no trabalho - Mentoria</a></li>
+          <li><a [routerLink]="['/projecto-de-qualidade-de-vida']">Projecto de qualidade de vida</a></li>
+          <li><a [routerLink]="['/programa-de-ginastica-laboral']" >Programa de Ginástica Laboral</a></li>
+          <li><a [routerLink]="['/palestra-e-workshop']">Palestras e workshops</a></li>
+        </ul>
+      </div>
 
-    <!-- Direitos + Links finais -->
-    <div class="uk-grid uk-grid-small uk-grid-divider" style="color: white; opacity: 0.6; font-size: 12px;">
-      <div>&copy; {{ currentYear }}</div>
-      <div>Onda Branca – Saúde Mental, Produtividade e Comunidade. Todos os direitos reservados.</div>
-      <div><a style="color: white;" [routerLink]="['/politica-de-privacidade']">Política de privacidade</a></div>
-      <div><a style="color: white;" [routerLink]="['/termo-de-uso']">Termos de uso</a></div>
-      <div><a style="color: white;" href="javascript:void(0)">Política da Qualidade</a></div>
+      <div>
+        <h3>Mídia</h3>
+        <ul class="uk-list">
+          <li><a href="javascript:void(0)">Podcast</a></li>
+          <li><a href="javascript:void(0)">Blog</a></li>
+          <hr>
+          <p style="font-size: .8rem; color: white;">
+            Programa Onda Branca – Rádio Solidária | 90.7 FM <br>
+            Todos os sábados · 9h – 10h
+          </p>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Conexão</h3>
+        <ul class="uk-list">
+          <li><a href="">Comunidade</a></li>
+          <li><a href="javascript:void(0)">Agenda</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociais e contactos -->
+      <div>
+        <h3>Redes sociais</h3>
+
+        <div class="uk-flex icon  uk-flex-middle uk-grid-small" uk-grid>
+          <a href="" class="uk-flex-middle" uk-tooltip="Instagram" style="font-size: 1rem;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="" uk-tooltip="Facebook" style="font-size: 1rem;">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="" uk-tooltip="LinkedIn" style="font-size: 1rem;">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="" class="" uk-tooltip="YouTube" style="font-size: 1rem;">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="" uk-tooltip="Spotify" style="font-size: 1rem;" >
+            <i class="fab fa-spotify"></i>
+          </a>
+        </div>
+
+        <p style="margin-top: 15px; font-size: 1rem;">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:comercial@ondabranca.com"> comercial@ondabranca.com</a> <br>
+          <i class="fas fa-phone"></i>
+          <a href="tel:+2449222222222"> (+244) 9222 222 222</a>
+        </p>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="uk-flex icon uk-flex-between uk-flex-middle uk-flex-wrap">
+      <div>
+        <p>
+          Copyright &copy; {{currentYear}} •
+          Todos os direitos reservados para Onda Branca.
+        </p>
+      </div>
+      <div>
+        <a [routerLink]="['/politica-de-privacidade']" >Política de privacidade</a> |
+        <a [routerLink]="['/termos-de-uso']">Termos de uso</a>
+      </div>
     </div>
   </div>
 </div>
