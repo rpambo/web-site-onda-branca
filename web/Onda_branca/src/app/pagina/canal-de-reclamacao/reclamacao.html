@@ -12,23 +12,23 @@
                     <a style="color: #272727; font-size: 20px;" href="mail:comercial@ondabranca.ao">reclamacao&#64;ondabranca.ao</a>
                 </div>
             </div>
-            <div>
+            <div  style="background-color: #00479f; padding: 20px; border-radius: 10px;">
                 <div uk-scrollspy="cls: uk-animation-slide-bottom; delay: 500">
                     <form  [formGroup]="applyForm" (ngSubmit)="submiteForm()">
                         <div class="uk-margin">
-                            <input  [ngStyle]="{'border': applyForm.get('name')?.invalid && (applyForm.get('name')?.dirty || applyForm.get('name')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="name" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="text" placeholder="Qual o seu nome?" aria-label="Large">
+                            <input  [ngStyle]="{'border': applyForm.get('name')?.invalid && (applyForm.get('name')?.dirty || applyForm.get('name')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="name" style="background-color: transparent; border-radius: 5px; color: #fff;" type="text" placeholder="Qual o seu nome?" aria-label="Large">
                             <div [class.erroMensage]="applyForm.get('name')?.invalid && applyForm.get('name')?.dirty || applyForm.get('name')?.touched"></div>
                         </div>
                         <div class="uk-margin">
-                            <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
+                            <input [ngStyle]="{'border': applyForm.get('email')?.invalid && (applyForm.get('email')?.dirty || applyForm.get('email')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" class="uk-input uk-form-width-1-1 uk-form-large" formControlName="email" style="background-color: transparent; border-radius: 5px; color: #fff;" type="email" placeholder="Seu endereço de e-mail" aria-label="Large">
                         </div>
                         <div class="uk-margin">
-                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: rgb(0, 0, 0);" rows="5"></textarea>
+                            <textarea  [ngStyle]="{'border': applyForm.get('message')?.invalid && (applyForm.get('message')?.dirty || applyForm.get('message')?.touched || isSumbit) ? '2px solid #f0506e' : '2px solid #d1d1d1'}" formControlName="message" name="" id=""  placeholder="Mensagem" class="uk-form-width-1-1 uk-textarea uk-form-large" style="background-color: transparent; border-radius: 5px; color: #fff;" rows="5"></textarea>
                         </div>
                         <div class="uk-margin">
-                            <button type="submit" class="uk-button uk-button-default" style="background-color: #00479f; color: #ffffff;">Enviar reclamação</button>
+                            <button type="submit" class="uk-button uk-button-default" style="background-color: #272727; color: #ffffff;">Enviar reclamação</button>
                             <div *ngIf="isLoading" class="spinner"></div>
-                            <p style="color: rgb(0, 0, 0); font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
+                            <p style="color: #fff; font-size: 16px;">Aceito a <strong><a [routerLink]="['/politica-de-privacidade']" style="color: #c467bf;">Política de Privacidade</a></strong> e autorizo o uso dos meus dados para contato pela Onda branca</p>
                         </div>
                     </form>
                 </div>

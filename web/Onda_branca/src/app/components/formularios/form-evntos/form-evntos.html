@@ -1,0 +1,240 @@
+<div class="uk-section formulario-section">
+  <div class="uk-container">
+    <div class="uk-flex uk-flex-center uk-flex-middle">
+      <div>
+        <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()" class="form-evento">
+
+          <!-- Título -->
+          <div class="uk-text-center uk-margin-medium-bottom">
+            <h2 class="form-title">Reserve o Espaço ou Divulgue sua Marca</h2>
+            <p class="form-subtitle">Palestras, workshops, encontros e eventos corporativos</p>
+          </div>
+          
+          <!-- Nome -->
+          <div class="uk-margin-small">
+            <label class="form-label">Nome Completo *</label>
+            <input
+              class="form-input"
+              type="text"
+              formControlName="name"
+              placeholder="Seu nome completo"
+              [ngClass]="{'input-error': isSubmitted && f['name'].errors}">
+            <div *ngIf="isSubmitted && f['name'].errors" class="form-error">
+              <small *ngIf="f['name'].errors['required']">Nome é obrigatório</small>
+              <small *ngIf="f['name'].errors['pattern']">Nome deve conter apenas letras</small>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="uk-margin-small">
+            <label class="form-label">Email *</label>
+            <input
+              class="form-input"
+              type="email"
+              formControlName="email"
+              placeholder="seu.email@empresa.com"
+              [ngClass]="{'input-error': isSubmitted && f['email'].errors}">
+            <div *ngIf="isSubmitted && f['email'].errors" class="form-error">
+              <small *ngIf="f['email'].errors['required']">Email é obrigatório</small>
+              <small *ngIf="f['email'].errors['email']">Email inválido</small>
+            </div>
+          </div>
+
+          <!-- Telefone -->
+          <div class="uk-margin-small">
+            <label class="form-label">Telefone/Telemóvel *</label>
+            <input
+              class="form-input"
+              type="tel"
+              formControlName="contact"
+              placeholder="+244 XXX XXX XXX"
+              [ngClass]="{'input-error': isSubmitted && f['contact'].errors}">
+            <div *ngIf="isSubmitted && f['contact'].errors" class="form-error">
+              <small *ngIf="f['contact'].errors['required']">Telefone é obrigatório</small>
+              <small *ngIf="f['contact'].errors['pattern']">Telefone inválido</small>
+            </div>
+          </div>
+
+          <!-- Empresa -->
+          <div class="uk-margin-small">
+            <label class="form-label">Empresa/Marca *</label>
+            <input
+              class="form-input"
+              type="text"
+              formControlName="company"
+              placeholder="Nome da sua empresa ou marca"
+              [ngClass]="{'input-error': isSubmitted && f['company'].errors}">
+            <div *ngIf="isSubmitted && f['company'].errors" class="form-error">
+              <small *ngIf="f['company'].errors['required']">Empresa é obrigatória</small>
+              <small *ngIf="f['company'].errors['minlength']">Mínimo 3 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Tipo de Interesse -->
+          <div class="uk-margin-small">
+            <label class="form-label">Tipo de Interesse *</label>
+            <select
+              class="form-input form-select"
+              formControlName="interestType"
+              [ngClass]="{'input-error': isSubmitted && f['interestType'].errors}">
+              <option value="">Selecione uma opção...</option>
+              <option *ngFor="let tipo of tiposInteresse" [value]="tipo">{{ tipo }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['interestType'].errors" class="form-error">
+              <small *ngIf="f['interestType'].errors['required']">Selecione o tipo de interesse</small>
+            </div>
+          </div>
+
+          <!-- Tipo de Evento -->
+          <div class="uk-margin-small">
+            <label class="form-label">Tipo de Evento *</label>
+            <select
+              class="form-input form-select"
+              formControlName="eventType"
+              [ngClass]="{'input-error': isSubmitted && f['eventType'].errors}">
+              <option value="">Selecione o tipo...</option>
+              <option *ngFor="let tipo of tiposEvento" [value]="tipo">{{ tipo }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['eventType'].errors" class="form-error">
+              <small *ngIf="f['eventType'].errors['required']">Selecione o tipo de evento</small>
+            </div>
+          </div>
+
+          <!-- ── Seleção de Datas ── -->
+          <div class="uk-margin-small">
+            <label class="form-label">Datas Pretendidas *</label>
+            <div class="datas-wrapper">
+
+              <div >
+                <small style="color: #d32f2f; display: block; font-weight: 500;">
+                  Datas já reservadas ou selecionadas, serão desativadas.
+                </small>
+              </div>
+
+              <div class="data-input-row">
+                <div class="data-field">
+                  <input
+                    id="dataSelecionada"
+                    #dataInput
+                    type="text"
+                    class="form-input date-input"
+                    placeholder="Selecione uma data"
+                    [ngClass]="{'input-error': isSubmitted && datasSelecionadas.length === 0}"
+                    [(ngModel)]="novaData"
+                    [ngModelOptions]="{standalone: true}"
+                    readonly>
+                </div>
+                <button type="button" class="btn-add-data" (click)="adicionarData()">
+                  + Adicionar Data
+                </button>
+              </div>
+
+              <div *ngIf="datasSelecionadas.length > 0" class="datas-list">
+                <div *ngFor="let data of datasSelecionadas; let i = index" class="data-tag">
+                  <span class="data-icon">📅</span>
+                  <span class="data-texto">{{ data | date:'dd/MM/yyyy' }}</span>
+                  <span class="tag-status selecionado">✅ Selecionado</span>
+                  <button type="button" class="btn-remove" (click)="removerData(i)">✕</button>
+                </div>
+              </div>
+
+              <small class="form-hint">
+                Selecione as datas desejadas uma a uma. Os horários serão discutidos com a nossa equipe.
+              </small>
+            </div>
+            <div *ngIf="isSubmitted && datasSelecionadas.length === 0" class="form-error">
+              <small>Adicione pelo menos uma data</small>
+            </div>
+          </div>
+
+          <!-- Número de Participantes -->
+          <div class="uk-margin-small">
+            <label class="form-label">Número Estimado de Participantes *</label>
+            <input
+              class="form-input"
+              type="number"
+              formControlName="participantes"
+              placeholder="Ex: 50"
+              [ngClass]="{'input-error': isSubmitted && f['participantes'].errors}">
+            <div *ngIf="isSubmitted && f['participantes'].errors" class="form-error">
+              <small *ngIf="f['participantes'].errors['required']">Campo obrigatório</small>
+              <small *ngIf="f['participantes'].errors['min']">Mínimo 5 participantes</small>
+              <small *ngIf="f['participantes'].errors['max']">Máximo 200 participantes</small>
+              <small *ngIf="f['participantes'].errors['pattern']">Apenas números</small>
+            </div>
+          </div>
+
+          <!-- Coffee Break -->
+          <div class="uk-margin-small">
+            <label class="form-label">Coffee Break / Catering</label>
+            <div class="coffee-options">
+              <label class="checkbox-label">
+                <input type="checkbox" formControlName="coffeeBreak" (change)="onCoffeeBreakChange($event)">
+                <span>Incluir Coffee Break</span>
+              </label>
+
+              <div *ngIf="f['coffeeBreak'].value" class="coffee-details">
+                <select class="form-input form-select" formControlName="coffeeTipo">
+                  <option *ngFor="let coffee of coffeeTipos" [value]="coffee.value">{{ coffee.label }}</option>
+                </select>
+                <input
+                  type="number"
+                  class="form-input"
+                  formControlName="coffeePessoas"
+                  placeholder="Número de pessoas">
+                <div *ngIf="isSubmitted && f['coffeePessoas'].errors" class="form-error">
+                  <small *ngIf="f['coffeePessoas'].errors['pattern']">Apenas números</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Necessidades Específicas -->
+          <div class="uk-margin-small">
+            <label class="form-label">Necessidades Específicas</label>
+            <textarea
+              class="form-input form-textarea"
+              formControlName="specificNeeds"
+              placeholder="Ex: Arranjo de palco, decoração específica, montagem diferenciada, etc..."
+              rows="3"
+              [ngClass]="{'input-error': isSubmitted && f['specificNeeds'].errors}"></textarea>
+            <small class="form-hint">{{ f['specificNeeds'].value?.length || 0 }}/500 caracteres</small>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="uk-margin-small">
+            <label class="form-label">Mensagem / Observações *</label>
+            <textarea
+              class="form-input form-textarea"
+              formControlName="message"
+              placeholder="Descreva seu evento, objetivos ou como podemos ajudar a divulgar sua marca..."
+              rows="4"
+              [ngClass]="{'input-error': isSubmitted && f['message'].errors}"></textarea>
+            <small class="form-hint">{{ f['message'].value?.length || 0 }}/1000 caracteres</small>
+            <div *ngIf="isSubmitted && f['message'].errors" class="form-error">
+              <small *ngIf="f['message'].errors['required']">Mensagem é obrigatória</small>
+              <small *ngIf="f['message'].errors['minlength']">Mínimo 10 caracteres</small>
+              <small *ngIf="f['message'].errors['maxlength']">Máximo 1000 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Botões -->
+          <div class="uk-margin-top btn-group">
+            <button type="submit" class="btn-submit" [disabled]="isLoading">
+              <span *ngIf="!isLoading">Enviar Proposta</span>
+              <span *ngIf="isLoading">Enviando...</span>
+            </button>
+            <button type="button" class="btn-reset" (click)="resetForm()" [disabled]="isLoading">
+              Limpar Formulário
+            </button>
+          </div>
+
+          <p class="form-disclaimer">
+            * Campos obrigatórios. Entraremos em contacto para confirmar a disponibilidade e discutir os horários do seu evento.
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

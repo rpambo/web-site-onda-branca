@@ -1,7 +1,11 @@
 .back{
-  background-image: url(/imagens/contactos/background.png);
-
+  background-image: url(/imagens/asset.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
 }
+
 .titulo-principal {
   font-size: 16px;
   color: #094268;
@@ -43,7 +47,7 @@
 }
 
 textarea::placeholder, input::placeholder {
-    color: rgb(0, 0, 0) !important; /* branco com transparência */
+    color: #fff !important; /* branco com transparência */
 }
 
 @media (max-width: 768px) {
@@ -74,7 +78,6 @@ textarea::placeholder, input::placeholder {
 .uk-button::first-letter {
   text-transform: uppercase;   /* só a primeira letra da frase em maiúscula */
 }
-
 
 .uk-button {
   position: relative;

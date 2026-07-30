@@ -1,92 +1,45 @@
 <app-navbar></app-navbar>
-<div class="back">
-    <div class="uk-position-center uk-position-relative conteudo" style="left: 35%; bottom: 1%;">
-        <h1 class="titulo" style="color: white; font-family: 'sora'; max-width: 500px; font-size: 3.3rem; font-weight: 200;">Projecto de <strong>Qualidade de Vida</strong></h1>
-        <p style="color: white; font-family: 'sora'; max-width: 450px;">O objetivo é ajudar cada participante a viver com mais clareza, propósito e estabilidade, fortalecendo tanto a produtividade quanto a saúde mental.</p>
-        <a href="" class="uk-button animated-btn uk-button-default" 
-       style=" color: white; 
-              border-radius: 6px; 
-              padding: 12px 28px; 
-              font-weight: 600;">
-      Inscreva-se no programa
-    </a>
+<div class="uk-position-relative uk-visible-toggle uk-light" 
+     uk-slideshow="autoplay: true; animation: slide; pause-on-hover: false; ratio: false">
+
+  <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true">
+
+    <!-- SLIDE 1 -->
+    <li>
+      <div class="uk-position-relative  uk-height-1-1">
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-qualidade-de-vida/hero-projecto-de-melhoria-de-vida.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtcXVhbGlkYWRlLWRlLXZpZGEvaGVyby1wcm9qZWN0by1kZS1tZWxob3JpYS1kZS12aWRhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzM0ODIyLCJleHAiOjIxMDA2OTQ4MjJ9.p6dCC5Da_WJjVg0YcxQ4OfxJ3LACOt8SrUmSiSLHdT4" uk-img alt="Hero image" style="object-position: left center;" class="uk-visible@s img-grande" uk-cover>
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-qualidade-de-vida/hero-projecto-de-melhoria-de-vida-mobile.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtcXVhbGlkYWRlLWRlLXZpZGEvaGVyby1wcm9qZWN0by1kZS1tZWxob3JpYS1kZS12aWRhLW1vYmlsZS53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTMzNDc0MSwiZXhwIjoyMTAwNjk0NzQxfQ.DAfipdttx2YLUvfrGU_akLPeLRq73Q_Bpg6_uLKUL8s" uk-img class="uk-hidden@s" style="object-position: center top;" uk-cover alt="Hero image mobile">
       </div>
-</div>
-
-<div class="uk-section" style="background-image: url(/imagens/background.png); background-position: center; background-size: contain;" >
-  <div class="uk-container">
-    <div class="uk-child-width-1-2@l uk-child-width-1-2@m uk-child-width-1-2@s uk-grid">
-    <div>
-      <h3 style="font-size: 2rem; font-family: 'sora'; "><strong>Projecto de qualidade de vida <span style="color: #02576C;"></span> </strong></h3>
-      <p>O Projecto de Qualidade de Vida é um programa voltado para o desenvolvimento pessoal de forma completa. Ele integra bem-estar emocional, organização de vida e orientação prática para criação de fontes de renda extra.</p>
-      <p>O objetivo é ajudar cada participante a conquistar mais equilíbrio, estabilidade e autonomia, combinando saúde mental, hábitos saudáveis e competências que fortalecem tanto a vida pessoal quanto a profissional. É uma jornada de clareza, foco e crescimento sustentável.</p>
-      <a href="" class="uk-button bnt animated-btn uk-button-default" 
-       style=" color: white; 
-              border-radius: 6px; 
-              padding: 12px 28px; 
+    
+      <div class="uk-container">
+        <div class="uk-position-center-right uk-text-left text uk-padding-large conteudo">
+          <h1 class="titulo" style="color: #1E3A5F; font-family: 'sora'; max-width: 500px; font-size: 2rem; font-weight: 200;">Projecto de <strong style="color: #2563EB">Qualidade de Vida</strong></h1>
+        <p style="color: #4B5563; font-family: 'sora'; max-width: 450px;">O objetivo é ajudar cada participante a viver com mais clareza, propósito e estabilidade, fortalecendo tanto a produtividade quanto a saúde mental.</p>
+        <a (click)="scrollToForm()" class="uk-button animated-btn uk-button-default" style=" color: white; 
+              border-radius: 6px;  
               font-weight: 600;">
-      Inscreva-se no programa
+      Inscreva-se no programa <span uk-icon="icon: arrow-right"></span>
     </a>
-    </div>
-    <div>
-      <img style="border-radius: 10px;"  src="imagens/pmv/pqv-apresentation.png" alt=""> 
-    </div>
-  </div>
-  </div>
-</div>
-
-
-<div class="uk-section" style="background-color: #02576C;">
-  <div class="uk-container">
-
-    <h3 class="uk-text-center" style="font-size: 2.3rem; color: #fff; font-weight: 600;">
-      O que você vai conquistar <br> no programa
-    </h3>
-
-    <div class="uk-child-width-1-3@m uk-child-width-1-3@s  uk-grid-match uk-grid-large" uk-grid>
-      
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="background-image: url(/imagens/background.png); background-position: center; background-size: contain; border-radius: 5px;">
-          <h4 style="color: #02576C;">Clareza Mental</h4>
-          <p>Ferramentas práticas para organizar pensamentos, reduzir confusão e aumentar foco.</p>
         </div>
       </div>
-      
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="background-image: url(/imagens/background.png); background-position: center; background-size: contain; border-radius: 5px;">
-          <h4 style="color: #02576C;">Rotina Equilibrada</h4>
-          <p>Estratégias para manter hábitos saudáveis e produtividade sem sobrecarga.</p>
-        </div>
-      </div>
+    </li>
 
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="background-image: url(/imagens/background.png); background-position: center; background-size: contain; border-radius: 5px;">
-          <h4 style="color: #02576C;">Renda Extra</h4>
-          <p>Orientação para transformar habilidades pessoais em pequenas fontes de rendimento.</p>
-        </div>
-      </div>
+  </ul>
 
-    </div>
+  <!-- DOTNAV CORRETO -->
+  <ul class="uk-dotnav uk-slideshow-nav uk-position-center-right uk-position-medium uk-flex uk-flex-column">
+    <li uk-slideshow-item="0"><a href="#"></a></li>
+    <li uk-slideshow-item="1"><a href="#"></a></li>
+    <li uk-slideshow-item="2"><a href="#"></a></li>
+  </ul>
 
-  </div>
 </div>
 
-
-<!-- Seção 1 -->
-<div class="uk-section" style="background-color: #F4F7F8;">
-  <div class="uk-container uk-text-center">
-    <h3 style="font-size: 2rem; color: #272727;"><strong>Para quem é o projecto de <br> qualidade vida</strong></h3>
-    <p style="font-size: 1.5rem; max-width: 650px; margin: auto; color: #272727;">
-      O programa é para qualquer pessoa que queira viver com mais equilíbrio, clareza e autonomia financeira.
-    </p>
-    <a href="" class="uk-button animated-btn uk-button-default uk-margin-top" 
-       style=" color: white; 
-              border-radius: 6px; 
-              padding: 12px 28px; 
-              font-weight: 600;">
-      Inscreva-se no programa
-    </a>
-  </div>
+<div class="uk-section" style="background-color:#4B5563 ; background-position: center; background-size: contain;" >
+  <!-- Formulário de Saúde Mental -->
+<div id="formulario" style="scroll-behavior: smooth;">
+  <app-form-qualidade-vida></app-form-qualidade-vida>
+</div>
 </div>
 
 <app-footer></app-footer>

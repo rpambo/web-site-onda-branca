@@ -1,42 +1,55 @@
 <app-navbar></app-navbar>
-<div class="uk-section">
-  <div class="uk-container">
-    <div class="uk-child-width-1-2@l uk-child-width-1-2@s uk-child-width-1-2@m uk-grid uk-flex-center " uk-grid>
+<div class="uk-position-relative uk-visible-toggle uk-light" 
+     uk-slideshow="autoplay: true; animation: slide; pause-on-hover: false; ratio: false">
 
-      <div class="card-programa">
-        <div class="uk-card">
-          <img src="imagens/palestra-1.png" alt="Palestras">
+  <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true">
 
-          <div class="uk-overlay uk-overlay-primary uk-position-cover overlay-custom">
-            <div class="uk-position-bottom uk-text-center uk-padding" style="bottom: 18%">
-              <h1>Palestras</h1>
-              <p>Aplique para contratar palestras</p>
-              <a routerLink="palestras" class="uk-button btn-gold">
-                Saiba mais <span uk-icon="icon: arrow-right"></span>
-              </a>
-            </div>
-          </div>
+    <!-- SLIDE 1 -->
+    <li>
+      <div class="uk-position-relative uk-height-1-1">
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/palestra-e-workshop/hero-palestra-e-workshop.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcGFsZXN0cmEtZS13b3Jrc2hvcC9oZXJvLXBhbGVzdHJhLWUtd29ya3Nob3Aud2VicCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODUzMzU1ODEsImV4cCI6MjEwMDY5NTU4MX0.4u8a-l3BoDoY3FE4bJ17tfyhkizJjPXsfW0_NlR3MVk" uk-img alt="Hero Image" class="uk-visible@s" uk-cover>
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/palestra-e-workshop/hero-palestra-e-workshop-mobile.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcGFsZXN0cmEtZS13b3Jrc2hvcC9oZXJvLXBhbGVzdHJhLWUtd29ya3Nob3AtbW9iaWxlLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzM1Njk3LCJleHAiOjIxMDA2OTU2OTd9.mjiC6wIH2hO77cvq6TWtJqzcPQsbflyqnVouCJ-ify0" uk-img class="uk-hidden@s" style="object-position: center top;" uk-cover alt="Hero Image Mobile">
+      </div>
+
+      <div class="uk-container">
+        <div class="uk-position-center-left uk-text-left text uk-padding-large conteudo">
+          <h1 class="titulo"
+        style="color: #1E3A5F; font-family: 'sora'; max-width: 500px; font-size: 2rem; font-weight: 200;">
+        <strong style="color: #8B4789;">Palestras</strong> e
+        <strong style="color: #2563EB;">Workshops</strong>
+        para transformar equipas
+    </h1>
+
+    <p style="color: #4B5563; font-family: 'sora'; max-width: 450px;">
+        Promovemos experiências inspiradoras e práticas que fortalecem competências,
+        estimulam a reflexão e impulsionam o desenvolvimento humano, criando equipas
+        mais conscientes, colaborativas e preparadas para os desafios do dia a dia.
+    </p>
+
+    <a (click)="scrollToForm()"
+       class="uk-button uk-button-default animated-btn"
+       style="font-family: 'sora'; color: white; border-radius: 5px;">
+        Solicitar Proposta
+        <span uk-icon="icon: arrow-right"></span>
+    </a>
         </div>
       </div>
-      <div class="card-programa">
-        <div class="uk-card ">
-          <img src="imagens/palestra-2.png" alt="Palestras">
+    </li>
 
-          <div class="uk-overlay uk-overlay-primary uk-position-cover overlay-custom">
-            <div class="uk-position-bottom uk-text-center uk-padding" style="bottom: 18%">
-              <h1>Workshops</h1>
-              <p>Aplique para contratar workshops</p>
-              <a routerLink="workshops" class="uk-button btn-gold2">
-                Saiba mais <span uk-icon="icon: arrow-right"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+  </ul>
 
-    </div>
-  </div>
+  <!-- DOTNAV CORRETO -->
+  <ul class="uk-dotnav uk-slideshow-nav uk-position-center-right uk-position-medium uk-flex uk-flex-column">
+    <li uk-slideshow-item="0"><a href="#"></a></li>
+    <li uk-slideshow-item="1"><a href="#"></a></li>
+    <li uk-slideshow-item="2"><a href="#"></a></li>
+  </ul>
+
+</div>
+
+<!-- Formulário de P7 Mentoria -->
+<div id="formulario" style="scroll-behavior: smooth;">
+  <app-form-palestra></app-form-palestra>
 </div>
 
 <app-footer></app-footer>

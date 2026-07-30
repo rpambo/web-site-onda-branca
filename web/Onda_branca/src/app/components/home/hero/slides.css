@@ -86,8 +86,6 @@ h2 {
   font-weight: 600;
 }
 
-
-
 /* animação */
 @keyframes gradientMove {
   0% {
@@ -159,7 +157,6 @@ h2 {
   }
 
 }
-
 
 /* =====================================
    BOTÃO SPOTIFY – MOVIMENTO E BRILHO
@@ -288,12 +285,7 @@ h2 {
     font-size: clamp(1rem, 100vw, 1.3rem) !important;
   }
 
-  /* Título fluido sem estourar no mobile */
-  .title {
-    font-size: clamp(1.4rem, 100vw, 2rem) !important;
-    max-width: 250px !important;
-    margin: auto !important;
-  }
+  
   
 }
 

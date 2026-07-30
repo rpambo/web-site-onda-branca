@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from '../../components/footer/footer';
-import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { ContactService } from '../../services/contact-service';
-import Swal from 'sweetalert2';
+import { Services } from "../../components/home/services/services";
 
 @Component({
   selector: 'app-contacto',
-  imports: [Navbar, Footer, CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [Navbar, Footer, CommonModule, ReactiveFormsModule, Services],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.css']
 })

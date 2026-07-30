@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /node_modules/
+Disallow: /out-tsc/
+Disallow: /dist/
+Disallow: /*?*
+Allow: /
+
+Sitemap: https://ondabranca.com/sitemap.xml

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from "../../components/footer/footer";
 import { Meta, Title } from '@angular/platform-browser';
-import { RouterLink } from "@angular/router";
+import { FormPalestra } from '../../components/formularios/form-palestra/form-palestra';
 
 @Component({
   selector: 'app-palestra-e-workshop',
   imports: [
     Navbar,
     Footer,
-    RouterLink,
+    FormPalestra,
 ],
   templateUrl: './palestra-e-workshop.html',
   styleUrls: ['./palestra-e-workshop.css']
@@ -47,6 +47,10 @@ export class PalestraEWorkshop implements OnInit {
     this.meta.updateTag({ name: 'twitter:title', content: 'Palestra e Workshop | Onda Branca' });
     this.meta.updateTag({ name: 'twitter:description', content: 'Participe da nossa palestra e workshop para desenvolver habilidades de gestão emocional, produtividade e bem-estar.' });
     this.meta.updateTag({ name: 'twitter:image', content: 'https://ondabranca.com/imagens/og-palestra.png' });
+  }
+
+  scrollToForm(): void {
+    document.getElementById('formulario')?.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
 
 }

@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Navbar } from "../../components/navbar/navbar";
 import { Footer } from '../../components/footer/footer';
 import { Bruchura } from '../../components/programa-de-ginastica-laboral/bruchura/bruchura';
+import { FormGinasticaLaboral } from '../../components/formularios/form-ginastica-laboral/form-ginastica-laboral';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-programa-ginastica-laboral',
-  imports: [Navbar, Footer, Bruchura],
+  imports: [Navbar, Footer, Bruchura, FormGinasticaLaboral],
   templateUrl: './programa-ginastica-laboral.html',
   styleUrl: './programa-ginastica-laboral.css'
 })
 export class ProgramaGinasticaLaboral {
   constructor(private meta: Meta, private titleService: Title) {}
-
 updateMetaTagsGinastica() {
   this.titleService.setTitle('Ginástica Laboral | Onda Branca');
 
@@ -68,5 +68,9 @@ updateMetaTagsGinastica() {
 ngOnInit() {
   this.updateMetaTagsGinastica();
 }
+
+scrollToForm(): void {
+    document.getElementById('formulario')?.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
 
 }

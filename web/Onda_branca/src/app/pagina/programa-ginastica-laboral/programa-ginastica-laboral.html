@@ -1,83 +1,50 @@
 <app-navbar></app-navbar>
-<!-- Hero -->
-<div class="back">
-    <div class="uk-position-center-left uk-position-relative conteudo" style="left: 7%; bottom: 1%;">
-        <h1  class="titulo" style="color: #8f51c9; font-family: 'sora'; max-width: 500px; font-size: 3.3rem; font-weight: 200;">
-            <strong>Programa de Ginástica Laboral</strong>
+
+<div class="uk-position-relative uk-visible-toggle uk-light" 
+     uk-slideshow="autoplay: true; animation: slide; pause-on-hover: false; ratio: false">
+
+  <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true">
+
+    <!-- SLIDE 1 -->
+    <li>
+      <div class="uk-position-relative uk-height-1-1">
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-ginastica/hero-programa-de-ginastica.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtZ2luYXN0aWNhL2hlcm8tcHJvZ3JhbWEtZGUtZ2luYXN0aWNhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzM1MDQzLCJleHAiOjIxMDA2OTUwNDN9.NJxz1T6DXYBquZJAai_gNfyAzaDYBhczlnEfAVsc-w4" uk-img alt="Hero image" class="uk-visible@s" uk-cover>
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-ginastica/hero-programa-de-ginastica-mobile.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtZ2luYXN0aWNhL2hlcm8tcHJvZ3JhbWEtZGUtZ2luYXN0aWNhLW1vYmlsZS53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTMzNTMyOSwiZXhwIjoyMTAwNjk1MzI5fQ.5twjATtmADb4u0KIEjDT7KzUQIc9X4HqfrgXIj6XUx4" uk-img class="uk-hidden@s" style="object-position: center top;" uk-cover alt="Hero image mobile">
+      </div>
+
+      <div class="uk-container">
+        <div class="uk-position-center-left uk-text-left text uk-padding-large conteudo">
+          <h1 class="titulo" style="color: #1E3A5F; font-family: 'sora'; max-width: 500px; font-size: 2rem; font-weight: 200;">
+          Programa de <strong style="color: #8B4789;">Ginástica Laboral</strong> para Empresas
         </h1>
-
-        <p style="color: #272727; font-family: 'sora'; max-width: 450px;">
-            O programa de Ginástica Laboral promove alongamentos, movimentos leves e práticas de relaxamento que reduzem dores, evitam lesões e aumentam a energia durante o trabalho.
+        <p style="color: #4B5563; font-family: 'sora'; max-width: 450px;">
+          Promova mais saúde, disposição e qualidade de vida no ambiente de trabalho. O programa ajuda a reduzir tensões musculares, prevenir lesões ocupacionais e aumentar o bem-estar dos colaboradores através de exercícios rápidos e orientados.
         </p>
-
-        <a href="" class="uk-button animated-btn uk-button-default"
-            style="
-                   color: white;
-                   border: none;
-                   border-radius: 6px;
-                   font-weight: 600;">
-            Contratar agora
+        <a (click)="scrollToForm()"  class="uk-button uk-button-default animated-btn" style="font-family: 'sora'; color: white; border-radius: 5px;">
+          Solicitar Proposta <span uk-icon="icon: arrow-right"></span>
         </a>
-    </div>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- DOTNAV CORRETO -->
+  <ul class="uk-dotnav uk-slideshow-nav uk-position-center-right uk-position-medium uk-flex uk-flex-column">
+    <li uk-slideshow-item="0"><a href="#"></a></li>
+    <li uk-slideshow-item="1"><a href="#"></a></li>
+    <li uk-slideshow-item="2"><a href="#"></a></li>
+  </ul>
+
 </div>
 
-<!-- Cards -->
-<div class="uk-section" >
-  <div class="uk-container">
-    <div class="uk-child-width-1-4@l uk-child-width-1-2@s uk-child-width-1-2@m uk-grid-match uk-grid-large" uk-grid>
 
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
-          <h4 style="color: #8F51C9;">Atendimento de Qualidade</h4>
-          <p>Instrutores qualificados, suporte contínuo e acompanhamento adaptado às necessidades da empresa.</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
-          <h4 style="color: #8F51C9;">Atividades para Qualquer Espaço</h4>
-          <p>Sessões rápidas e eficazes que podem ser feitas em qualquer ambiente, sem necessidade de equipamentos.</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
-          <h4 style="color: #8F51C9;">Programas Personalizados</h4>
-          <p>Exercícios ajustados ao tipo de trabalho, prevenindo dores musculares e melhorando o bem-estar.</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="uk-card uk-card-default uk-card-body" style="border-radius: 10px;">
-          <h4 style="color: #8F51C9;">Sessões em Grupo</h4>
-          <p>Atividades que estimulam integração, descontração e fortalecem o clima organizacional.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<!-- ===== FORM SECTION ===== -->
+<div id="formulario" class="formulario-section">
+  <app-form-ginastica-laboral></app-form-ginastica-laboral>
 </div>
 
-<!-- Para Quem É -->
-<div class="uk-section" style="background-color: #F4F7F8;">
-  <div class="uk-container uk-text-center">
-    <h3 style="font-size: 2rem; color: #8f51c9;">
-      <strong>Para quem é o programa de <br> Ginástica Laboral</strong>
-    </h3>
-
-    <p style="font-size: 1.3rem; max-width: 650px; margin: auto; color: #272727;">
-      É ideal para empresas, equipas e profissionais que passam longos períodos sentados, lidam com esforço repetitivo ou querem melhorar energia e bem-estar no trabalho.
-    </p>
-
-    <a href="" class="uk-button uk-button-default animated-btn uk-margin-top"
-       style="color: white;
-              border-radius: 6px;
-              padding: 12px 28px;
-              font-weight: 600;">
-      Solicitar proposta
-    </a>
-  </div>
-</div>
-
+<!-- ===== BROCHURE SECTION ===== -->
 <app-bruchura></app-bruchura>
+
 <app-footer></app-footer>

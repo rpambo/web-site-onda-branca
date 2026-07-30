@@ -1,0 +1,281 @@
+/* Container */
+.form-container-ginastica {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #edf6ff 0%, #edf6ff 100%);
+}
+
+.form-container-ginastica .uk-container {
+  max-width: 1200px;
+}
+
+/* Grid layout */
+.form-container-ginastica [uk-grid] {
+  gap: 40px;
+  margin: 0;
+}
+
+/* Benefits section */
+.benefits-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.benefits-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #8f51c9;
+  margin: 0 0 20px 0;
+  font-family: 'sora', sans-serif;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  box-shadow: 0 4px 16px rgba(143, 81, 201, 0.15);
+  transform: translateY(-2px);
+}
+
+.benefit-icon {
+  font-size: 24px;
+  min-width: 24px;
+  line-height: 1.5;
+}
+
+.benefit-item h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8f51c9;
+  font-family: 'sora', sans-serif;
+}
+
+.benefit-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Form section */
+.form-ginastica {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #8f51c9;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8f51c9;
+  margin: 0 0 8px 0;
+  font-family: 'sora', sans-serif;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: 'sora', sans-serif;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+.form-input {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'sora', sans-serif;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #333;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #8f51c9;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(143, 81, 201, 0.1);
+}
+
+.form-input:hover {
+  border-color: #8f51c9;
+}
+
+.form-input.is-invalid {
+  border-color: #e74c3c;
+  background: #fef5f5;
+}
+
+.form-input.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error messages */
+.error {
+  display: block;
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Character count */
+.char-count {
+  font-size: 12px;
+  color: #999;
+  margin-left: 8px;
+  font-weight: normal;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #8f51c9 0%, #7a3fb8 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'sora', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(143, 81, 201, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7a3fb8 0%, #6a2fa8 100%);
+  box-shadow: 0 6px 20px rgba(143, 81, 201, 0.4);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Form note */
+.form-note {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container-ginastica {
+    padding: 40px 15px;
+  }
+
+  .form-ginastica {
+    padding: 24px;
+  }
+
+  .benefits-title {
+    font-size: 22px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .form-container-ginastica [uk-grid] {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container-ginastica {
+    padding: 30px 10px;
+  }
+
+  .form-ginastica {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .benefits-title {
+    font-size: 20px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .form-input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .benefit-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .benefit-icon {
+    font-size: 20px;
+  }
+
+  .benefit-item h4 {
+    font-size: 14px;
+  }
+
+  .benefit-item p {
+    font-size: 13px;
+  }
+}

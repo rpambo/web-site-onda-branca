@@ -1,5 +1,5 @@
 .back{
-  background-image: url(/imagens/contacto-topo.png);
+  background-image: url("https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/contacto/contacto-topo.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvY29udGFjdG8vY29udGFjdG8tdG9wby53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTMzNzc3NSwiZXhwIjoyMTAwNjk3Nzc1fQ.GwV0qZEs4oOyQwlcZFFbjRi1KzvwWVxcNVPIUg0Ja-E");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,6 +52,14 @@ a[uk-slider-item].uk-invisible {
     to { width: 80%; }
 }
 
+@media (max-height: 700px) {
+  .titulo{
+    font-size: 2.5rem !important;
+    max-width: 450px !important;
+  }
+}
+
+
 @media (max-width:768px) {
   .uk-slider-container{
     padding-right: 0 !important;
@@ -70,5 +78,45 @@ a[uk-slider-item].uk-invisible {
   .titulo-principal .linha{
     width: 25%;
     animation: growMobile 2s infinite alternate;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .back {
+    height: 50vh !important;
+  }
+  
+  .conteudo{
+    margin-bottom: 20px !important;
+  }
+}
+
+
+@media (min-width:344px) and (max-width: 767px) {
+  .conteudo {
+    position: static !important;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    transform: none;
+    text-align: center;
+    padding: 20px;
+  }
+  .back {
+    height: 65vh !important;
+    background-image: url("https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/contacto/contacto-topo-mobile.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvY29udGFjdG8vY29udGFjdG8tdG9wby1tb2JpbGUud2VicCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODUzMzc4NDQsImV4cCI6MjEwMDY5Nzg0NH0.A4PcZn3xXC1aHcMfyIcS3L1POLl69u0yYAjRgx3vkIk") !important;
+    background-position: center top;
+  }   
+
+  .titulo{
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
+  }
+  .titulo-p7{
+    font-size: 2rem !important;
   }
 }

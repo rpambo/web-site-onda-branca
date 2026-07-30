@@ -1,21 +1,16 @@
-.back{
-  background-image: url(/imagens/mentoria-p7/hero-p7-mentoria.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 75vh;
-}
-
 .animated-btn {
-    background: linear-gradient(90deg, #02576C, #7CCFF7);
+    background: linear-gradient(
+        90deg,
+        #5B21B6,
+        #8F51C9,
+        #C084FC
+    );
     background-size: 200%;
     animation: moveGradient 3s ease infinite;
     border: none;
-    padding: 5px !important;
-    font-size: 1rem !important;
-  }
+}
 
-  @keyframes moveGradient {
+@keyframes moveGradient {
     0% { background-position: 0%; }
     50% { background-position: 100%; }
     100% { background-position: 0%; }
@@ -23,79 +18,79 @@
 
 .animated-btn:hover {
     box-shadow:
-    0 0 15px rgba(0, 180, 216, 0.6),
-    0 0 30px rgba(0, 119, 182, 0.3);
-  
-  /* Efeito de brilho interno que segue o gradiente */
-  background: linear-gradient(
-    90deg,
-    #004a9e,
-    #0060c0,
-    #0088e0,
-    #00c8ff,
-    #004a9e
-  );
-  background-size: 300% 100%;
+        0 0 15px rgba(143, 81, 201, 0.5),
+        0 0 30px rgba(109, 40, 217, 0.3);
+
+    background: linear-gradient(
+        90deg,
+        #4C1D95,
+        #6D28D9,
+        #8B5CF6,
+        #C084FC,
+        #4C1D95
+    );
+
+    background-size: 300% 100%;
 }
 
-
-@media (max-height: 700px) {
-  .titulo{
-    font-size: 2rem !important;
-    max-width: 450px !important;
-  }
+.conteudo {
+  max-width: 600px;
+  left: 7%;
 }
-
 
 @media (min-width:344px) and (max-width: 767px) {
-  .conteudo {
-    position: static !important;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 100%;
-    transform: none;
-    text-align: center;
-    padding: 20px;
+  .uk-slideshow-items {
+    min-height: 740px !important;
   }
-  .back {
-    height: 65vh !important;
-    background-image: url(/imagens/mentoria-p7/hero-p7-mentoria-mobile.png) !important;
-    background-position: center top;
+
+  .conteudo {
+    left: 0 !important;
+    right: 0 !important;
+    top: 45%;
+    transform: none;
+    text-align: center !important;
+    width: 100% !important;
   }   
+
+  .titulo{
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(1.5rem, 100vw, 1.1rem) !important;
+  }
+
+  .uk-section{
+    text-align: center;
+  }
+
+  .uk-button{
+    font-size: clamp(.7rem, 100vw, 0.8rem) !important;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+  
+  .uk-slideshow-items{
+    min-height: 450px !important;
+  }
+  
+  .conteudo {
+    width: 400px !important;
+  }
 
   .titulo{
     max-width: 100% !important;
     margin: 0 !important;
     font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
   }
-  .titulo-p7{
-    font-size: 2rem !important;
-  }
-  .uk-section{
-    text-align: center;
-  }
-  .bnt{
-    margin-bottom: 10px !important;
-  }
-  .btn-1{
-    margin-top: 35px !important;
-  }
 }
 
-
-/* TABLET */
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  .back {
-    height: 50vh !important;
-  }
-  
-  .conteudo{
-    margin-bottom: 20px !important;
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .uk-slideshow-items{
+    min-height: 450px !important;
   }
 
-  .sectio-baixo{
-    margin-top: -90px !important;
+  .conteudo {
+    max-width: 450px !important;
   }
 }

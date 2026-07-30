@@ -25,7 +25,7 @@
 
 @keyframes growMobile {
   from { width: 0; }
-  to { width: 25%; }
+  to { width: 50%; }
 }
 
 @keyframes grow {
@@ -107,5 +107,19 @@
   }
   .titulo-metricas{
     max-width: 100%;
+  }
+}
+
+@media (min-width:344px) and (max-width:767px) {
+  .titulo-principal{
+    display: block !important;
+    margin-top: 20px !important;
+  }
+  .titulo-principal .linha{
+    left: 17% !important;
+    animation: growMobile 2s infinite alternate;
+  }
+  .uk-container{
+    text-align: center !important;
   }
 }

@@ -1,0 +1,196 @@
+<div class="uk-section uk-padding-remove formulario-section-vida">
+  <div class="uk-container">
+    <div class="uk-grid uk-grid-large uk-grid-match" uk-grid>
+      <!-- Coluna Esquerda: Título e Descrição -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+        <div class="formulario-info-vida">
+          <h2 class="uk-margin-remove titulo-formulario" style="font-family: 'Archivo';">
+            <span class="titulo-principal">Comece sua <span class="linha"></span></span>
+            <span class="uk-text-light"><strong>Transformação Pessoal</strong></span>
+          </h2>
+        
+          <p class="descricao-formulario" style="color: #666; font-size: 16px; margin-top: 20px;">
+            O Projeto de Qualidade de Vida é um programa integrado que o ajuda a viver com mais clareza, 
+            propósito e estabilidade. Fortalecemos tanto sua produtividade quanto sua saúde mental e bem-estar geral.
+          </p>
+
+          <div class="beneficios-lista-vida" style="margin-top: 30px;">
+            <div class="beneficio-item" *ngFor="let beneficio of ['Transformação Pessoal', 'Metas Alcançáveis', 'Bem-estar Integrado', 'Suporte Contínuo']">
+              <p style="color: #0d5a90; font-size: 14px; margin: 10px 0;">{{ beneficio }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Formulário -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+        <form [formGroup]="qualidadeVidaForm" (ngSubmit)="onSubmit()" class="form-qualidade-vida">
+          
+          <!-- Nome -->
+          <div class="uk-margin-small">
+            <label class="form-label">Nome Completo *</label>
+            <input 
+              class="form-input" 
+              type="text" 
+              formControlName="name"
+              placeholder="Seu nome completo"
+              [ngClass]="{'input-error': isSubmitted && f['name'].errors}">
+            <div *ngIf="isSubmitted && f['name'].errors" class="form-error">
+              <small *ngIf="f['name'].errors['required']">Nome é obrigatório</small>
+              <small *ngIf="f['name'].errors['pattern']">Nome deve conter apenas letras</small>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="uk-margin-small">
+            <label class="form-label">Email *</label>
+            <input 
+              class="form-input" 
+              type="email" 
+              formControlName="email"
+              placeholder="seu.email@exemplo.com"
+              [ngClass]="{'input-error': isSubmitted && f['email'].errors}">
+            <div *ngIf="isSubmitted && f['email'].errors" class="form-error">
+              <small *ngIf="f['email'].errors['required']">Email é obrigatório</small>
+              <small *ngIf="f['email'].errors['email']">Email inválido</small>
+            </div>
+          </div>
+
+          <!-- Telefone -->
+          <div class="uk-margin-small">
+            <label class="form-label">Telefone/Telemóvel *</label>
+            <input 
+              class="form-input" 
+              type="tel" 
+              formControlName="contact"
+              placeholder="+244 XXX XXX XXX"
+              [ngClass]="{'input-error': isSubmitted && f['contact'].errors}">
+            <div *ngIf="isSubmitted && f['contact'].errors" class="form-error">
+              <small *ngIf="f['contact'].errors['required']">Telefone é obrigatório</small>
+              <small *ngIf="f['contact'].errors['pattern']">Telefone inválido</small>
+            </div>
+          </div>
+
+          <!-- Idade (Opcional) -->
+          <div class="uk-margin-small">
+            <label class="form-label">Idade (Opcional)</label>
+            <input 
+              class="form-input" 
+              type="number" 
+              formControlName="age"
+              placeholder="Ex: 35"
+              [ngClass]="{'input-error': isSubmitted && f['age'].errors}">
+            <div *ngIf="isSubmitted && f['age'].errors" class="form-error">
+              <small *ngIf="f['age'].errors['pattern']">Apenas números</small>
+            </div>
+          </div>
+
+          <!-- Áreas de Interesse -->
+          <div class="uk-margin-small">
+            <label class="form-label">Áreas de Interesse *</label>
+            <select 
+              class="form-input form-select" 
+              formControlName="areasInterest"
+              [ngClass]="{'input-error': isSubmitted && f['areasInterest'].errors}">
+              <option value="">Selecione suas áreas de interesse...</option>
+              <option *ngFor="let area of areasInteresse" [value]="area">{{ area }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['areasInterest'].errors" class="form-error">
+              <small *ngIf="f['areasInterest'].errors['required']">Selecione uma área</small>
+            </div>
+          </div>
+
+          <!-- Objetivo Pessoal -->
+          <div class="uk-margin-small">
+            <label class="form-label">Qual é seu Principal Objetivo? *</label>
+            <textarea 
+              class="form-input form-textarea" 
+              formControlName="personalGoal"
+              placeholder="Ex: Melhorar meu bem-estar físico, reduzir stress, encontrar equilíbrio vida-trabalho..."
+              rows="3"
+              [ngClass]="{'input-error': isSubmitted && f['personalGoal'].errors}"></textarea>
+            <small class="form-hint">{{ f['personalGoal'].value?.length || 0 }}/500 caracteres</small>
+            <div *ngIf="isSubmitted && f['personalGoal'].errors" class="form-error">
+              <small *ngIf="f['personalGoal'].errors['required']">Descreva seu objetivo</small>
+              <small *ngIf="f['personalGoal'].errors['minlength']">Mínimo 10 caracteres</small>
+              <small *ngIf="f['personalGoal'].errors['maxlength']">Máximo 500 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Frequência Preferida -->
+          <div class="uk-margin-small">
+            <label class="form-label">Frequência Preferida *</label>
+            <select 
+              class="form-input form-select" 
+              formControlName="frequencia"
+              [ngClass]="{'input-error': isSubmitted && f['frequencia'].errors}">
+              <option value="">Selecione a frequência...</option>
+              <option *ngFor="let freq of frequenciaPreferida" [value]="freq">{{ freq }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['frequencia'].errors" class="form-error">
+              <small *ngIf="f['frequencia'].errors['required']">Selecione uma frequência</small>
+            </div>
+          </div>
+
+          <!-- Experiência Prévia -->
+          <div class="uk-margin-small">
+            <label class="form-label">Experiência Anterior em Programas de Bem-estar *</label>
+            <textarea 
+              class="form-input form-textarea" 
+              formControlName="experiencePrior"
+              placeholder="Conte-nos sobre sua experiência anterior (se houver) com programas de qualidade de vida, coaching, etc..."
+              rows="3"
+              [ngClass]="{'input-error': isSubmitted && f['experiencePrior'].errors}"></textarea>
+            <small class="form-hint">{{ f['experiencePrior'].value?.length || 0 }}/1000 caracteres</small>
+            <div *ngIf="isSubmitted && f['experiencePrior'].errors" class="form-error">
+              <small *ngIf="f['experiencePrior'].errors['required']">Descreva sua experiência</small>
+              <small *ngIf="f['experiencePrior'].errors['minlength']">Mínimo 5 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Mensagem Extra -->
+          <div class="uk-margin-small">
+            <label class="form-label">Algo Mais para Compartilhar? *</label>
+            <textarea 
+              class="form-input form-textarea" 
+              formControlName="message"
+              placeholder="Conte-nos mais sobre você, suas expectativas ou dúvidas sobre o programa..."
+              rows="4"
+              [ngClass]="{'input-error': isSubmitted && f['message'].errors}"></textarea>
+            <small class="form-hint">{{ f['message'].value?.length || 0 }}/1000 caracteres</small>
+            <div *ngIf="isSubmitted && f['message'].errors" class="form-error">
+              <small *ngIf="f['message'].errors['required']">Mensagem é obrigatória</small>
+              <small *ngIf="f['message'].errors['minlength']">Mínimo 10 caracteres</small>
+              <small *ngIf="f['message'].errors['maxlength']">Máximo 1000 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Botões -->
+          <div class="uk-margin-top btn-group">
+            <button 
+              type="submit" 
+              class="btn-submit-vida"
+              [disabled]="isLoading">
+              <span *ngIf="!isLoading"> Inscrever-me</span>
+              <span *ngIf="isLoading"> Processando...</span>
+            </button>
+            <button 
+              type="button" 
+              class="btn-reset"
+              (click)="resetForm()"
+              [disabled]="isLoading">
+              Limpar Formulário
+            </button>
+          </div>
+
+          <p class="form-disclaimer" style="color: #999; font-size: 12px; margin-top: 15px;">
+            * Campos obrigatórios. Seus dados serão utilizados apenas para contacto referente ao programa.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

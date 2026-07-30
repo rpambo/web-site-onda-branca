@@ -19,7 +19,7 @@ a:hover{
 }
 
 .back{
-    background-image: url(/imagens/asset.webp);
+    background-image: url("https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/background/asset.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvYmFja2dyb3VuZC9hc3NldC53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTQwMzY5NiwiZXhwIjoyMTAwNzYzNjk2fQ.VTW_wQiqPz_6Qp-50TPX984vorsauRt3ASDLIAQP0dk");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -62,7 +62,7 @@ a[uk-slider-item].uk-invisible {
 
 @keyframes growMobile {
   from { width: 0; }
-  to { width: 25%; }
+  to { width: 50%; }
 }
 
 @keyframes grow {
@@ -88,5 +88,19 @@ a[uk-slider-item].uk-invisible {
   .titulo-principal .linha{
     width: 25%;
     animation: growMobile 2s infinite alternate;
+  }
+}
+
+@media (min-width:344px) and (max-width:767px) {
+  .titulo-principal{
+    display: block !important;
+    margin-top: 20px !important;
+  }
+  .titulo-principal .linha{
+    left: 20% !important;
+    animation: growMobile 2s infinite alternate;
+  }
+  .uk-container{
+    text-align: center !important;
   }
 }

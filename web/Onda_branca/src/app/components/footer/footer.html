@@ -11,7 +11,7 @@
 
       <!-- Logo + lema -->
       <div>
-        <img src="imagens/logo/logo-onda-branca.svg" width="120" alt="Onda Branca">
+        <img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/logos/logo-onda-branca.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvbG9nb3MvbG9nby1vbmRhLWJyYW5jYS5zdmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzM2MDU1LCJleHAiOjIxMDA2OTYwNTV9.7k4NST7hjnRV013mBeJjBUjQhQDxQiaY0jK2lKOW93c" uk-img width="120" alt="Onda Branca">
         <p style="font-size: 0.85rem; color: #ccc; margin-top: 10px; line-height: 1.4;">
           Saúde mental, produtividade<br>e comunidade.
         </p>
@@ -34,6 +34,7 @@
           <li><a href="javascript:void(0)">Podcast</a></li>
           <li><a href="javascript:void(0)">Blog</a></li>
           <hr>
+          <li><a [routerLink]="['/canal-de-reclamacao']">Canal de reclamacao</a></li>
           <p style="font-size: .8rem; color: white;">
             Programa Onda Branca – Rádio Solidária | 90.7 FM <br>
             Todos os sábados · 9h – 10h
@@ -92,7 +93,7 @@
       </div>
       <div>
         <a [routerLink]="['/politica-de-privacidade']" >Política de privacidade</a> |
-        <a [routerLink]="['/termos-de-uso']">Termos de uso</a>
+        <a [routerLink]="['/termo-de-uso']">Termos de uso</a>
       </div>
     </div>
   </div>

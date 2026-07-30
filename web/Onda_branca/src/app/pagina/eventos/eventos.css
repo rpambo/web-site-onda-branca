@@ -1,0 +1,36 @@
+.back{
+  background-image: url("https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/eventos/hero-espcao-de-eventos.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvZXZlbnRvcy9oZXJvLWVzcGNhby1kZS1ldmVudG9zLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzM3MzMxLCJleHAiOjIxMDA2OTczMzF9.QMuDZmtAxPyNuM1f4PiUCKrAXZ8W8v_cWvvNwC6m2UA");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+}
+
+
+@media (min-width:344px) and (max-width: 767px) {
+  .back{
+    background-image: url("https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/eventos/hero-espcao-de-eventos-mobile.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvZXZlbnRvcy9oZXJvLWVzcGNhby1kZS1ldmVudG9zLW1vYmlsZS53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTMzNzM5NCwiZXhwIjoyMTAwNjk3Mzk0fQ.x36f7hSoKU8cnjOGob2SbF9xkfmWOlief5Tu5_HPADQ");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .back{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .back{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+  }
+}

@@ -1,22 +1,8 @@
-.back{
-  background-image: url(/imagens/pgl/hero-programa-de-ginastica.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 75vh;
-}
-
-p, h4{
-  font-family: 'sora';
-}
-
 .animated-btn {
-    background: linear-gradient(90deg, #8f51c9, #caa0ff);
+    background: linear-gradient(90deg, #01061F, #7CCFF7);
     background-size: 200%;
     animation: moveGradient 3s ease infinite;
     border: none;
-    padding: 5px !important;
-    font-size: 1rem !important;
   }
 
   @keyframes moveGradient {
@@ -26,78 +12,85 @@ p, h4{
 }
 
 .animated-btn:hover {
+    box-shadow:
+    0 0 15px rgba(0, 180, 216, 0.6),
+    0 0 30px rgba(0, 119, 182, 0.3);
+  
+  /* Efeito de brilho interno que segue o gradiente */
   background: linear-gradient(
     90deg,
-    #8d2fe5,
-    #b984fa,
-    #caa0ff,
-    #a86be0,
-    #7a3eb4
+    #004a9e,
+    #0060c0,
+    #0088e0,
+    #00c8ff,
+    #004a9e
   );
   background-size: 300% 100%;
-  box-shadow:
-    0 0 15px rgba(138, 73, 202, 0.5),
-    0 0 30px rgba(149, 69, 247, 0.4),
-    inset 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: 0.3s ease;
 }
 
+
+
 @media (min-width:344px) and (max-width: 767px) {
-  .conteudo {
-    position: static !important;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 100%;
-    transform: none;
-    text-align: center;
-    padding: 20px;
+  .uk-slideshow-items {
+    min-height: 740px !important;
   }
-  .back {
-    height: 65vh !important;
-    background-image: url(/imagens/mentoria-p7/hero-p7-mentoria-mobile.png) !important;
-    background-position: center top;
+
+  .conteudo {
+    left: 0 !important;
+    right: 0 !important;
+    top: 45%;
+    transform: none;
+    text-align: center !important;
+    width: 100% !important;
   }   
+
+  .titulo{
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(1.8rem, 100vw, 1.1rem) !important;
+  }
+
+  .titulo-p7{
+    font-size: 2rem !important;
+  }
+
+  .uk-section{
+    text-align: center;
+  }
+
+  .bnt{
+    margin-bottom: 10px !important;
+  }
+
+  .btn-1{
+    margin-top: 35px !important;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+  
+  .uk-slideshow-items{
+    min-height: 450px !important;
+  }
+  
+  .conteudo {
+    width: 350px !important;
+  }
 
   .titulo{
     max-width: 100% !important;
     margin: 0 !important;
     font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
   }
-  .titulo-p7{
-    font-size: 2rem !important;
-  }
-  .uk-section{
-    text-align: center;
-  }
-  .bnt{
-    margin-bottom: 10px !important;
-  }
-  .btn-1{
-    margin-top: 35px !important;
-  }
 }
 
-
-/* TABLET */
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  .back {
-    height: 50vh !important;
-  }
-  
-  .conteudo{
-    margin-bottom: 20px !important;
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .uk-slideshow-items{
+    min-height: 450px !important;
   }
 
-  .sectio-baixo{
-    margin-top: -90px !important;
-  }
-}
-
-@media (max-height: 700px) {
-  .titulo{
-    font-size: 2rem !important;
+  .conteudo {
     max-width: 450px !important;
   }
 }

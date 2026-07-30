@@ -1,0 +1,161 @@
+<div class="uk-section formulario-section-eventos">
+  <div class="uk-container">
+    <div class="uk-grid uk-grid-large uk-grid-match" uk-grid>
+
+      <!-- Coluna Esquerda -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+        <div class="formulario-info-eventos">
+
+          <h2 class="uk-margin-remove titulo-formulario" style="font-family: 'Archivo';">
+            <span class="titulo-principal">Contrate uma <span class="linha"></span></span>
+            <span class="uk-text-light"><strong>Palestra ou Workshop</strong></span>
+          </h2>
+
+          <p class="descricao-formulario" style="color: #666; font-size: 16px; margin-top: 20px;">
+            As palestras e workshops do Dr. Bernardino António são desenhados para inspirar, educar e transformar equipas e organizações,
+            com foco em saúde emocional, produtividade, liderança e bem-estar no trabalho.
+          </p>
+
+          <div class="beneficios-lista-eventos" style="margin-top: 30px;">
+            <div class="beneficio-item" *ngFor="let beneficio of [
+              'Palestras Motivacionais',
+              'Workshops Corporativos',
+              'Formação de Equipas',
+              'Conteúdo Personalizado'
+            ]">
+              <p style="color: #0d5a90; font-size: 14px; margin: 10px 0;">
+                {{ beneficio }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Coluna Direita -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+
+        <form [formGroup]="palestraWorkshopForm" (ngSubmit)="onSubmit()" class="form-eventos">
+
+          <!-- Nome -->
+          <div class="uk-margin-small">
+            <label class="form-label">Nome Completo *</label>
+            <input class="form-input" type="text" formControlName="name"
+              placeholder="Seu nome completo"
+              [ngClass]="{'input-error': isSubmitted && f['name'].errors}">
+          </div>
+
+          <!-- Email -->
+          <div class="uk-margin-small">
+            <label class="form-label">Email *</label>
+            <input class="form-input" type="email" formControlName="email"
+              placeholder="seu.email@exemplo.com"
+              [ngClass]="{'input-error': isSubmitted && f['email'].errors}">
+          </div>
+
+          <!-- Telefone -->
+          <div class="uk-margin-small">
+            <label class="form-label">Telefone *</label>
+            <input class="form-input" type="tel" formControlName="contact"
+              placeholder="+244 XXX XXX XXX"
+              [ngClass]="{'input-error': isSubmitted && f['contact'].errors}">
+          </div>
+
+          <!-- Organização -->
+          <div class="uk-margin-small">
+            <label class="form-label">Empresa / Organização *</label>
+            <input class="form-input" type="text" formControlName="company"
+              placeholder="Nome da empresa ou instituição"
+              [ngClass]="{'input-error': isSubmitted && f['company'].errors}">
+          </div>
+
+          <!-- Tipo de evento -->
+          <div class="uk-margin-small">
+            <label class="form-label">Tipo de Evento *</label>
+            <select class="form-input form-select" formControlName="eventType"
+              [ngClass]="{'input-error': isSubmitted && f['eventType'].errors}">
+              <option value="">Selecione...</option>
+              <option value="Palestra">Palestra</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Formação Corporativa">Formação Corporativa</option>
+              <option value="Programa Completo">Programa Completo</option>
+            </select>
+          </div>
+
+          <!-- Tema -->
+          <div class="uk-margin-small">
+            <label class="form-label">Tema de Interesse *</label>
+            <select class="form-input form-select" formControlName="topic"
+              [ngClass]="{'input-error': isSubmitted && f['topic'].errors}">
+              <option value="">Selecione um tema...</option>
+              <option value="Saúde Mental no Trabalho">Saúde Mental no Trabalho</option>
+              <option value="Produtividade e Foco">Produtividade e Foco</option>
+              <option value="Liderança e Gestão de Equipas">Liderança e Gestão de Equipas</option>
+              <option value="Inteligência Emocional">Inteligência Emocional</option>
+              <option value="Personalizado">Personalizado</option>
+            </select>
+          </div>
+
+          <!-- Tamanho do público -->
+          <div class="uk-margin-small">
+            <label class="form-label">Número de Participantes *</label>
+            <input class="form-input" type="number" formControlName="audienceSize"
+              placeholder="Ex: 50, 100, 300..."
+              [ngClass]="{'input-error': isSubmitted && f['audienceSize'].errors}">
+          </div>
+
+          <!-- Local -->
+          <div class="uk-margin-small">
+            <label class="form-label">Local do Evento *</label>
+            <input class="form-input" type="text" formControlName="location"
+              placeholder="Cidade / Local do evento"
+              [ngClass]="{'input-error': isSubmitted && f['location'].errors}">
+          </div>
+
+          <!-- Data -->
+          <div class="uk-margin-small">
+            <label class="form-label">Data Preferida *</label>
+            <input class="form-input" type="date" formControlName="eventDate"
+              [ngClass]="{'input-error': isSubmitted && f['eventDate'].errors}">
+          </div>
+
+          <!-- Objetivo -->
+          <div class="uk-margin-small">
+            <label class="form-label">Objetivo do Evento *</label>
+            <textarea class="form-input form-textarea" formControlName="objective"
+              placeholder="O que pretende alcançar com este evento?"
+              rows="4"
+              [ngClass]="{'input-error': isSubmitted && f['objective'].errors}">
+            </textarea>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="uk-margin-small">
+            <label class="form-label">Informações Adicionais</label>
+            <textarea class="form-input form-textarea" formControlName="message"
+              placeholder="Outros detalhes relevantes..."
+              rows="4"></textarea>
+          </div>
+
+          <!-- Botões -->
+          <div class="uk-margin-top btn-group">
+            <button type="submit" class="btn-submit-evento" [disabled]="isLoading">
+              <span *ngIf="!isLoading">Solicitar Proposta</span>
+              <span *ngIf="isLoading">A processar...</span>
+            </button>
+
+            <button type="button" class="btn-reset" (click)="resetForm()" [disabled]="isLoading">
+              Limpar
+            </button>
+          </div>
+
+          <p class="form-disclaimer" style="color: #999; font-size: 12px; margin-top: 15px;">
+            * Entraremos em contacto para enviar uma proposta personalizada de palestra ou workshop.
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

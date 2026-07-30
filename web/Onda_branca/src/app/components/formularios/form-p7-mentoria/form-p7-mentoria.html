@@ -1,0 +1,198 @@
+<div class="uk-section formulario-section-mentoria">
+  <div class="uk-container">
+    <div class="uk-grid uk-grid-large uk-grid-match" uk-grid>
+      <!-- Coluna Esquerda: Título e Descrição -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+        <div class="formulario-info-mentoria">
+          <h2 class="uk-margin-remove titulo-formulario" style="font-family: 'Archivo';">
+            <span class="titulo-principal">Inicie sua <span class="linha"></span></span>
+            <span class="uk-text-light"><strong>Jornada de Transformação</strong></span>
+          </h2>
+          
+          <p class="descricao-formulario" style="color: #666; font-size: 16px; margin-top: 20px;">
+            A mentoria personalizada P7 é desenhada especialmente para você. Um acompanhamento 
+            estratégico que ajuda a reduzir stress, fortalecer equilíbrio emocional e desenvolver 
+            hábitos sustentáveis para um dia a dia mais leve e produtivo.
+          </p>
+
+          <div class="beneficios-lista-mentoria" style="margin-top: 30px;">
+            <div class="beneficio-item" *ngFor="let beneficio of ['Objetivos Personalizados', ' Mentoria 1-to-1', 'Progresso Mensurável', ' Ferramentas Práticas']">
+              <p style="color: #0d5a90; font-size: 14px; margin: 10px 0;">{{ beneficio }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Formulário -->
+      <div class="uk-width-1-2@l uk-width-1-2@s">
+        <form [formGroup]="p7MentoriaForm" (ngSubmit)="onSubmit()" class="form-p7-mentoria">
+          
+          <!-- Nome -->
+          <div class="uk-margin-small">
+            <label class="form-label">Nome Completo *</label>
+            <input 
+              class="form-input" 
+              type="text" 
+              formControlName="name"
+              placeholder="Seu nome completo"
+              [ngClass]="{'input-error': isSubmitted && f['name'].errors}">
+            <div *ngIf="isSubmitted && f['name'].errors" class="form-error">
+              <small *ngIf="f['name'].errors['required']">Nome é obrigatório</small>
+              <small *ngIf="f['name'].errors['pattern']">Nome deve conter apenas letras</small>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="uk-margin-small">
+            <label class="form-label">Email *</label>
+            <input 
+              class="form-input" 
+              type="email" 
+              formControlName="email"
+              placeholder="seu.email@exemplo.com"
+              [ngClass]="{'input-error': isSubmitted && f['email'].errors}">
+            <div *ngIf="isSubmitted && f['email'].errors" class="form-error">
+              <small *ngIf="f['email'].errors['required']">Email é obrigatório</small>
+              <small *ngIf="f['email'].errors['email']">Email inválido</small>
+            </div>
+          </div>
+
+          <!-- Telefone -->
+          <div class="uk-margin-small">
+            <label class="form-label">Telefone/Telemóvel *</label>
+            <input 
+              class="form-input" 
+              type="tel" 
+              formControlName="contact"
+              placeholder="+244 XXX XXX XXX"
+              [ngClass]="{'input-error': isSubmitted && f['contact'].errors}">
+            <div *ngIf="isSubmitted && f['contact'].errors" class="form-error">
+              <small *ngIf="f['contact'].errors['required']">Telefone é obrigatório</small>
+              <small *ngIf="f['contact'].errors['pattern']">Telefone inválido</small>
+            </div>
+          </div>
+
+          <!-- Tipo de Participante -->
+          <div class="uk-margin-small">
+            <label class="form-label">Qual é seu Perfil? *</label>
+            <select 
+              class="form-input form-select" 
+              formControlName="participantType"
+              [ngClass]="{'input-error': isSubmitted && f['participantType'].errors}">
+              <option value="">Selecione seu perfil...</option>
+              <option *ngFor="let tipo of tiposParticipante" [value]="tipo">{{ tipo }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['participantType'].errors" class="form-error">
+              <small *ngIf="f['participantType'].errors['required']">Selecione seu perfil</small>
+            </div>
+          </div>
+
+          <!-- Empresa (Opcional) -->
+          <div class="uk-margin-small">
+            <label class="form-label">Empresa/Organização (Opcional)</label>
+            <input 
+              class="form-input" 
+              type="text" 
+              formControlName="company"
+              placeholder="Se aplicável"
+              [ngClass]="{'input-error': isSubmitted && f['company'].errors}">
+            <div *ngIf="isSubmitted && f['company'].errors" class="form-error">
+              <small *ngIf="f['company'].errors['minlength']">Mínimo 3 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Principais Desafios -->
+          <div class="uk-margin-small">
+            <label class="form-label">Qual é seu Principal Desafio? *</label>
+            <select 
+              class="form-input form-select" 
+              formControlName="mainChallenges"
+              [ngClass]="{'input-error': isSubmitted && f['mainChallenges'].errors}">
+              <option value="">Selecione um desafio...</option>
+              <option *ngFor="let desafio of desafiosComuns" [value]="desafio">{{ desafio }}</option>
+            </select>
+            <div *ngIf="isSubmitted && f['mainChallenges'].errors" class="form-error">
+              <small *ngIf="f['mainChallenges'].errors['required']">Selecione um desafio</small>
+            </div>
+          </div>
+
+          <!-- Objetivos da Mentoria -->
+          <div class="uk-margin-small">
+            <label class="form-label">Quais são seus Objetivos com a Mentoria? *</label>
+            <textarea 
+              class="form-input form-textarea" 
+              formControlName="mentoriaGoals"
+              placeholder="Ex: Reduzir stress, melhorar comunicação, desenvolver liderança, etc..."
+              rows="3"
+              [ngClass]="{'input-error': isSubmitted && f['mentoriaGoals'].errors}"></textarea>
+            <small class="form-hint">{{ f['mentoriaGoals'].value?.length || 0 }}/500 caracteres</small>
+            <div *ngIf="isSubmitted && f['mentoriaGoals'].errors" class="form-error">
+              <small *ngIf="f['mentoriaGoals'].errors['required']">Descreva seus objetivos</small>
+              <small *ngIf="f['mentoriaGoals'].errors['minlength']">Mínimo 10 caracteres</small>
+              <small *ngIf="f['mentoriaGoals'].errors['maxlength']">Máximo 500 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Disponibilidade -->
+          <div class="uk-margin-small">
+            <label class="form-label">Sua Disponibilidade Preferida *</label>
+            <select 
+              class="form-input form-select" 
+              formControlName="availability"
+              [ngClass]="{'input-error': isSubmitted && f['availability'].errors}">
+              <option value="">Selecione sua disponibilidade...</option>
+              <option value="Manhã (08:00-12:00)">Manhã (08:00-12:00)</option>
+              <option value="Tarde (14:00-18:00)">Tarde (14:00-18:00)</option>
+              <option value="Noite (18:00-21:00)">Noite (18:00-21:00)</option>
+              <option value="Flexível">Flexível</option>
+            </select>
+            <div *ngIf="isSubmitted && f['availability'].errors" class="form-error">
+              <small *ngIf="f['availability'].errors['required']">Selecione sua disponibilidade</small>
+            </div>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="uk-margin-small">
+            <label class="form-label">Conte-nos Mais (Opcional) *</label>
+            <textarea 
+              class="form-input form-textarea" 
+              formControlName="message"
+              placeholder="Contexto adicional que nos ajude a personalizar melhor sua mentoria..."
+              rows="4"
+              [ngClass]="{'input-error': isSubmitted && f['message'].errors}"></textarea>
+            <small class="form-hint">{{ f['message'].value?.length || 0 }}/1000 caracteres</small>
+            <div *ngIf="isSubmitted && f['message'].errors" class="form-error">
+              <small *ngIf="f['message'].errors['required']">Descreva seu contexto</small>
+              <small *ngIf="f['message'].errors['minlength']">Mínimo 10 caracteres</small>
+              <small *ngIf="f['message'].errors['maxlength']">Máximo 1000 caracteres</small>
+            </div>
+          </div>
+
+          <!-- Botões -->
+          <div class="uk-margin-top btn-group">
+            <button 
+              type="submit" 
+              class="btn-submit-mentoria"
+              [disabled]="isLoading">
+              <span *ngIf="!isLoading">Começar Mentoria</span>
+              <span *ngIf="isLoading">Processando...</span>
+            </button>
+            <button 
+              type="button" 
+              class="btn-reset"
+              (click)="resetForm()"
+              [disabled]="isLoading">
+              Limpar Formulário
+            </button>
+          </div>
+
+          <p class="form-disclaimer" style="color: #999; font-size: 12px; margin-top: 15px;">
+            * Campos obrigatórios. Seus dados serão utilizados apenas para contacto referente à mentoria.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

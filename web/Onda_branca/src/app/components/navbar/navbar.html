@@ -3,7 +3,7 @@
     <div uk-navbar>
       <!-- LOGO -->
       <div class="uk-navbar-left">
-        <a href="#" class="uk-navbar-item uk-logo" ><img src="imagens/logo/logo-onda-branca.svg" width="120" alt=""></a>
+        <a href="#" class="uk-navbar-item uk-logo" ><img data-src="https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/logos/logo-onda-branca.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvbG9nb3MvbG9nby1vbmRhLWJyYW5jYS5zdmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1MzI5NTY4LCJleHAiOjIxMDA2ODk1Njh9.hZtzhc4iv1oDSgjrlHTEvY520RJEu86uWnQklZ3wrIw" uk-img width="120" alt="Logo Onda Branca"></a>
       </div>
   
       <!-- NAVBAR CENTER -->
@@ -105,7 +105,7 @@
                 </div>
                 <div class="dropdown-col-right">
                   <ul class="uk-nav uk-navbar-dropdown-nav" style="max-width: 250px;">
-                    <li routerLinkActive="uk-active"><a class="dropdown-link" [routerLink]="['/comunidade-onda-branca']">Comunidade</a></li>
+                    <li routerLinkActive="uk-active"><a class="dropdown-link" href="">Comunidade</a></li>
                     <li routerLinkActive="uk-active"><a class="dropdown-link" href="javascript:void(0)">Agenda</a></li>
                   </ul>
                 </div>
@@ -114,7 +114,7 @@
           </li>
           <!-- SOBRE ONDA BRANCA -->
           <li routerLinkActive="uk-active" [routerLinkActiveOptions]="{ exact: false }">
-            <a href="javascript:void(0)" tabindex="0">Espaço de eventos</a>
+            <a [routerLink]="['/espaco-de-eventos']" tabindex="0">Espaço de eventos</a>
           </li>
         </ul>
       </div>
@@ -128,9 +128,11 @@
 
       <!-- BOTÃO MOBILE -->
       <div class="uk-navbar-right uk-hidden@s">
+        <div class="uk-flex uk-flex-middle">
+          <a [routerLink]="['/contacto']" class="uk-button uk-button-default btn-blue-alive" style="background-color: #00479f; color: white; border: none; border-radius: 5px;">Contato</a>
+        </div>
         <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
           <span style="color: white; font-weight: bold;" class="uk-icon" uk-icon="icon: more-vertical"></span> 
-          <span style="color: white; font-weight: bold;" class="uk-margin-small-right">Menu</span>
         </a>
       </div>
     </div>
@@ -150,66 +152,68 @@
     <ul class="uk-nav uk-nav-default" uk-nav>
       <!-- Sobre a Onda Branca -->
       <li><a style="color:#272727;" [routerLink]="['']">Home</a></li>
-      <li><a style="color:#272727;" [routerLink]="['/sobre']">Sobre a Onda Branca</a></li>
+      <li><a style="color:#272727;" uk-scroll href="#sobre-onda-branca">Onda Branca</a></li>
       <!-- Serviços -->
       <li class="uk-parent">
-        <a href="javascript:void(0)" style="color:#272727;">Serviços</a>
+        <a href="javascript:void(0)" style="color:#272727;">Soluções</a>
         <ul class="uk-nav-sub uk-list-divider">
-          <li><a style="color:#272727;" [routerLink]="['/mentoria-de-saude-mental-para-gestores']">Mentoria de saúde mental para gestores</a></li>
-          <li><a style="color:#272727;" [routerLink]="['/antendimento-empressarial']">Atendimento empresarial</a></li>
-          <li><a style="color:#272727;" [routerLink]="['/gestao-de-saude-mental-para-empressa']">Gestão de programa de saúde mental para empresas</a></li>
-          <li><a style="color:#272727;" [routerLink]="['/programa-de-renda-extra']">Programa de Renda Extra</a></li>
+          <li><a style="color:#272727;" [routerLink]="['/programa-de-saude-emocional-do-trabalhador']">Programa de saúde emocional do trabalhador</a></li>
+          <li><a style="color:#272727;" [routerLink]="['/programa-de-saude-emocional-do-trabalhador-mentoria']">Programa de saúde emocional do trabalhador - mentoria</a></li>
+          <li><a style="color:#272727;" [routerLink]="['/projecto-de-qualidade-de-vida']">Projecto de qualidade de vida</a></li>
           <li><a style="color:#272727;" [routerLink]="['/programa-de-ginastica-laboral']">O programa de ginástica laboral</a></li>
           <li><a style="color:#272727;" [routerLink]="['/palestra-e-workshop']">Palestras e workshops</a></li>
-          <li><a style="color:#272727;" [routerLink]="['/programa-de-saude-mental-no-trabalho']">Programa de saúde mental no trabalho</a></li>
         </ul>
       </li>
 
       <!-- Conteúdos -->
       <li class="uk-parent">
-        <a href="javascript:void(0)" style="color:#272727;">Conteúdos</a>
+        <a href="javascript:void(0)" style="color:#272727;">Media</a>
         <ul class="uk-nav-sub uk-list-divider">
-          <li><a style="color:#272727;" [routerLink]="['/sobre']">Podcast</a></li>
-          <li><a style="color:#272727;" [routerLink]="['/missao']">Blog</a></li>
+          <li><a style="color:#272727;" href="javascript:void(0)">Podcast</a></li>
+          <li><a style="color:#272727;" href="javascript:void(0)">Blog</a></li>
+        </ul>
+      </li>
+      <!-- Conteúdos -->
+      <li class="uk-parent">
+        <a href="javascript:void(0)" style="color:#272727;">Conexão</a>
+        <ul class="uk-nav-sub uk-list-divider">
+          <li><a style="color:#272727;" href="">Comunidade</a></li>
+          <li><a style="color:#272727;" href="javascript:void(0)">Agenda</a></li>
         </ul>
       </li>
     </ul>
+    <hr>
+    <li><a style="color:#272727;" uk-scroll href="">Espaço de eventos</a></li>
     <hr>
     <h3 style="color: #272727; margin: 5px; font-size: 16px;">Siga-nos nas redes sociais</h3>
     <hr>
     <!-- Lista vertical de ícones com texto -->
     <ul class="uk-list uk-list-divider uk-margin-small-top">
       <li>
-        <a href="javascript:void(0)" target="_blank" style="color: #00479f; font-size: 16px;">
+        <a href="javascript:void(0)" target="_blank" style="color: #8f51c9; font-size: 16px;">
           <i class="fab fa-facebook"></i> Facebook
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" target="_blank" style="color: #00479f; font-size: 16px;">
+        <a href="javascript:void(0)" target="_blank" style="color: #8f51c9; font-size: 16px;">
           <i class="fab fa-instagram"></i> Instagram
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" target="_blank" style="color: #00479f; font-size: 16px;">
+        <a href="javascript:void(0)" target="_blank" style="color: #8f51c9; font-size: 16px;">
           <i class="fab fa-linkedin"></i> Linkedin
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" target="_blank" style="color: #00479f; font-size: 16px;">
+        <a href="javascript:void(0)" target="_blank" style="color: #8f51c9; font-size: 16px;">
           <i class="fab fa-youtube"></i> Youtube
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" target="_blank" style="color: #00479f; font-size: 16px;">
+        <a href="javascript:void(0)" target="_blank" style="color: #8f51c9; font-size: 16px;">
           <i class="fab fa-spotify"></i> Spotify
         </a>
       </li>
     </ul>
-
-    <!-- Botão de contacto -->
-    <a class="uk-button uk-button-default uk-margin-top" 
-       style="background-color: #00479f; color: white; border: none; border-radius: 5px;" 
-       [routerLink]="['/contacto']">Contacto</a>
-
   </div>
 </div>

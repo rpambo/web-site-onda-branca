@@ -1,0 +1,227 @@
+<div class="form-container-ginastica">
+  <div class="uk-container">
+    <div class="uk-grid-match" uk-grid>
+
+      <!-- Right side - Form -->
+      <div class="uk-width-1-2@m uk-width-1-1">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-ginastica">
+          <h3 class="form-title">Solicite seu Programa</h3>
+          <p class="form-subtitle">Preencha os dados para iniciar seu programa de Ginástica Laboral</p>
+
+          <!-- Nome -->
+          <div class="form-group">
+            <label for="name" class="form-label">
+              Nome Completo <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name"
+              class="form-input"
+              [class.is-invalid]="submitted && f['name'].errors"
+              placeholder="Seu nome"
+            >
+            <small class="error" *ngIf="submitted && f['name'].errors">
+              <span *ngIf="f['name'].errors['required']">Nome é obrigatório</span>
+              <span *ngIf="f['name'].errors['minlength']">Mínimo 3 caracteres</span>
+            </small>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label">
+              Email <span class="required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email"
+              class="form-input"
+              [class.is-invalid]="submitted && f['email'].errors"
+              placeholder="seu.email@empresa.com"
+            >
+            <small class="error" *ngIf="submitted && f['email'].errors">
+              <span *ngIf="f['email'].errors['required']">Email é obrigatório</span>
+              <span *ngIf="f['email'].errors['email']">Email inválido</span>
+            </small>
+          </div>
+
+          <!-- Telefone -->
+          <div class="form-group">
+            <label for="telefone" class="form-label">
+              Telefone <span class="required">*</span>
+            </label>
+            <input 
+              type="tel" 
+              id="telefone" 
+              formControlName="telefone"
+              class="form-input"
+              [class.is-invalid]="submitted && f['telefone'].errors"
+              placeholder="+244 910 000 000"
+            >
+            <small class="error" *ngIf="submitted && f['telefone'].errors">
+              <span *ngIf="f['telefone'].errors['required']">Telefone é obrigatório</span>
+              <span *ngIf="f['telefone'].errors['pattern']">Telefone inválido</span>
+            </small>
+          </div>
+
+          <!-- Empresa -->
+          <div class="form-group">
+            <label for="empresa" class="form-label">
+              Nome da Empresa <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="empresa" 
+              formControlName="empresa"
+              class="form-input"
+              [class.is-invalid]="submitted && f['empresa'].errors"
+              placeholder="Nome da sua empresa"
+            >
+            <small class="error" *ngIf="submitted && f['empresa'].errors">
+              <span *ngIf="f['empresa'].errors['required']">Empresa é obrigatória</span>
+              <span *ngIf="f['empresa'].errors['minlength']">Mínimo 3 caracteres</span>
+            </small>
+          </div>
+
+          <!-- Número de Funcionários -->
+          <div class="form-group">
+            <label for="numeroFuncionarios" class="form-label">
+              Número de Colaboradores <span class="required">*</span>
+            </label>
+            <input 
+              type="number" 
+              id="numeroFuncionarios" 
+              formControlName="numeroFuncionarios"
+              class="form-input"
+              [class.is-invalid]="submitted && f['numeroFuncionarios'].errors"
+              placeholder="Quantos colaboradores?"
+              min="1"
+            >
+            <small class="error" *ngIf="submitted && f['numeroFuncionarios'].errors">
+              <span *ngIf="f['numeroFuncionarios'].errors['required']">Campo obrigatório</span>
+              <span *ngIf="f['numeroFuncionarios'].errors['min']">Mínimo 1 colaborador</span>
+            </small>
+          </div>
+
+          <!-- Área/Departamento -->
+          <div class="form-group">
+            <label for="area" class="form-label">
+              Área/Departamento <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="area" 
+              formControlName="area"
+              class="form-input"
+              [class.is-invalid]="submitted && f['area'].errors"
+              placeholder="Ex: RH, Administrativo, Operações..."
+            >
+            <small class="error" *ngIf="submitted && f['area'].errors">
+              <span *ngIf="f['area'].errors['required']">Área é obrigatória</span>
+            </small>
+          </div>
+
+          <!-- Atividade Preferida -->
+          <div class="form-group">
+            <label for="atividadePreferida" class="form-label">
+              Tipo de Atividade Preferida <span class="required">*</span>
+            </label>
+            <select 
+              id="atividadePreferida" 
+              formControlName="atividadePreferida"
+              class="form-input"
+              [class.is-invalid]="submitted && f['atividadePreferida'].errors"
+            >
+              <option value="">-- Selecione uma opção --</option>
+              <option *ngFor="let atividade of atividadesPreferidas" [value]="atividade">
+                {{ atividade }}
+              </option>
+            </select>
+            <small class="error" *ngIf="submitted && f['atividadePreferida'].errors">
+              <span *ngIf="f['atividadePreferida'].errors['required']">Selecione uma atividade</span>
+            </small>
+          </div>
+
+          <!-- Objetivos -->
+          <div class="form-group">
+            <label for="objetivos" class="form-label">
+              Principais Objetivos <span class="required">*</span>
+            </label>
+            <select 
+              id="objetivos" 
+              formControlName="objetivos"
+              class="form-input"
+              [class.is-invalid]="submitted && f['objetivos'].errors"
+            >
+              <option value="">-- Selecione um objetivo --</option>
+              <option *ngFor="let objetivo of objetivosGinastica" [value]="objetivo">
+                {{ objetivo }}
+              </option>
+            </select>
+            <small class="error" *ngIf="submitted && f['objetivos'].errors">
+              <span *ngIf="f['objetivos'].errors['required']">Selecione um objetivo</span>
+            </small>
+          </div>
+
+          <!-- Frequência -->
+          <div class="form-group">
+            <label for="frequencia" class="form-label">
+              Frequência Desejada <span class="required">*</span>
+            </label>
+            <select 
+              id="frequencia" 
+              formControlName="frequencia"
+              class="form-input"
+              [class.is-invalid]="submitted && f['frequencia'].errors"
+            >
+              <option value="">-- Selecione a frequência --</option>
+              <option *ngFor="let freq of frequenciaDesejada" [value]="freq">
+                {{ freq }}
+              </option>
+            </select>
+            <small class="error" *ngIf="submitted && f['frequencia'].errors">
+              <span *ngIf="f['frequencia'].errors['required']">Selecione uma frequência</span>
+            </small>
+          </div>
+
+          <!-- Mensagem Extra -->
+          <div class="form-group">
+            <label for="mensagem" class="form-label">
+              Mensagem Adicional
+              <span class="char-count" *ngIf="form.get('mensagem')?.value">
+                ({{ form.get('mensagem')?.value.length }}/1000)
+              </span>
+            </label>
+            <textarea 
+              id="mensagem" 
+              formControlName="mensagem"
+              class="form-input"
+              [class.is-invalid]="submitted && f['mensagem'].errors"
+              placeholder="Dúvidas, expectativas ou informações adicionais..."
+              rows="4"
+            ></textarea>
+            <small class="error" *ngIf="submitted && f['mensagem'].errors">
+              <span *ngIf="f['mensagem'].errors['minlength']">Mínimo 10 caracteres</span>
+              <span *ngIf="f['mensagem'].errors['maxlength']">Máximo 1000 caracteres</span>
+            </small>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="submit-btn"
+            [disabled]="loading"
+          >
+            <span *ngIf="!loading">Solicitar Programa </span>
+            <span *ngIf="loading">Enviando...</span>
+          </button>
+
+          <p class="form-note">
+            Responderemos em breve com uma proposta personalizada
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,3 @@
-.back{
-  background-image: url(/imagens/2026-p7/hero-p7.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80vh;
-}
-
 .animated-btn {
     background: linear-gradient(90deg, #01061F, #7CCFF7);
     background-size: 200%;
@@ -36,99 +28,71 @@
   background-size: 300% 100%;
 }
 
+.conteudo {
+  max-width: 600px;
+}
 
 @media (min-width:344px) and (max-width: 767px) {
-  .conteudo {
-    position: static !important;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 100%;
-    transform: none;
-    text-align: center;
-    padding: 20px;
+  .uk-slideshow-items {
+    min-height: 740px !important;
   }
-  .back {
-    height: 65vh !important;
-    background-image: url(/imagens/2026-p7/hero-p7-mobile.png) !important;
-    background-position: center top;
+
+  .conteudo {
+    left: 0 !important;
+    right: 0 !important;
+    top: 45%;
+    transform: none;
+    text-align: center !important;
+    width: 100% !important;
   }   
 
   .titulo{
     max-width: 100% !important;
     margin: 0 !important;
-    font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
+    font-size: clamp(1.8rem, 100vw, 1.1rem) !important;
   }
+
   .titulo-p7{
     font-size: 2rem !important;
   }
+
   .uk-section{
-    text-align: center;
+    text-align: left;
   }
+
   .bnt{
     margin-bottom: 10px !important;
   }
-  .btn-2{
-    margin-top: 30px !important;
-  }
-}
 
-
-@media (max-height: 700px) {
-  .titulo{
-    font-size: 2rem !important;
-    max-width: 450px !important;
-  }
-}
-@media (min-width:344px) and (max-width: 767px) {
-  .conteudo {
-    position: static !important;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 100%;
-    transform: none;
-    text-align: center;
-    padding: 20px;
-  }
-  .back {
-    height: 65vh !important;
-    background-image: url(/imagens/2026-p7/hero-p7-mobile.png) !important;
-    background-position: center top;
-  }   
-
-  .titulo{
-    max-width: 100% !important;
-    margin: 0 !important;
-    font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
-  }
-  .titulo-p7{
-    font-size: 2rem !important;
-  }
-  .uk-section{
-    text-align: center;
-  }
-  .bnt{
-    margin-bottom: 10px !important;
-  }
   .btn-1{
     margin-top: 35px !important;
   }
 }
 
-
 /* TABLET */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   
-  .back {
-    height: 50vh !important;
+  .uk-slideshow-items{
+    min-height: 450px !important;
   }
   
-  .conteudo{
-    margin-bottom: 20px !important;
+  .conteudo {
+    width: 350px !important;
   }
 
-  .sectio-baixo{
-    margin-top: -90px !important;
+  .titulo{
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: clamp(1.8rem, 100vw, 1.4rem) !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .uk-slideshow-items{
+    min-height: 450px !important;
+  }
+
+  .conteudo {
+    max-width: 450px !important;
   }
 }

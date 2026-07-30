@@ -318,12 +318,12 @@
 }
 
 ul li a:hover{
-  color: #c467bf !important;
+  color: #1E3A5F !important;
 }
 
 /* hover */
 .uk-navbar-dropdown .uk-navbar-dropdown-nav li > a.dropdown-link:hover {
-  color: #c467bf !important;
+  color: #1E3A5F !important;
   text-decoration: underline;
 }
 
@@ -411,6 +411,6 @@ hr{
 
 
 .uk-navbar-nav > li.uk-active > a {
-  color: #c467bf !important; /* cor para ativo */
+  color: #1E3A5F !important; /* cor para ativo */
   font-weight: 600;
 }
