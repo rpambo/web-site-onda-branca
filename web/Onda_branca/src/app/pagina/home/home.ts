@@ -59,7 +59,7 @@ export class Home {
 
     this.meta.updateTag({
       property: 'og:image',
-      content: 'https://ondabranca.com/imagens/logo.png'
+      content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/logos/logo-onda-branca.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvbG9nb3MvbG9nby1vbmRhLWJyYW5jYS5zdmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDkzODk5LCJleHAiOjIxMDA4NTM4OTl9.3SBkWZqkYucCtuF3OYocaYkFDtQuNV9hCapuyTKedk0'
     });
 
     this.meta.updateTag({
@@ -86,7 +86,7 @@ export class Home {
 
     this.meta.updateTag({
       name: 'twitter:image',
-      content: 'https://ondabranca.com/imagens/logo.png'
+      content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/logos/logo-onda-branca.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvbG9nb3MvbG9nby1vbmRhLWJyYW5jYS5zdmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDkzODk5LCJleHAiOjIxMDA4NTM4OTl9.3SBkWZqkYucCtuF3OYocaYkFDtQuNV9hCapuyTKedk0'
     });
 
     this.meta.updateTag({

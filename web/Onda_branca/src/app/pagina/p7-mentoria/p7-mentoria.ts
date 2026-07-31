@@ -46,11 +46,11 @@ export class P7Mentoria implements OnInit {
     });
     this.meta.updateTag({
       property: 'og:image',
-      content: 'https://ondabranca.com/imagens/og-mentoria-saude-mental.png'
+      content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/p7-mentoria/hero-p7-mentoria.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcDctbWVudG9yaWEvaGVyby1wNy1tZW50b3JpYS53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTQ5NDQ5NywiZXhwIjoyMTAwODU0NDk3fQ.lBKF_QqRp-UUWnHg8_mOoMXmCpEw3XPbTC6yEN7i7SI'
     });
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://ondabranca.com/p7-mentoria'
+      content: 'https://ondabranca.com/programa-de-saude-emocional-do-trabalhador-mentoria'
     });
     this.meta.updateTag({ property: 'og:type', content: 'article' });
 
@@ -66,7 +66,7 @@ export class P7Mentoria implements OnInit {
     });
     this.meta.updateTag({
       name: 'twitter:image',
-      content: 'https://ondabranca.com/imagens/og-mentoria-saude-mental.png'
+      content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/p7-mentoria/hero-p7-mentoria.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcDctbWVudG9yaWEvaGVyby1wNy1tZW50b3JpYS53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTQ5NDQ5NywiZXhwIjoyMTAwODU0NDk3fQ.lBKF_QqRp-UUWnHg8_mOoMXmCpEw3XPbTC6yEN7i7SI'
     });
   }
 

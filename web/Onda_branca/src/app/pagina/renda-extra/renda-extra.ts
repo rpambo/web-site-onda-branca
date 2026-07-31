@@ -40,11 +40,11 @@ updateMetaTagsProjetoQualidadeDeVida() {
   });
   this.meta.updateTag({
     property: 'og:image',
-    content: 'https://ondabranca.com/imagens/og-qualidade-de-vida.png'
+    content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-qualidade-de-vida/hero-projecto-de-melhoria-de-vida.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtcXVhbGlkYWRlLWRlLXZpZGEvaGVyby1wcm9qZWN0by1kZS1tZWxob3JpYS1kZS12aWRhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDk0ODYzLCJleHAiOjIxMDA4NTQ4NjN9.EEN7uZMF5wpFqiOreza7Pg20VDIYcVRDpSqUvJqJxvw'
   });
   this.meta.updateTag({
     property: 'og:url',
-    content: 'https://ondabranca.com/projeto-de-qualidade-de-vida'
+    content: 'https://ondabranca.com/projecto-de-qualidade-de-vida'
   });
   this.meta.updateTag({ property: 'og:type', content: 'article' });
 
@@ -61,7 +61,7 @@ updateMetaTagsProjetoQualidadeDeVida() {
   });
   this.meta.updateTag({
     name: 'twitter:image',
-    content: 'https://ondabranca.com/imagens/og-qualidade-de-vida.png'
+    content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-qualidade-de-vida/hero-projecto-de-melhoria-de-vida.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtcXVhbGlkYWRlLWRlLXZpZGEvaGVyby1wcm9qZWN0by1kZS1tZWxob3JpYS1kZS12aWRhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDk0ODYzLCJleHAiOjIxMDA4NTQ4NjN9.EEN7uZMF5wpFqiOreza7Pg20VDIYcVRDpSqUvJqJxvw'
   });
 }
 

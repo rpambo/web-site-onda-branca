@@ -38,7 +38,7 @@ export class PalestraEWorkshop implements OnInit {
     // Open Graph
     this.meta.updateTag({ property: 'og:title', content: 'Palestra e Workshop | Onda Branca' });
     this.meta.updateTag({ property: 'og:description', content: 'Aprenda técnicas de gestão emocional e produtividade com a Onda Branca. Participe do nosso workshop e transforme sua rotina.' });
-    this.meta.updateTag({ property: 'og:image', content: 'https://ondabranca.com/imagens/og-palestra.png' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/palestra-e-workshop/hero-palestra-e-workshop.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcGFsZXN0cmEtZS13b3Jrc2hvcC9oZXJvLXBhbGVzdHJhLWUtd29ya3Nob3Aud2VicCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU0OTQ2MDAsImV4cCI6MjEwMDg1NDYwMH0.X5uVSFTmyA-NmvEys4_ZqmlGbiVwIbOPRW7SUrj3Vug' });
     this.meta.updateTag({ property: 'og:url', content: 'https://ondabranca.com/palestra-e-workshop' });
     this.meta.updateTag({ property: 'og:type', content: 'article' });
 
@@ -46,7 +46,7 @@ export class PalestraEWorkshop implements OnInit {
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: 'Palestra e Workshop | Onda Branca' });
     this.meta.updateTag({ name: 'twitter:description', content: 'Participe da nossa palestra e workshop para desenvolver habilidades de gestão emocional, produtividade e bem-estar.' });
-    this.meta.updateTag({ name: 'twitter:image', content: 'https://ondabranca.com/imagens/og-palestra.png' });
+    this.meta.updateTag({ name: 'twitter:image', content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/palestra-e-workshop/hero-palestra-e-workshop.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcGFsZXN0cmEtZS13b3Jrc2hvcC9oZXJvLXBhbGVzdHJhLWUtd29ya3Nob3Aud2VicCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODU0OTQ2MDAsImV4cCI6MjEwMDg1NDYwMH0.X5uVSFTmyA-NmvEys4_ZqmlGbiVwIbOPRW7SUrj3Vug' });
   }
 
   scrollToForm(): void {

@@ -40,11 +40,11 @@ updateMetaTagsGinastica() {
   });
   this.meta.updateTag({
     property: 'og:image',
-    content: 'https://ondabranca.com/imagens/og-ginastica.png' // imagem específica para a página
+    content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-ginastica/hero-programa-de-ginastica.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtZ2luYXN0aWNhL2hlcm8tcHJvZ3JhbWEtZGUtZ2luYXN0aWNhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDk0NzcxLCJleHAiOjIxMDA4NTQ3NzF9.919JHOMiK2HvTW04Z3tFUkD9ry-IkNREuky-pMU239c' // imagem específica para a página
   });
   this.meta.updateTag({
     property: 'og:url',
-    content: 'https://ondabranca.com/ginastica'
+    content: 'https://ondabranca.com/programa-de-ginastica-laboral'
   });
   this.meta.updateTag({ property: 'og:type', content: 'article' });
 
@@ -61,7 +61,7 @@ updateMetaTagsGinastica() {
   });
   this.meta.updateTag({
     name: 'twitter:image',
-    content: 'https://ondabranca.com/imagens/og-ginastica.png'
+    content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/programa-ginastica/hero-programa-de-ginastica.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvcHJvZ3JhbWEtZ2luYXN0aWNhL2hlcm8tcHJvZ3JhbWEtZGUtZ2luYXN0aWNhLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1NDk0NzcxLCJleHAiOjIxMDA4NTQ3NzF9.919JHOMiK2HvTW04Z3tFUkD9ry-IkNREuky-pMU239c'
   });
 }
 
