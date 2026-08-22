@@ -56,7 +56,7 @@ export class Reclamacao implements OnInit {
     this.meta.updateTag({ property: 'og:title', content: 'Canal de Reclamações | Onda Branca' });
     this.meta.updateTag({ property: 'og:description', content: 'Registre aqui sua reclamação ou denúncia com segurança e confidencialidade.' });
     this.meta.updateTag({ property: 'og:image', content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/canal-de-reclamacao/hero-canal-de-reclamacao.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvY2FuYWwtZGUtcmVjbGFtYWNhby9oZXJvLWNhbmFsLWRlLXJlY2xhbWFjYW8ucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTQ5ODE2MSwiZXhwIjoyMTAwODU4MTYxfQ.6LrqAU129wx0fSEj9bah41x-2CjVRge4i9eZzvrhUcw' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://ondabranca.com/canal-de-reclamacao' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://ondabrancaangola.com/canal-de-reclamacao' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
 
     // Twitter Cards

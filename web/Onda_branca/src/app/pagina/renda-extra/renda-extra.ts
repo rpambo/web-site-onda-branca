@@ -44,7 +44,7 @@ updateMetaTagsProjetoQualidadeDeVida() {
   });
   this.meta.updateTag({
     property: 'og:url',
-    content: 'https://ondabranca.com/projecto-de-qualidade-de-vida'
+    content: 'https://ondabrancaangola.com/projecto-de-qualidade-de-vida'
   });
   this.meta.updateTag({ property: 'og:type', content: 'article' });
 

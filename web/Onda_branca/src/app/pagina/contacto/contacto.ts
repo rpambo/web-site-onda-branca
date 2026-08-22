@@ -40,7 +40,7 @@ export class Contacto implements OnInit {
     this.meta.updateTag({ property: 'og:title', content: 'Contacto | Onda Branca' });
     this.meta.updateTag({ property: 'og:description', content: 'Fale conosco e conheça todos os serviços da Onda Branca. Estamos aqui para apoiar você ou sua empresa.' });
     this.meta.updateTag({ property: 'og:image', content: 'https://wxopwlmdtfupztzdmtzb.supabase.co/storage/v1/object/sign/GestDremasImage/contacto/contacto-topo.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYzM3Zjg5Ny05YzgwLTRiYzctYjZlZS0yMjEwMGQ3Mzk0YTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJHZXN0RHJlbWFzSW1hZ2UvY29udGFjdG8vY29udGFjdG8tdG9wby53ZWJwIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NTQ5NDE4OSwiZXhwIjoyMTAwODU0MTg5fQ.NNputu9TqJ41cdXHfGw6NL6a96C1Xf6bonouxbkgIBE' });
-    this.meta.updateTag({ property: 'og:url', content: 'https://ondabranca.com/contacto' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://ondabrancaangola.com/contacto' });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
 
     // Twitter Cards

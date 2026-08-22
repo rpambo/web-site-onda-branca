@@ -54,7 +54,7 @@ export class PageNotFound implements OnInit {
 
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://ondabranca.com/404'
+      content: 'https://ondabrancaangola.com/404'
     });
 
     this.meta.updateTag({

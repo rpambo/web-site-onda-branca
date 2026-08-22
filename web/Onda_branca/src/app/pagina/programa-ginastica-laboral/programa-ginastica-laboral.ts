@@ -44,7 +44,7 @@ updateMetaTagsGinastica() {
   });
   this.meta.updateTag({
     property: 'og:url',
-    content: 'https://ondabranca.com/programa-de-ginastica-laboral'
+    content: 'https://ondabrancaangola.com/programa-de-ginastica-laboral'
   });
   this.meta.updateTag({ property: 'og:type', content: 'article' });
 

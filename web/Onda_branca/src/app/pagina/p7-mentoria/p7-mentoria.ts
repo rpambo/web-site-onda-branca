@@ -50,7 +50,7 @@ export class P7Mentoria implements OnInit {
     });
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://ondabranca.com/programa-de-saude-emocional-do-trabalhador-mentoria'
+      content: 'https://ondabrancaangola.com/programa-de-saude-emocional-do-trabalhador-mentoria'
     });
     this.meta.updateTag({ property: 'og:type', content: 'article' });
 

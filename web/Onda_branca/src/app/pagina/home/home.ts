@@ -64,7 +64,7 @@ export class Home {
 
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://ondabranca.com'
+      content: 'https://ondabrancaangola.com'
     });
 
     // Tipo adequado para programa/projeto

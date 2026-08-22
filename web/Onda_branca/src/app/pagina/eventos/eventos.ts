@@ -55,7 +55,7 @@ export class Eventos implements OnInit {
 
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://ondabranca.com/espaco-de-eventos'
+      content: 'https://ondabrancaangola/espaco-de-eventos'
     });
 
     this.meta.updateTag({
