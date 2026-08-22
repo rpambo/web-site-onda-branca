@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailMarketing {
-  private apiUrl = 'http://localhost:8080/v1/brochura/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/brochura/email'
 
   constructor(private http: HttpClient){}
   

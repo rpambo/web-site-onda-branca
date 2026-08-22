@@ -8,7 +8,7 @@ import { GinasticaLaboralInterface } from '../interfaces';
 })
 
 export class GinasticaLaboral {
-  private apiUrl = 'http://localhost:8080/v1/ginastica-laboral/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/ginastica-laboral/email'
   
   constructor(private http: HttpClient){}
     

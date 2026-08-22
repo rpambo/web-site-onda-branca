@@ -7,7 +7,7 @@ import { ProgramaSaudeMentalTrabalhador } from '../interfaces';
   providedIn: 'root'
 })
 export class ProgramaSaudeMentalTrabalhadorService {
-  private apiUrl = 'http://localhost:8080/v1/saude-mental/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/saude-mental/email'
   
   constructor(private http: HttpClient){}
     

@@ -9,7 +9,7 @@ import { reclamacao } from '../interfaces';
 
 export class CanalDeReclamacao {
   
-  private apiUrl = 'http://localhost:8080/v1/complaints/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/complaints/email'
 
   constructor(private http: HttpClient){}
 

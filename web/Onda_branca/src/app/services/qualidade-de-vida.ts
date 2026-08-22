@@ -7,7 +7,7 @@ import { QualidadeVidaInterface } from '../interfaces';
   providedIn: 'root'
 })
 export class QualidadeDeVida {
-  private apiUrl = 'http://localhost:8080/v1/qualidade-vida/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/qualidade-vida/email'
   
   constructor(private http: HttpClient){}
     

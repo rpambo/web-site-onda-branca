@@ -7,7 +7,7 @@ import { PalestraWorkshopInterface } from '../interfaces';
   providedIn: 'root'
 })
 export class Palestra {
-  private apiUrl = 'http://localhost:8080/v1/palestras-workshops/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/palestras-workshops/email'
   
   constructor(private http: HttpClient){}
     

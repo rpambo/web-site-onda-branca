@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProgramaSaudeMentalTrabalhadorServiceSete {
-  private apiUrl = 'http://localhost:8080/v1/mentoria/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/mentoria/email'
   
   constructor(private http: HttpClient){}
     

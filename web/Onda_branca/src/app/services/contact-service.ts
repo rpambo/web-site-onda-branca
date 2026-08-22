@@ -7,7 +7,7 @@ import { contactService } from '../interfaces';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:8080/v1/enterprises/email'
+  private apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/enterprises/email'
 
   constructor(private http: HttpClient) {}
 

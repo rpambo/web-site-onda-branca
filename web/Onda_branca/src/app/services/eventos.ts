@@ -8,7 +8,7 @@ import { GetSessoesResponse, SessaoEvento, ReservaEventoRequest } from '../inter
 })
 export class Eventos {
 
-  private readonly apiUrl = 'http://localhost:8080/v1/reserva-evento';
+  private readonly apiUrl = 'https://web-site-onda-branca-env.up.railway.app/v1/reserva-evento';
 
   constructor(private http: HttpClient) {}
 
