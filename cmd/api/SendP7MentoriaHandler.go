@@ -91,7 +91,7 @@ func (app *application) SendP7MentoriaHandler(w http.ResponseWriter, r *http.Req
 	status, err = app.mailer.Send(
 		mailer.MentoriaSalesTemplate,
 		"Equipa P7",
-		"rkitoco@gmail.com",
+		"geral@ondabrancaangola.com",
 		salesVars,
 		!isProdEnv,
 	)

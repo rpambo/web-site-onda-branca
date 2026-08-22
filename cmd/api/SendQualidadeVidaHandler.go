@@ -92,7 +92,7 @@ func (app *application) SendQualidadeVidaHandler(w http.ResponseWriter, r *http.
 	status, err = app.mailer.Send(
 		mailer.QualidadeVidaSalesTemplate,
 		"Equipa Onda Branca",
-		"rkitoco@gmail.com",
+		"geral@ondabrancaangola.com",
 		salesVars,
 		!isProdEnv,
 	)

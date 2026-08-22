@@ -94,7 +94,7 @@ func (app *application) SendGinasticaLaboralHandler(w http.ResponseWriter, r *ht
 	status, err = app.mailer.Send(
 		mailer.GinasticaSalesTemplate,
 		"Equipa Onda Branca",
-		"rkitoco@gmail.com",
+		"geral@ondabrancaangola.com",
 		salesVars,
 		!isProdEnv,
 	)

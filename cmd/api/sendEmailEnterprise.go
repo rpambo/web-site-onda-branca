@@ -85,7 +85,7 @@ func (app *application) SendEmailEnterprises(w http.ResponseWriter, r *http.Requ
         Data:    time.Now().Format("02/01/2006 15:04"),
     }
 
-    salesEmail := "rkitoco@gmail.com" // <- trocar pelo email da equipa
+    salesEmail := "geral@ondabrancaangola.com" // <- trocar pelo email da equipa
     status, err = app.mailer.Send(
         mailer.SalesTeamNotificationTemplate,
         "Equipa de Vendas",

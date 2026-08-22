@@ -96,7 +96,7 @@ func (app *application) SendPalestraWorkshopHandler(w http.ResponseWriter, r *ht
 	status, err = app.mailer.Send(
 		mailer.PalestraWorkshopSalesTemplate,
 		"Equipa Onda Branca",
-		"rkitoco@gmail.com",
+		"geral@ondabrancaangola.com",
 		salesVars,
 		!isProdEnv,
 	)

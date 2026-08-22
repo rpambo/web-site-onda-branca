@@ -86,7 +86,7 @@ func (app *application) SendComplaint(w http.ResponseWriter, r *http.Request) {
         Data:     time.Now().Format("02/01/2006 15:04"),
     }
 
-    supportEmail := "rafaelgeniokitoco@gmail.com"
+    supportEmail := "geral@ondabrancaangola.com"
 
     status, err = app.mailer.Send(
         mailer.SupportTeamComplaintTemplate,

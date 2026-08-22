@@ -100,7 +100,7 @@ func (app *application) SendProgramaSaudeMentalHandler(w http.ResponseWriter, r 
         Data:              time.Now().Format("02/01/2006 15:04"),
     }
 
-    salesEmail := "rkitoco@gmail.com" // <- trocar pelo email da equipa
+    salesEmail := "geral@ondabrancaangola.com" // <- trocar pelo email da equipa
     status, err = app.mailer.Send(
         mailer.SaudeMentalSalesTemplate, // template de notificação à equipa
         "Equipa de Vendas",
