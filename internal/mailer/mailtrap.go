@@ -1,6 +1,5 @@
 package mailer
 
-
 import (
 	"bytes"
 	"errors"

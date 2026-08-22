@@ -8,22 +8,183 @@ definitions:
     properties:
       email:
         type: string
+      message:
+        type: string
+      name:
+        type: string
+    type: object
+  types.GinasticaLaboral:
+    properties:
+      area:
+        type: string
+      atividadePreferida:
+        type: string
+      email:
+        type: string
+      empresa:
+        type: string
+      frequencia:
+        type: string
       mensagem:
         type: string
       name:
+        type: string
+      numeroFuncionarios:
+        type: integer
+      objetivos:
+        type: string
+      telefone:
         type: string
     type: object
   types.InfoEmpresa:
     properties:
+      contact:
+        type: string
       email:
         type: string
-      mensagem:
+      message:
         type: string
       name:
         type: string
-      servico:
+      service:
         type: string
     type: object
+  types.P7Mentoria:
+    properties:
+      availability:
+        type: string
+      company:
+        type: string
+      contact:
+        type: string
+      email:
+        type: string
+      mainChallenges:
+        type: string
+      mentoriaGoals:
+        type: string
+      message:
+        type: string
+      name:
+        type: string
+      participantType:
+        type: string
+    type: object
+  types.PalestraWorkshop:
+    properties:
+      audienceSize:
+        type: integer
+      company:
+        type: string
+      contact:
+        type: string
+      email:
+        type: string
+      eventDate:
+        type: string
+      eventType:
+        type: string
+      location:
+        type: string
+      message:
+        type: string
+      name:
+        type: string
+      objective:
+        type: string
+      topic:
+        type: string
+    type: object
+  types.ProgramaSaudeMentalTrabalhador:
+    properties:
+      company:
+        type: string
+      contact:
+        type: string
+      email:
+        type: string
+      message:
+        type: string
+      name:
+        type: string
+      numberOfEmployees:
+        type: integer
+      serviceType:
+        type: string
+      specificNeeds:
+        type: string
+    type: object
+  types.QualidadeVida:
+    properties:
+      age:
+        type: integer
+      areasInterest:
+        type: string
+      contact:
+        type: string
+      email:
+        type: string
+      experiencePrior:
+        type: string
+      frequencia:
+        type: string
+      message:
+        type: string
+      name:
+        type: string
+      personalGoal:
+        type: string
+    type: object
+  types.ReservaEvento:
+    properties:
+      coffeeBreak:
+        properties:
+          included:
+            type: boolean
+          people:
+            type: integer
+          type:
+            type: string
+        type: object
+      company:
+        type: string
+      contact:
+        type: string
+      createdAt:
+        type: string
+      dates:
+        items:
+          type: string
+        type: array
+      email:
+        type: string
+      eventType:
+        type: string
+      id:
+        type: string
+      interestType:
+        type: string
+      message:
+        type: string
+      name:
+        type: string
+      participants:
+        type: integer
+      specificNeeds:
+        type: string
+      status:
+        $ref: '#/definitions/types.StatusReserva'
+    type: object
+  types.StatusReserva:
+    enum:
+    - PENDENTE
+    - CONFIRMADA
+    - CANCELADA
+    type: string
+    x-enum-varnames:
+    - StatusPendente
+    - StatusConfirmada
+    - StatusCancelada
 info:
   contact: {}
 paths:
@@ -153,4 +314,350 @@ paths:
       summary: Envia email de confirmação e notificação
       tags:
       - enterprises
+  /v1/ginastica-laboral/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados do formulário de ginástica laboral e envia emails
+        para cliente e equipa
+      parameters:
+      - description: Dados da ginástica laboral
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.GinasticaLaboral'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.GinasticaLaboral'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "429":
+          description: Too Many Requests
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Solicitação de Ginástica Laboral
+      tags:
+      - ginastica-laboral
+  /v1/mentoria/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados da mentoria e envia emails
+      parameters:
+      - description: Dados da mentoria
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.P7Mentoria'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.P7Mentoria'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Solicitação de Mentoria P7
+      tags:
+      - mentoria
+  /v1/palestras-workshops/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados do formulário de palestras e workshops e envia emails
+        para cliente e equipa
+      parameters:
+      - description: Dados da palestra ou workshop
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.PalestraWorkshop'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.PalestraWorkshop'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "429":
+          description: Too Many Requests
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Solicitação de Palestra ou Workshop
+      tags:
+      - palestras-workshops
+  /v1/qualidade-vida/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados do participante e envia emails
+      parameters:
+      - description: Dados do participante
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.QualidadeVida'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.QualidadeVida'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Inscrição no Projeto de Qualidade de Vida
+      tags:
+      - qualidade-vida
+  /v1/reserva-evento/{id}/cancelar:
+    get:
+      description: Valida o token, remove a reserva e envia um e-mail de cancelamento
+        ao cliente.
+      parameters:
+      - description: ID da Reserva
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Token de confirmação
+        in: query
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Cancelar reserva de evento
+      tags:
+      - reserva-evento
+  /v1/reserva-evento/{id}/confirmar:
+    get:
+      description: Confirma uma reserva através do link enviado por e-mail.
+      parameters:
+      - description: ID da reserva
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Token de confirmação
+        in: query
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Confirmar reserva
+      tags:
+      - reserva-evento
+  /v1/reserva-evento/criar-reserva:
+    post:
+      consumes:
+      - application/json
+      description: Recebe um pedido de reserva de evento
+      parameters:
+      - description: Dados da reserva de evento
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.ReservaEvento'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/types.ReservaEvento'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "429":
+          description: Too Many Requests
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Criar reserva de evento
+      tags:
+      - reserva-evento
+  /v1/reserva-evento/sessoes:
+    get:
+      description: Retorna todas as sessões reservadas para bloqueio no calendário
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Listar sessões reservadas
+      tags:
+      - reserva-evento
+  /v1/saude-mental/email:
+    post:
+      consumes:
+      - application/json
+      description: Recebe dados da empresa, envia confirmação ao cliente e notificação
+        à equipa
+      parameters:
+      - description: Dados do programa
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/types.ProgramaSaudeMentalTrabalhador'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.ProgramaSaudeMentalTrabalhador'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Envia email do Programa de Saúde Mental do Trabalhador
+      tags:
+      - saude-mental
 swagger: "2.0"

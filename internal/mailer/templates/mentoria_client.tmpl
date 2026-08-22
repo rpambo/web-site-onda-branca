@@ -1,0 +1,103 @@
+{{define "subject"}} Recebemos o seu pedido de Mentoria P7 {{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: #323130;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e1dfdd;
+      }
+      .header {
+        background: #006699;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .content {
+        padding: 30px;
+      }
+      h2 {
+        color: #006699;
+        margin-bottom: 20px;
+      }
+      .details {
+        background: #f8f8f8;
+        border: 1px solid #e1dfdd;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 25px 0;
+      }
+      .details p {
+        margin: 8px 0;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #605e5c;
+        background: #f3f2f1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+        Mentoria P7
+      </div>
+
+      <div class="content">
+
+        <h2>Olá, {{.Name}}!</h2>
+
+        <p>
+          Recebemos o seu pedido de mentoria e a nossa equipa irá analisar as suas informações.
+        </p>
+
+        <h2>Resumo do Pedido</h2>
+
+        <div class="details">
+          <p><strong>Nome:</strong> {{.Name}}</p>
+          <p><strong>Email:</strong> {{.Email}}</p>
+          <p><strong>Contacto:</strong> {{.Contact}}</p>
+          <p><strong>Perfil:</strong> {{.ParticipantType}}</p>
+          <p><strong>Empresa:</strong> {{if .Company}}{{.Company}}{{else}}Não informada{{end}}</p>
+          <p><strong>Desafio Principal:</strong> {{.MainChallenges}}</p>
+          <p><strong>Objetivos:</strong> {{.MentoriaGoals}}</p>
+          <p><strong>Disponibilidade:</strong> {{.Availability}}</p>
+          <p><strong>Mensagem:</strong> {{.Message}}</p>
+        </div>
+
+        <p>
+          Entraremos em contacto em breve para dar seguimento ao seu pedido.
+        </p>
+
+      </div>
+
+      <div class="footer">
+        © Onda Branca | Mentoria P7
+      </div>
+
+    </div>
+  </body>
+</html>
+{{end}}

@@ -1,0 +1,114 @@
+{{define "subject"}} Recebemos o seu pedido - Programa de Saúde Mental do Trabalhador {{end}}
+
+{{define "body"}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: #323130;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e1dfdd;
+      }
+      .header {
+        background: #d83b01;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .content {
+        padding: 30px;
+      }
+      h2 {
+        color: #d83b01;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .details {
+        background: #f8f8f8;
+        border: 1px solid #e1dfdd;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 25px 0;
+      }
+      .details p {
+        margin: 8px 0;
+      }
+      .badge {
+        display: inline-block;
+        background: #d83b01;
+        color: #ffffff;
+        border-radius: 4px;
+        padding: 2px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 18px;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #605e5c;
+        background: #f3f2f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Cabeçalho -->
+      <div class="header">
+        Programa de Saúde Mental do Trabalhador
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="content">
+        <h2>Olá, {{.Name}}!</h2>
+
+        <p>
+          Obrigado por entrar em contacto connosco. Recebemos o seu pedido de informação
+          sobre o <b>Programa de Saúde Mental do Trabalhador</b> e a nossa equipa irá
+          analisar os detalhes e responder-lhe brevemente.
+        </p>
+
+        <h2>Resumo do Pedido</h2>
+        <div class="details">
+          <p><b>Nome:</b> {{.Name}}</p>
+          <p><b>Email:</b> {{.Email}}</p>
+          <p><b>Contacto:</b> {{.Contact}}</p>
+          <p><b>Empresa:</b> {{.Company}}</p>
+          <p><b>Nº de Colaboradores:</b> {{.NumberOfEmployees}}</p>
+          <p><b>Tipo de Serviço:</b> {{.ServiceType}}</p>
+          <p><b>Data/Hora:</b> {{.Year}}</p>
+        </div>
+
+        <p>
+          Caso tenha alguma questão urgente, pode contactar-nos directamente através
+          dos nossos canais oficiais.
+        </p>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="footer">
+        &copy; {{.Year}} Onda Branca — Todos os direitos reservados
+      </div>
+
+    </div>
+  </body>
+</html>
+{{end}}

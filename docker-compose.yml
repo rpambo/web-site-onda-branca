@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:18
+    container_name: ondabranca-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ondabranca
+      POSTGRES_USER: rpambo
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - db-data-fresh:/var/lib/postgresql
+    ports:
+      - "5433:5432"
+
+volumes:
+  db-data-fresh:

@@ -1,0 +1,106 @@
+{{define "subject"}} Novo pedido — Palestra ou Workshop {{end}}
+
+{{define "body"}}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: #323130;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #e1dfdd;
+      }
+      .header {
+        background: #006699;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .content {
+        padding: 30px;
+      }
+      h2 {
+        color: #006699;
+        margin-bottom: 20px;
+      }
+      .details {
+        background: #f8f8f8;
+        border: 1px solid #e1dfdd;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 25px 0;
+      }
+      .details p {
+        margin: 8px 0;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 12px;
+        color: #605e5c;
+        background: #f3f2f1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+```
+  <div class="header">
+    🎤 Novo Pedido de Palestra ou Workshop
+  </div>
+
+  <div class="content">
+
+    <h2>Detalhes da Solicitação</h2>
+
+    <div class="details">
+      <p><b>Nome:</b> {{.Name}}</p>
+      <p><b>Email:</b> {{.Email}}</p>
+      <p><b>Contacto:</b> {{.Contact}}</p>
+      <p><b>Empresa:</b> {{.Company}}</p>
+      <p><b>Tipo de Evento:</b> {{.EventType}}</p>
+      <p><b>Tema:</b> {{.Topic}}</p>
+      <p><b>Número de Participantes:</b> {{.AudienceSize}}</p>
+      <p><b>Local:</b> {{.Location}}</p>
+      <p><b>Data do Evento:</b> {{.EventDate}}</p>
+      <p><b>Objetivo:</b> {{.Objective}}</p>
+      <p><b>Mensagem:</b> {{if .Message}}{{.Message}}{{else}}Não informada{{end}}</p>
+      <p><b>Data/Hora do Pedido:</b> {{.Data}}</p>
+    </div>
+
+    <p>
+      O cliente demonstrou interesse em contratar uma palestra ou workshop.
+      Recomenda-se contacto para levantamento de requisitos e elaboração da proposta.
+    </p>
+
+  </div>
+
+  <div class="footer">
+    &copy; {{.Data}} Onda Branca — Notificação Interna
+  </div>
+
+</div>
+```
+
+  </body>
+</html>
+{{end}}

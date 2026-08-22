@@ -17,6 +17,7 @@ import (
 	"github.com/rpambo/web-site-onda-branca/internal/env"
 	"github.com/rpambo/web-site-onda-branca/internal/mailer"
 	"github.com/rpambo/web-site-onda-branca/internal/ratelimiter"
+	"github.com/rpambo/web-site-onda-branca/internal/store"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"go.uber.org/zap"
 )
@@ -25,7 +26,8 @@ type application struct {
 	config			config
 	logger			*zap.SugaredLogger
 	mailer			mailer.Client
-	ratelimiter		ratelimiter.Limiter			
+	ratelimiter		ratelimiter.Limiter
+	store			store.Storage			
 }
 
 type config struct {
@@ -35,6 +37,7 @@ type config struct {
 	mail 			mailConfig
 	env				string
 	ratelimiter		ratelimiter.Config
+	db	dbConfig
 }
 
 type mailConfig struct {
@@ -45,6 +48,13 @@ type mailConfig struct {
 
 type mailTrapConfig struct {
 	apikey			string
+}
+
+type dbConfig struct{
+	addr				string
+	maxOpenIdleCons		int
+	maxIdleCons			int
+	maxIdleTime			string
 }
 
 func (app *application) mount() http.Handler{
@@ -82,6 +92,38 @@ func (app *application) mount() http.Handler{
 		r.Route("/brochura", func(r chi.Router) {
 			r.Post("/email", app.SubmitEmailHandler)
 		})
+
+		// ── Programa Saúde Mental do Trabalhador ─────────────
+        r.Route("/saude-mental", func(r chi.Router) {
+            r.Post("/email", app.SendProgramaSaudeMentalHandler)
+        })
+
+		// ── Mentoria P7 ─────────────
+		r.Route("/mentoria", func(r chi.Router) {
+			r.Post("/email", app.SendP7MentoriaHandler)
+		})
+
+		r.Route("/qualidade-vida", func(r chi.Router) {
+        	r.Post("/email", app.SendQualidadeVidaHandler)
+    	})
+
+		r.Route("/ginastica-laboral", func(r chi.Router) {
+			r.Post("/email", app.SendGinasticaLaboralHandler)
+		})
+
+		r.Route("/palestras-workshops", func(r chi.Router) {
+			r.Post("/email", app.SendPalestraWorkshopHandler)
+		})
+		
+		r.Route("/reserva-evento", func(r chi.Router) {
+			r.Post("/criar-reserva", app.CreateReservaEventoHandler)
+
+			r.Get("/sessoes", app.GetSessoesHandler)
+
+			r.Get("/{id}/confirmar", app.ConfirmReservaEventoHandler)
+			r.Get("/{id}/cancelar", app.CancelReservaEventoHandler)
+		})
+		
 	})
 	return r
 }
@@ -113,6 +155,7 @@ func (app *application) run(mux http.Handler) error{
 	}()
 
 	app.logger.Info("server has started", "addr", app.config.addr, "env", app.config.env)
+	app.logger.Info("DB:", app.config.db.addr)
 
 	err := srv.ListenAndServe()
 	if !errors.Is(err, http.ErrServerClosed){

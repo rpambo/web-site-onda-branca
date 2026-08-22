@@ -191,6 +191,525 @@
                     }
                 }
             }
+        },
+        "/v1/ginastica-laboral/email": {
+            "post": {
+                "description": "Recebe dados do formulário de ginástica laboral e envia emails para cliente e equipa",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ginastica-laboral"
+                ],
+                "summary": "Solicitação de Ginástica Laboral",
+                "parameters": [
+                    {
+                        "description": "Dados da ginástica laboral",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.GinasticaLaboral"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/types.GinasticaLaboral"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/mentoria/email": {
+            "post": {
+                "description": "Recebe dados da mentoria e envia emails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "mentoria"
+                ],
+                "summary": "Solicitação de Mentoria P7",
+                "parameters": [
+                    {
+                        "description": "Dados da mentoria",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.P7Mentoria"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/types.P7Mentoria"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/palestras-workshops/email": {
+            "post": {
+                "description": "Recebe dados do formulário de palestras e workshops e envia emails para cliente e equipa",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "palestras-workshops"
+                ],
+                "summary": "Solicitação de Palestra ou Workshop",
+                "parameters": [
+                    {
+                        "description": "Dados da palestra ou workshop",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.PalestraWorkshop"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/types.PalestraWorkshop"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/qualidade-vida/email": {
+            "post": {
+                "description": "Recebe dados do participante e envia emails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "qualidade-vida"
+                ],
+                "summary": "Inscrição no Projeto de Qualidade de Vida",
+                "parameters": [
+                    {
+                        "description": "Dados do participante",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.QualidadeVida"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/types.QualidadeVida"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/reserva-evento/criar-reserva": {
+            "post": {
+                "description": "Recebe um pedido de reserva de evento",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "reserva-evento"
+                ],
+                "summary": "Criar reserva de evento",
+                "parameters": [
+                    {
+                        "description": "Dados da reserva de evento",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.ReservaEvento"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/types.ReservaEvento"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/reserva-evento/sessoes": {
+            "get": {
+                "description": "Retorna todas as sessões reservadas para bloqueio no calendário",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "reserva-evento"
+                ],
+                "summary": "Listar sessões reservadas",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/reserva-evento/{id}/cancelar": {
+            "get": {
+                "description": "Valida o token, remove a reserva e envia um e-mail de cancelamento ao cliente.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "reserva-evento"
+                ],
+                "summary": "Cancelar reserva de evento",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID da Reserva",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Token de confirmação",
+                        "name": "token",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/reserva-evento/{id}/confirmar": {
+            "get": {
+                "description": "Confirma uma reserva através do link enviado por e-mail.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "reserva-evento"
+                ],
+                "summary": "Confirmar reserva",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID da reserva",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Token de confirmação",
+                        "name": "token",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/saude-mental/email": {
+            "post": {
+                "description": "Recebe dados da empresa, envia confirmação ao cliente e notificação à equipa",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "saude-mental"
+                ],
+                "summary": "Envia email do Programa de Saúde Mental do Trabalhador",
+                "parameters": [
+                    {
+                        "description": "Dados do programa",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/types.ProgramaSaudeMentalTrabalhador"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/types.ProgramaSaudeMentalTrabalhador"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -208,7 +727,7 @@
                 "email": {
                     "type": "string"
                 },
-                "mensagem": {
+                "message": {
                     "type": "string"
                 },
                 "name": {
@@ -216,10 +735,22 @@
                 }
             }
         },
-        "types.InfoEmpresa": {
+        "types.GinasticaLaboral": {
             "type": "object",
             "properties": {
+                "area": {
+                    "type": "string"
+                },
+                "atividadePreferida": {
+                    "type": "string"
+                },
                 "email": {
+                    "type": "string"
+                },
+                "empresa": {
+                    "type": "string"
+                },
+                "frequencia": {
                     "type": "string"
                 },
                 "mensagem": {
@@ -228,10 +759,241 @@
                 "name": {
                     "type": "string"
                 },
-                "servico": {
+                "numeroFuncionarios": {
+                    "type": "integer"
+                },
+                "objetivos": {
+                    "type": "string"
+                },
+                "telefone": {
                     "type": "string"
                 }
             }
+        },
+        "types.InfoEmpresa": {
+            "type": "object",
+            "properties": {
+                "contact": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "service": {
+                    "type": "string"
+                }
+            }
+        },
+        "types.P7Mentoria": {
+            "type": "object",
+            "properties": {
+                "availability": {
+                    "type": "string"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "mainChallenges": {
+                    "type": "string"
+                },
+                "mentoriaGoals": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "participantType": {
+                    "type": "string"
+                }
+            }
+        },
+        "types.PalestraWorkshop": {
+            "type": "object",
+            "properties": {
+                "audienceSize": {
+                    "type": "integer"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "eventDate": {
+                    "type": "string"
+                },
+                "eventType": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "objective": {
+                    "type": "string"
+                },
+                "topic": {
+                    "type": "string"
+                }
+            }
+        },
+        "types.ProgramaSaudeMentalTrabalhador": {
+            "type": "object",
+            "properties": {
+                "company": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "numberOfEmployees": {
+                    "type": "integer"
+                },
+                "serviceType": {
+                    "type": "string"
+                },
+                "specificNeeds": {
+                    "type": "string"
+                }
+            }
+        },
+        "types.QualidadeVida": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "areasInterest": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "experiencePrior": {
+                    "type": "string"
+                },
+                "frequencia": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "personalGoal": {
+                    "type": "string"
+                }
+            }
+        },
+        "types.ReservaEvento": {
+            "type": "object",
+            "properties": {
+                "coffeeBreak": {
+                    "type": "object",
+                    "properties": {
+                        "included": {
+                            "type": "boolean"
+                        },
+                        "people": {
+                            "type": "integer"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "company": {
+                    "type": "string"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "dates": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "email": {
+                    "type": "string"
+                },
+                "eventType": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "interestType": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "participants": {
+                    "type": "integer"
+                },
+                "specificNeeds": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/types.StatusReserva"
+                }
+            }
+        },
+        "types.StatusReserva": {
+            "type": "string",
+            "enum": [
+                "PENDENTE",
+                "CONFIRMADA",
+                "CANCELADA"
+            ],
+            "x-enum-varnames": [
+                "StatusPendente",
+                "StatusConfirmada",
+                "StatusCancelada"
+            ]
         }
     }
 }

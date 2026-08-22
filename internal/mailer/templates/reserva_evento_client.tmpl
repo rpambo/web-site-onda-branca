@@ -1,0 +1,155 @@
+{{define "subject"}}
+Confirmação da sua Reserva de Evento — {{.TipoEvento}}
+{{end}}
+
+{{define "body"}}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #323130;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e1dfdd;
+    }
+
+    .header {
+      background: #107c10;
+      padding: 20px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    h2 {
+      color: #107c10;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      background: #f8f8f8;
+      border: 1px solid #e1dfdd;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .details p {
+      margin: 8px 0;
+    }
+
+    .highlight {
+      background: #e7f5e7;
+      border-left: 4px solid #107c10;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #605e5c;
+      background: #f3f2f1;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #107c10;
+      color: white;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    RESERVA CONFIRMADA
+  </div>
+
+  <div class="content">
+
+    <p class="badge">Estado: {{.Status}}</p>
+
+    <h2>Olá {{.Nome}},</h2>
+
+    <p>
+      A sua reserva de evento foi registada com sucesso.
+      Segue abaixo o resumo completo da sua solicitação.
+    </p>
+
+    <h2>📌 Dados do evento</h2>
+    <div class="details">
+      <p><strong>Tipo de evento:</strong> {{.TipoEvento}}</p>
+      <p><strong>Tipo de interesse:</strong> {{.TipoInteresse}}</p>
+      <p><strong>Participantes:</strong> {{.Participantes}}</p>
+    </div>
+
+    <h2>📅 Datas escolhidas</h2>
+    <div class="details">
+      {{if .Datas}}
+        <ul>
+          {{range .Datas}}
+            <li>{{.}}</li>
+          {{end}}
+        </ul>
+      {{else}}
+        <p>Nenhuma data foi informada.</p>
+      {{end}}
+    </div>
+
+    <h2>🍽️ Coffee Break</h2>
+    <div class="details">
+      <p><strong>Incluído:</strong> {{if .CoffeeBreak.Incluido}}Sim{{else}}Não{{end}}</p>
+      <p><strong>Tipo:</strong> {{.CoffeeBreak.Tipo}}</p>
+      <p><strong>Pessoas:</strong> {{.CoffeeBreak.Pessoas}}</p>
+    </div>
+
+    <h2>📝 Informações adicionais</h2>
+    <div class="details">
+      <p><strong>Necessidades:</strong> {{.Necessidades}}</p>
+      <p><strong>Mensagem:</strong> {{.Mensagem}}</p>
+    </div>
+
+    <div class="highlight">
+      <strong>Importante:</strong><br/>
+      A nossa equipa entrará em contacto consigo em breve para confirmação final das datas e detalhes do evento.
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Onda Branca — Confirmação automática de reserva
+  </div>
+
+</div>
+
+</body>
+</html>
+
+{{end}}
